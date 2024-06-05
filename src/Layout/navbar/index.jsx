@@ -21,7 +21,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-const Navbar = () => {
+export const Navbar = () => {
   const { open, setOpen } = useUIContext()
 
   const handleDrawer = () => {
@@ -46,5 +46,3 @@ const Navbar = () => {
     </AppBar>
   )
 }
-
-export default Navbar

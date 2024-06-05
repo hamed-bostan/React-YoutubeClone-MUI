@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from './navbar/Navbar'
-import { Sidebar } from './sidebar/Sidebar'
 import { Box } from '@mui/material'
+import { Navbar } from './navbar'
+import { Sidebar } from './sidebar'
 
 export const Layout = ({ children }) => {
     return (

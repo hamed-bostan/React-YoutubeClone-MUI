@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import { DrawerHeader } from '../Layout/sidebar/Sidebar'
+import { DrawerHeader } from '../Layout/sidebar'
 
 export const HomePage = () => {
     return (

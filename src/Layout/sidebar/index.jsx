@@ -75,7 +75,7 @@ export const Sidebar = () => {
   ]
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box>
       <CssBaseline />
 
       <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}  >
