@@ -4,7 +4,6 @@ import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton, Typography, styled } from '@mui/material';
 import { useUIContext } from '../context/ui';
-import { drawerWidth } from '../sidebar/Sidebar';
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -28,8 +27,6 @@ const Navbar = () => {
   const handleDrawer = () => {
     setOpen(!open);
   };
-
-
 
   return (
     <AppBar position="fixed" open={open}>
