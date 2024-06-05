@@ -1,15 +1,16 @@
 import './App.css'
-import Navbar from './navbar/Navbar'
-import { Sidebar } from './sidebar/Sidebar'
 import { UIProvider } from './context/ui'
+import { Layout } from './Layout'
+import { MainContent } from './components/MainContent'
 
 function App() {
 
   return (
     <>
       <UIProvider>
-        <Navbar />
-        <Sidebar />
+        <Layout>
+          <MainContent />
+        </Layout>
       </UIProvider>
     </>
   )

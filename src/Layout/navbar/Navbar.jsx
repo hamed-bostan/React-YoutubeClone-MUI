@@ -3,7 +3,7 @@ import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton, Typography, styled } from '@mui/material';
-import { useUIContext } from '../context/ui';
+import { useUIContext } from '../../context/ui';
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
