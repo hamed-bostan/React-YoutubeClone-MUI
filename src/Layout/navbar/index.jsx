@@ -29,7 +29,7 @@ export const Navbar = () => {
   };
 
   return (
-    <AppBar position="fixed" open={open}>
+    <AppBar position="fixed" open={open} elevation={0}>
       <Toolbar>
         <IconButton
           color="inherit"
