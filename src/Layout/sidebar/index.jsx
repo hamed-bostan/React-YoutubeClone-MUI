@@ -27,6 +27,7 @@ import MilitaryTechOutlinedIcon from '@mui/icons-material/MilitaryTechOutlined';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import PodcastsOutlinedIcon from '@mui/icons-material/PodcastsOutlined';
 import { useUIContext } from '../../context/ui';
+import { Avatar } from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -62,6 +63,7 @@ export const DrawerHeader = styled('div')(({ theme }) => ({
 
 
 
+
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     width: drawerWidth,
@@ -83,11 +85,13 @@ export const Sidebar = () => {
   const theme = useTheme();
   const { open } = useUIContext()
 
+
+
   return (
     <Box>
       <CssBaseline />
 
-      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}  >
+      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }} sx={{ scrollbarWidth: 'thin' }} >
 
         <DrawerHeader />
 
@@ -100,46 +104,52 @@ export const Sidebar = () => {
               </ListItemButton>
             </ListItem>
           )))}
+          {open && <Divider />}
         </List>
 
-        <Divider />
 
-        <List>
-          {YouIcons.map((item => (
-            <ListItem key={item.id} disablePadding >
-              <ListItemButton sx={{ minHeight: 50 }}>
-                <ListItemIcon>{item.iconImage}</ListItemIcon>
-                {open && <ListItemText primary={item.textTitle} />}
-              </ListItemButton>
-            </ListItem>
-          )))}
-        </List>
+        {open && (
+          <List>
+            {YouIcons.map((item => (
+              <ListItem key={item.id} disablePadding >
+                <ListItemButton sx={{ minHeight: 50 }}>
+                  <ListItemIcon>{item.iconImage}</ListItemIcon>
+                  <ListItemText primary={item.textTitle} />
+                </ListItemButton>
+              </ListItem>
+            )))}
+            <Divider />
+          </List>
+        )}
 
-        <Divider />
 
-        <List>
-          {SubscriptionIcons.map((item => (
-            <ListItem key={item.id} disablePadding >
-              <ListItemButton sx={{ minHeight: 50 }}>
-                <ListItemIcon>{item.iconImage}</ListItemIcon>
-                {open && <ListItemText primary={item.textTitle} />}
-              </ListItemButton>
-            </ListItem>
-          )))}
-        </List>
+        {open && (
+          <List>
+            {SubscriptionIcons.map((item => (
+              <ListItem key={item.id} disablePadding >
+                <ListItemButton sx={{ minHeight: 50, columnGap: 3 }}>
+                  <Avatar src={item.iconImage} sx={{ width: 28, height: 28 }} />
+                  <ListItemText primary={item.textTitle} />
+                </ListItemButton>
+              </ListItem>
+            )))}
+            <Divider />
+          </List>
+        )}
 
-        <Divider />
 
-        <List>
-          {ExploreIcons.map((item => (
-            <ListItem key={item.id} disablePadding >
-              <ListItemButton sx={{ minHeight: 50 }}>
-                <ListItemIcon>{item.iconImage}</ListItemIcon>
-                {open && <ListItemText primary={item.textTitle} />}
-              </ListItemButton>
-            </ListItem>
-          )))}
-        </List>
+        {open && (
+          <List>
+            {ExploreIcons.map((item => (
+              <ListItem key={item.id} disablePadding >
+                <ListItemButton sx={{ minHeight: 50 }}>
+                  <ListItemIcon>{item.iconImage}</ListItemIcon>
+                  <ListItemText primary={item.textTitle} />
+                </ListItemButton>
+              </ListItem>
+            )))}
+          </List>
+        )}
 
 
       </Drawer>
@@ -152,7 +162,7 @@ export const Sidebar = () => {
 const HeadingIcons = [
   { id: "1", textTitle: "home", iconImage: <HomeOutlinedIcon /> },
   { id: "2", textTitle: "shorts", iconImage: <AddToDriveOutlinedIcon /> },
-  { id: "3", textTitle: "Subscription", iconImage: < SubscriptionsOutlinedIcon /> },
+  { id: "3", textTitle: "subscription", iconImage: < SubscriptionsOutlinedIcon /> },
 ]
 
 const YouIcons = [
@@ -165,12 +175,12 @@ const YouIcons = [
 ]
 
 const SubscriptionIcons = [
-  { id: "1", textTitle: "fireship", iconImage: <HomeOutlinedIcon /> },
-  { id: "2", textTitle: "traversy media", iconImage: < HomeOutlinedIcon /> },
-  { id: "3", textTitle: "kevin powell", iconImage: <HomeOutlinedIcon /> },
-  { id: "4", textTitle: "web dev simplified", iconImage: < HomeOutlinedIcon /> },
-  { id: "5", textTitle: "caleb curry", iconImage: < HomeOutlinedIcon /> },
-  { id: "6", textTitle: "sonny sangha", iconImage: <HomeOutlinedIcon /> },
+  { id: "1", textTitle: "fireship", iconImage: './images/profileImages/fireship.jpg' },
+  { id: "2", textTitle: "traversy media", iconImage: './images/profileImages/traversy-media.jpg' },
+  { id: "3", textTitle: "kevin powell", iconImage: './images/profileImages/kevin-powell.jpg' },
+  { id: "4", textTitle: "web dev simplified", iconImage: './images/profileImages/webdevsimplified.jpg' },
+  { id: "5", textTitle: "caleb curry", iconImage: './images/profileImages/caleb-curry.jpg' },
+  { id: "6", textTitle: "sonny sangha", iconImage: './images/profileImages/sonny-sangha.jpg' },
 ]
 
 const ExploreIcons = [
