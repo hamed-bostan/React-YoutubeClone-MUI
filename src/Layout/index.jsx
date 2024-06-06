@@ -8,6 +8,7 @@ export const Layout = ({ children }) => {
 
     return (
         <>
+        {/* null */}
             <Navbar />
             <Box sx={{ display: 'flex' }}>
                 <Sidebar />
