@@ -28,6 +28,7 @@ import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import PodcastsOutlinedIcon from '@mui/icons-material/PodcastsOutlined';
 import { useUIContext } from '../../context/ui';
 import { Avatar } from '@mui/material';
+import { useLocation } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -85,28 +86,28 @@ export const Sidebar = () => {
   const theme = useTheme();
   const { open } = useUIContext()
 
-
-
   return (
     <Box>
       <CssBaseline />
 
-      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }} sx={{ scrollbarWidth: 'thin' }} >
-
+      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}  >
         <DrawerHeader />
 
         <List>
           {HeadingIcons.map((item => (
-            <ListItem key={item.id} disablePadding >
-              <ListItemButton sx={{ minHeight: 50 }}>
-                <ListItemIcon>{item.iconImage}</ListItemIcon>
-                {open && <ListItemText primary={item.textTitle} />}
+            <ListItem key={item.id} disablePadding>
+              <ListItemButton sx={{ minHeight: 50, flexDirection: open ? 'row' : 'column' }}  >
+                <ListItemIcon sx={{ justifyContent: !open && 'center' }}>{item.iconImage}</ListItemIcon>
+                <ListItemText primary={item.textTitle}
+                  primaryTypographyProps={{
+                    fontSize: !open && 12,
+                  }} />
               </ListItemButton>
             </ListItem>
           )))}
-          {open && <Divider />}
         </List>
 
+        {open && <Divider />}
 
         {open && (
           <List>
@@ -118,10 +119,9 @@ export const Sidebar = () => {
                 </ListItemButton>
               </ListItem>
             )))}
-            <Divider />
           </List>
         )}
-
+        {open && <Divider />}
 
         {open && (
           <List>
@@ -133,10 +133,9 @@ export const Sidebar = () => {
                 </ListItemButton>
               </ListItem>
             )))}
-            <Divider />
           </List>
         )}
-
+        {open && <Divider />}
 
         {open && (
           <List>
@@ -151,7 +150,6 @@ export const Sidebar = () => {
           </List>
         )}
 
-
       </Drawer>
 
     </Box>
@@ -160,9 +158,9 @@ export const Sidebar = () => {
 
 
 const HeadingIcons = [
-  { id: "1", textTitle: "home", iconImage: <HomeOutlinedIcon /> },
-  { id: "2", textTitle: "shorts", iconImage: <AddToDriveOutlinedIcon /> },
-  { id: "3", textTitle: "subscription", iconImage: < SubscriptionsOutlinedIcon /> },
+  { id: "1", textTitle: "home", iconImage: <HomeOutlinedIcon />, path: '/' },
+  { id: "2", textTitle: "shorts", iconImage: <AddToDriveOutlinedIcon />, path: '/shorts' },
+  { id: "3", textTitle: "subscription", iconImage: < SubscriptionsOutlinedIcon />, path: '/subscription' },
 ]
 
 const YouIcons = [
