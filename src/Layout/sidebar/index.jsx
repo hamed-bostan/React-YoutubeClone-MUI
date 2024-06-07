@@ -28,7 +28,7 @@ import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import PodcastsOutlinedIcon from '@mui/icons-material/PodcastsOutlined';
 import { useUIContext } from '../../context/ui';
 import { Avatar } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -86,6 +86,7 @@ export const Sidebar = () => {
   const theme = useTheme();
   const { open } = useUIContext()
   const navigate = useNavigate()
+  const location = useLocation()
 
   return (
     <Box>
@@ -97,6 +98,7 @@ export const Sidebar = () => {
         <List>
           {HeadingIcons.map((item => (
             <ListItem key={item.id} disablePadding
+              sx={{ bgcolor: location.pathname == item.path ? '#f4f4f4' : '' }}
               onClick={() => navigate(item.path)}
             >
               <ListItemButton sx={{ minHeight: 50, flexDirection: open ? 'row' : 'column' }}  >
