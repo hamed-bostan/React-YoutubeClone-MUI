@@ -1,6 +1,5 @@
 import './App.css'
 import { UIProvider } from './context/ui'
-import { MainContent } from './components/MainContent'
 import { HomePage } from './pages/HomePage'
 import { ShortsPage } from './pages/ShortsPage'
 import { SubscriptionPage } from './pages/SubscriptionPage'

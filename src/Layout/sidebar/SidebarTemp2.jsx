@@ -90,22 +90,25 @@ export const Sidebar = () => {
 
   return (
     <Box>
-      <CssBaseline />
 
       <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}>
         <DrawerHeader />
 
-        <Box sx={{ px: 2 }}>
+        <Box sx={{}}>
           <List>
             {HeadingIcons.map((item => (
               <ListItem key={item.id} disablePadding
                 sx={{
                   bgcolor: location.pathname == item.path && open && '#f4f4f4',
-                  borderRadius: location.pathname == item.path && open && 3
+                  borderRadius: location.pathname == item.path && open && 3,
+                  display: 'flex', justifyContent: 'center', alignItems: 'center'
                 }}
                 onClick={() => navigate(item.path)}
               >
-                <ListItemButton sx={{  flexDirection: open ? 'row' : 'column', ":hover": { borderRadius: 3 } }}  >
+                <ListItemButton disablePadding sx={{
+                  flexDirection: open ? 'row' : 'column', minHeight: open ? 1 : 50, minWidth: !open && 80,
+                  ":hover": { borderRadius: 3 }
+                }}  >
                   <ListItemIcon sx={{ justifyContent: !open && 'center' }}>{item.iconImage}</ListItemIcon>
                   <ListItemText primary={item.textTitle}
                     primaryTypographyProps={{
@@ -160,9 +163,9 @@ export const Sidebar = () => {
           )}
 
         </Box>
-      </Drawer>
+      </Drawer >
 
-    </Box>
+    </Box >
   );
 }
 

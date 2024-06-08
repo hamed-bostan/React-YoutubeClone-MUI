@@ -1,4 +1,4 @@
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -83,7 +83,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export const Sidebar = () => {
-  const theme = useTheme();
   const { open } = useUIContext()
   const navigate = useNavigate()
   const location = useLocation()
@@ -92,72 +91,82 @@ export const Sidebar = () => {
     <Box>
       <CssBaseline />
 
-      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}  >
+      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}>
         <DrawerHeader />
 
-        <List>
-          {HeadingIcons.map((item => (
-            <ListItem key={item.id} disablePadding
-              sx={{ bgcolor: location.pathname == item.path ? '#f4f4f4' : '' }}
-              onClick={() => navigate(item.path)}
-            >
-              <ListItemButton sx={{ minHeight: 50, flexDirection: open ? 'row' : 'column' }}  >
-                <ListItemIcon sx={{ justifyContent: !open && 'center' }}>{item.iconImage}</ListItemIcon>
-                <ListItemText primary={item.textTitle}
-                  primaryTypographyProps={{
-                    fontSize: !open && 12,
-                  }} />
-              </ListItemButton>
-            </ListItem>
-          )))}
-        </List>
-
-        {open && <Divider />}
-
-        {open && (
+        <Box sx={{}}>
           <List>
-            {YouIcons.map((item => (
-              <ListItem key={item.id} disablePadding >
-                <ListItemButton sx={{ minHeight: 50 }}>
-                  <ListItemIcon>{item.iconImage}</ListItemIcon>
-                  <ListItemText primary={item.textTitle} />
+            {HeadingIcons.map((item => (
+              <ListItem key={item.id} disablePadding
+                sx={{
+                  bgcolor: location.pathname == item.path && open && '#f4f4f4',
+                  borderRadius: location.pathname == item.path && open && 3,
+                  display: 'flex', justifyContent: 'center', alignItems: 'center'
+                }}
+                onClick={() => navigate(item.path)}
+              >
+                <ListItemButton sx={{
+                  flexDirection: open ? 'row' : 'column',
+                  ":hover": { borderRadius: 3 },
+                  p: open ? 0.3 : 1
+                }}  >
+                  <ListItemIcon sx={{ justifyContent: !open && 'center' }}>{item.iconImage}</ListItemIcon>
+                  <ListItemText primary={item.textTitle}
+                    primaryTypographyProps={{
+                      fontSize: !open && 12,
+                    }} />
                 </ListItemButton>
               </ListItem>
             )))}
           </List>
-        )}
-        {open && <Divider />}
 
-        {open && (
-          <List>
-            {SubscriptionIcons.map((item => (
-              <ListItem key={item.id} disablePadding >
-                <ListItemButton sx={{ minHeight: 50, columnGap: 3 }}>
-                  <Avatar src={item.iconImage} sx={{ width: 28, height: 28 }} />
-                  <ListItemText primary={item.textTitle} />
-                </ListItemButton>
-              </ListItem>
-            )))}
-          </List>
-        )}
-        {open && <Divider />}
+          {open && <Divider />}
 
-        {open && (
-          <List>
-            {ExploreIcons.map((item => (
-              <ListItem key={item.id} disablePadding >
-                <ListItemButton sx={{ minHeight: 50 }}>
-                  <ListItemIcon>{item.iconImage}</ListItemIcon>
-                  <ListItemText primary={item.textTitle} />
-                </ListItemButton>
-              </ListItem>
-            )))}
-          </List>
-        )}
+          {open && (
+            <List>
+              {YouIcons.map((item => (
+                <ListItem key={item.id} disablePadding >
+                  <ListItemButton sx={{ minHeight: 50 }}>
+                    <ListItemIcon>{item.iconImage}</ListItemIcon>
+                    <ListItemText primary={item.textTitle} />
+                  </ListItemButton>
+                </ListItem>
+              )))}
+            </List>
+          )}
+          {open && <Divider />}
 
-      </Drawer>
+          {open && (
+            <List>
+              {SubscriptionIcons.map((item => (
+                <ListItem key={item.id} disablePadding >
+                  <ListItemButton sx={{ minHeight: 50, columnGap: 3 }}>
+                    <Avatar src={item.iconImage} sx={{ width: 28, height: 28 }} />
+                    <ListItemText primary={item.textTitle} />
+                  </ListItemButton>
+                </ListItem>
+              )))}
+            </List>
+          )}
+          {open && <Divider />}
 
-    </Box>
+          {open && (
+            <List>
+              {ExploreIcons.map((item => (
+                <ListItem key={item.id} disablePadding >
+                  <ListItemButton sx={{ minHeight: 50 }}>
+                    <ListItemIcon>{item.iconImage}</ListItemIcon>
+                    <ListItemText primary={item.textTitle} />
+                  </ListItemButton>
+                </ListItem>
+              )))}
+            </List>
+          )}
+
+        </Box>
+      </Drawer >
+
+    </Box >
   );
 }
 
