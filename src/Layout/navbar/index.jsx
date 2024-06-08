@@ -1,7 +1,7 @@
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, Avatar, Badge, Box, InputBase, styled, Icon } from '@mui/material';
+import { IconButton, Avatar, Badge, Box, InputBase, styled, Icon, ListItemButton } from '@mui/material';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
@@ -33,6 +33,16 @@ const Search = styled("div")(({ theme }) => ({
   alignItems: "center"
 }))
 
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    top: 5,
+    border: '2px solid white',
+    padding: '0 5px',
+  },
+}));
+
+
 export const Navbar = () => {
   const { open, setOpen } = useUIContext()
 
@@ -61,7 +71,8 @@ export const Navbar = () => {
             <InputBase placeholder="Search" sx={{ ml: 2, width: "95%" }} />
           </Search>
           <Box sx={{
-            bgcolor: 'rgba(0,0,0,0.05)', borderRadius: "50%", width: 38, height: 38, display: 'flex', justifyContent: 'center', alignItems: 'center', ":hover": {
+            bgcolor: 'rgba(0,0,0,0.05)', borderRadius: "50%", width: 38, height: 38, display: 'flex', justifyContent: 'center', alignItems: 'center',
+            ":hover": {
               bgcolor: 'rgba(0,0,0,0.1)'
             }
           }}>
@@ -69,12 +80,42 @@ export const Navbar = () => {
           </Box>
         </Box>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', }} gap={3}>
-          <VideocamOutlinedIcon sx={{ color: "#0f0f0f" }} />
-          <Badge badgeContent={"9+"} color='error'>
-            <NotificationsNoneOutlinedIcon sx={{ color: "#0f0f0f" }} />
-          </Badge>
-          <Avatar src='./images/profileImages/caleb-curry.jpg' sx={{ width: 38, height: 38 }} />
+        <Box sx={{
+          display: 'flex', alignItems: 'center'
+        }} gap={3}>
+          <ListItemButton
+            sx={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: 45,
+              height: 45,
+              borderRadius: '50%',
+              ":hover": {
+                borderRadius: '50%',
+                bgcolor: 'rgba(0,0,0,0.1)'
+              }
+            }}>
+            <VideocamOutlinedIcon sx={{ color: "#0f0f0f" }} />
+          </ListItemButton>
+
+          <ListItemButton
+            sx={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: 45,
+              height: 45,
+              borderRadius: '50%',
+              ":hover": {
+                borderRadius: '50%',
+                bgcolor: 'rgba(0,0,0,0.1)'
+              }
+            }}
+          >
+            <StyledBadge badgeContent={"9+"} color='error' >
+              <NotificationsNoneOutlinedIcon sx={{ color: "#0f0f0f" }} />
+            </StyledBadge>
+          </ListItemButton>
+          <Avatar src='./images/profileImages/caleb-curry.jpg' sx={{ width: 38, height: 38, cursor: 'pointer' }} />
         </Box>
 
       </Toolbar>
