@@ -1,11 +1,11 @@
 import { Box, Typography } from '@mui/material'
-import { DrawerHeader } from '../Layout/sidebar'
+import { DrawerHeader } from '../../Layout/sidebar'
 
-export const SubscriptionPage = () => {
+export const History = () => {
   return (
     <Box sx={{ p: 3 }}>
       <DrawerHeader />
-      <Typography>Wellcome to Subscription page</Typography>
+      <Typography>Wellcome to Your History page</Typography>
       <Typography paragraph>
         Soprano Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non

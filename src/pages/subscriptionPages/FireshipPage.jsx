@@ -1,11 +1,11 @@
 import { Box, Typography } from '@mui/material'
-import { DrawerHeader } from '../Layout/sidebar'
+import { DrawerHeader } from '../../Layout/sidebar'
 
-export const HomePage = () => {
+export const FireshipPage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <DrawerHeader />
-            <Typography>Wellocme to Home page</Typography>
+            <Typography>Wellocme to Fireship page</Typography>
             <Typography paragraph>
                 Soprano Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
