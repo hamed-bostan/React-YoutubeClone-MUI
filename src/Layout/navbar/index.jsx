@@ -1,7 +1,7 @@
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, Avatar, Badge, Box, InputBase, styled, ListItemButton, Stack } from '@mui/material';
+import { IconButton, Avatar, Badge, Box, InputBase, styled, ListItemButton, Stack, Button } from '@mui/material';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
@@ -68,7 +68,7 @@ export const Navbar = () => {
             >
               <MenuIcon />
             </IconButton>
-            <img src='./images/logo.jpg' alt='Youtube logo' width={"115px"} />
+            <img src='./images/logo.jpg' alt='Youtube logo' width={"115px"} style={{ cursor: 'pointer' }} />
           </Box>
 
           <Box sx={{ display: 'flex', alignItems: 'center', width: "40%" }} gap={2}>

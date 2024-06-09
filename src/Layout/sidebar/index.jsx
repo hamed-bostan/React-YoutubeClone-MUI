@@ -53,7 +53,7 @@ import PodcastsOutlinedIcon from '@mui/icons-material/PodcastsOutlined';
 
 
 import { useUIContext } from '../../context/ui';
-import { Avatar, IconButton, Typography, darkScrollbar } from '@mui/material';
+import { Avatar, IconButton, Typography } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -87,8 +87,6 @@ export const DrawerHeader = styled('div')(({ theme }) => ({
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
-
-
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -134,7 +132,7 @@ export const Sidebar = () => {
       <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}   >
         <DrawerHeader />
 
-        <Box>
+        <Box sx={{ px: open ? 1.5 : 0.5 }}>
           <List>
             {HeadingIcons.map((item => (
               <ListItem key={item.id} disablePadding
@@ -146,7 +144,8 @@ export const Sidebar = () => {
                     bgcolor: location.pathname == item.path && open && 'rgba(0,0,0,0.05)',
                     borderRadius: location.pathname == item.path && 3,
                     flexDirection: open ? 'row' : 'column',
-                    p: open ? 0.3 : 1,
+                    py: open ? 0.6 : 2,
+                    px: open ? 1 : 3,
                     ":hover": { borderRadius: 3, bgcolor: 'rgba(0,0,0,0.05)' },
                   }}  >
                   <ListItemIcon sx={{ justifyContent: !open && 'center', color: '#0f0f0f' }}>
@@ -155,7 +154,7 @@ export const Sidebar = () => {
                   <ListItemText primary={item.textTitle}
                     sx={{ color: '#0f0f0f' }}
                     primaryTypographyProps={{
-                      fontSize: !open && 12,
+                      fontSize: open ? '14px' : '10px',
                     }} />
                 </ListItemButton>
               </ListItem>
@@ -167,7 +166,7 @@ export const Sidebar = () => {
           {open && (
             <List>
               <IconButton disableTouchRipple sx={{ color: '#0f0f0f', width: '100%', borderRadius: 3, justifyContent: 'start', alignItems: 'center' }}  >
-                <Typography variant='h6' fontWeight={400}>you</Typography>
+                <Typography variant='h6' fontWeight={600} fontSize={'16px'}>you</Typography>
                 <ChevronRightIcon />
               </IconButton>
 
