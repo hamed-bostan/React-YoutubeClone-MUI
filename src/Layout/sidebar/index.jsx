@@ -8,7 +8,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import HomeIcon from '@mui/icons-material/Home';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
@@ -53,7 +53,7 @@ import PodcastsOutlinedIcon from '@mui/icons-material/PodcastsOutlined';
 
 
 import { useUIContext } from '../../context/ui';
-import { Avatar } from '@mui/material';
+import { Avatar, Icon, IconButton, Typography } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -154,6 +154,11 @@ export const Sidebar = () => {
 
           {open && (
             <List>
+              <IconButton disableTouchRipple sx={{ color: '#0f0f0f', width: '100%', borderRadius: 2, justifyContent: 'start', alignItems: 'center' }}  >
+                <Typography variant='h6' fontWeight={400}>you</Typography>
+                <ChevronRightIcon />
+              </IconButton>
+
               {YouIcons.map((item => (
                 <ListItem key={item.id} disablePadding
                   sx={{
@@ -177,6 +182,7 @@ export const Sidebar = () => {
 
           {open && (
             <List>
+              <Typography variant='body1' fontWeight={500}>subscriptions</Typography>
               {SubscriptionIcons.map((item => (
                 <ListItem key={item.id} disablePadding
                   sx={{
@@ -198,6 +204,7 @@ export const Sidebar = () => {
 
           {open && (
             <List>
+              <Typography variant='body1' fontWeight={500}>explore</Typography>
               {ExploreIcons.map((item => (
                 <ListItem key={item.id} disablePadding
                   sx={{

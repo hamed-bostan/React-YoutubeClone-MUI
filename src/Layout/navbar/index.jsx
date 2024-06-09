@@ -1,7 +1,7 @@
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, Avatar, Badge, Box, InputBase, styled, Icon, ListItemButton } from '@mui/material';
+import { IconButton, Avatar, Badge, Box, InputBase, styled, ListItemButton } from '@mui/material';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
@@ -29,13 +29,11 @@ const Search = styled("div")(({ theme }) => ({
   borderRadius: 20,
   height: 40,
   border: "1px solid rgba(0,0,0,0.05)",
+  boxShadow: 'inset 1px 1px 1px 0.05px #eee',
   display: 'flex',
   alignItems: "center",
-  boxShadow: 'inset 1px 1px 1px 0.05px #eee'
+  color: 'red'
 }))
-
-
-
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -71,8 +69,8 @@ export const Navbar = () => {
         </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', width: "40%" }} gap={2}>
-          <Search>
-            <InputBase placeholder="Search" sx={{ ml: 2, width: "95%" }} />
+          <Search >
+            <InputBase placeholder="Search" sx={{ ml: 2, width: "95%", color: '#0f0f0f' }} />
           </Search>
           <Box sx={{
             bgcolor: 'rgba(0,0,0,0.05)', borderRadius: "50%", width: 40, height: 40, display: 'flex', justifyContent: 'center', alignItems: 'center',
