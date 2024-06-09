@@ -138,19 +138,17 @@ export const Sidebar = () => {
           <List>
             {HeadingIcons.map((item => (
               <ListItem key={item.id} disablePadding
-                sx={{
-                  bgcolor: location.pathname == item.path && open && '#f4f4f4',
-                  borderRadius: location.pathname == item.path && open && 3,
-                  display: 'flex', justifyContent: 'center', alignItems: 'center'
-                }}
                 onClick={() => navigate(item.path)}
               >
                 <ListItemButton
                   disableRipple
                   sx={{
+                    bgcolor: location.pathname == item.path && open && 'rgba(0,0,0,0.05)',
+                    borderRadius: location.pathname == item.path && open && 3,
+                    display: 'flex', justifyContent: 'center', alignItems: 'center',
                     flexDirection: open ? 'row' : 'column',
-                    ":hover": { borderRadius: 3 },
-                    p: open ? 0.3 : 1
+                    p: open ? 0.3 : 1,
+                    ":hover": { borderRadius: 3, bgcolor: 'rgba(0,0,0,0.05)' },
                   }}  >
                   <ListItemIcon sx={{ justifyContent: !open && 'center', color: 'black' }}>
                     {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
