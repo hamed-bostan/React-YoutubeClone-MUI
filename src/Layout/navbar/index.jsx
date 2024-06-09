@@ -1,7 +1,7 @@
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, Avatar, Badge, Box, InputBase, styled, ListItemButton } from '@mui/material';
+import { IconButton, Avatar, Badge, Box, InputBase, styled, ListItemButton, Stack } from '@mui/material';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
@@ -32,7 +32,6 @@ const Search = styled("div")(({ theme }) => ({
   boxShadow: 'inset 1px 1px 1px 0.05px #eee',
   display: 'flex',
   alignItems: "center",
-  color: 'red'
 }))
 
 
@@ -53,63 +52,65 @@ export const Navbar = () => {
   };
 
   return (
-    <AppBar position="fixed" open={open} elevation={0}>
-      <Toolbar sx={{ bgcolor: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Box sx={{ display: 'flex', alignItems: 'center' }} >
-          <IconButton
-            aria-label="open drawer"
-            onClick={handleDrawer}
-            edge="start"
-            sx={{
-              color: '#0f0f0f',
-              ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
-            }}
-            disableTouchRipple
-          >
-            <MenuIcon />
-          </IconButton>
-          <img src='./images/logo.jpg' alt='Youtube logo' width={"115px"} />
-        </Box>
+    <AppBar position="fixed" open={open} elevation={0} >
+      <Toolbar sx={{ bgcolor: '#fff', }} style={{ padding: 0 }} >
+        <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', px: 3 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }} >
+            <IconButton
+              aria-label="open drawer"
+              onClick={handleDrawer}
+              edge="start"
+              sx={{
+                color: '#0f0f0f',
+                ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
+              }}
+              disableTouchRipple
+            >
+              <MenuIcon />
+            </IconButton>
+            <img src='./images/logo.jpg' alt='Youtube logo' width={"115px"} />
+          </Box>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', width: "40%" }} gap={2}>
-          <Search >
-            <InputBase placeholder="Search" sx={{ ml: 2, width: "95%", color: '#0f0f0f' }} />
-          </Search>
-          <IconButton
-            disableRipple
-            sx={{
-              width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.05)',
-              ":hover": { bgcolor: 'rgba(0,0,0,0.1)' }
-            }}>
-            <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
-          </IconButton>
-        </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', width: "40%" }} gap={2}>
+            <Search >
+              <InputBase placeholder="Search" sx={{ ml: 2, width: "95%", color: '#0f0f0f' }} />
+            </Search>
+            <IconButton
+              disableRipple
+              sx={{
+                width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.05)',
+                ":hover": { bgcolor: 'rgba(0,0,0,0.1)' }
+              }}>
+              <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
+            </IconButton>
+          </Box>
 
-        <Box
-          gap={3}
-          sx={{ display: 'flex', alignItems: 'center' }} >
-          <IconButton
-            disableRipple
-            sx={{
-              ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
-            }}>
-            <VideocamOutlinedIcon sx={{ color: "#0f0f0f" }} />
-          </IconButton>
+          <Box
+            gap={3}
+            sx={{ display: 'flex', alignItems: 'center' }} >
+            <IconButton
+              disableRipple
+              sx={{
+                ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
+              }}>
+              <VideocamOutlinedIcon sx={{ color: "#0f0f0f" }} />
+            </IconButton>
 
-          <IconButton
-            disableRipple
-            sx={{
-              ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
-            }}
-          >
-            <StyledBadge badgeContent={"9+"} color='error' >
-              <NotificationsNoneOutlinedIcon sx={{ color: "#0f0f0f" }} />
-            </StyledBadge>
-          </IconButton>
-          <Avatar src='./images/profileImages/caleb-curry.jpg' sx={{ width: 35, height: 35, cursor: 'pointer' }} />
-        </Box>
+            <IconButton
+              disableRipple
+              sx={{
+                ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
+              }}
+            >
+              <StyledBadge badgeContent={"9+"} color='error' >
+                <NotificationsNoneOutlinedIcon sx={{ color: "#0f0f0f" }} />
+              </StyledBadge>
+            </IconButton>
+            <Avatar src='./images/profileImages/caleb-curry.jpg' sx={{ width: 35, height: 35, cursor: 'pointer' }} />
+          </Box>
 
+        </Stack>
       </Toolbar>
-    </AppBar>
+    </AppBar >
   )
 }
