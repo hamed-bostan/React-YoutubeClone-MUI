@@ -55,12 +55,15 @@ export const Navbar = () => {
   return (
     <AppBar position="fixed" open={open} elevation={0}>
       <Toolbar sx={{ bgcolor: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} >
+        <Box sx={{ display: 'flex', alignItems: 'center' }} >
           <IconButton
             aria-label="open drawer"
             onClick={handleDrawer}
             edge="start"
-            sx={{ color: '#0f0f0f', ":hover": { bgcolor: 'rgba(0,0,0,0.1)' } }}
+            sx={{
+              color: '#0f0f0f',
+              ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
+            }}
             disableTouchRipple
           >
             <MenuIcon />
@@ -72,51 +75,37 @@ export const Navbar = () => {
           <Search >
             <InputBase placeholder="Search" sx={{ ml: 2, width: "95%", color: '#0f0f0f' }} />
           </Search>
-          <Box sx={{
-            bgcolor: 'rgba(0,0,0,0.05)', borderRadius: "50%", width: 40, height: 40, display: 'flex', justifyContent: 'center', alignItems: 'center',
-            ":hover": {
-              bgcolor: 'rgba(0,0,0,0.1)'
-            }
-          }}>
-            <MicOutlinedIcon sx={{ color: "#0f0f0f", cursor: 'pointer' }} />
-          </Box>
+          <IconButton
+            disableRipple
+            sx={{
+              width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.05)',
+              ":hover": { bgcolor: 'rgba(0,0,0,0.1)' }
+            }}>
+            <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
+          </IconButton>
         </Box>
 
-        <Box sx={{
-          display: 'flex', alignItems: 'center'
-        }} gap={3}>
-          <ListItemButton
+        <Box
+          gap={3}
+          sx={{ display: 'flex', alignItems: 'center' }} >
+          <IconButton
+            disableRipple
             sx={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: 40,
-              height: 40,
-              borderRadius: '50%',
-              ":hover": {
-                borderRadius: '50%',
-                bgcolor: 'rgba(0,0,0,0.1)'
-              }
+              ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
             }}>
             <VideocamOutlinedIcon sx={{ color: "#0f0f0f" }} />
-          </ListItemButton>
+          </IconButton>
 
-          <ListItemButton
+          <IconButton
+            disableRipple
             sx={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: 40,
-              height: 40,
-              borderRadius: '50%',
-              ":hover": {
-                borderRadius: '50%',
-                bgcolor: 'rgba(0,0,0,0.1)'
-              }
+              ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
             }}
           >
             <StyledBadge badgeContent={"9+"} color='error' >
               <NotificationsNoneOutlinedIcon sx={{ color: "#0f0f0f" }} />
             </StyledBadge>
-          </ListItemButton>
+          </IconButton>
           <Avatar src='./images/profileImages/caleb-curry.jpg' sx={{ width: 35, height: 35, cursor: 'pointer' }} />
         </Box>
 

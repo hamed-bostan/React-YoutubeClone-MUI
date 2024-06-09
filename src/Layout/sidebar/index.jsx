@@ -134,7 +134,7 @@ export const Sidebar = () => {
       <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}   >
         <DrawerHeader />
 
-        <Box sx={{}}>
+        <Box>
           <List>
             {HeadingIcons.map((item => (
               <ListItem key={item.id} disablePadding
@@ -144,16 +144,16 @@ export const Sidebar = () => {
                   disableRipple
                   sx={{
                     bgcolor: location.pathname == item.path && open && 'rgba(0,0,0,0.05)',
-                    borderRadius: location.pathname == item.path && open && 3,
-                    display: 'flex', justifyContent: 'center', alignItems: 'center',
+                    borderRadius: location.pathname == item.path && 3,
                     flexDirection: open ? 'row' : 'column',
                     p: open ? 0.3 : 1,
                     ":hover": { borderRadius: 3, bgcolor: 'rgba(0,0,0,0.05)' },
                   }}  >
-                  <ListItemIcon sx={{ justifyContent: !open && 'center', color: 'black' }}>
+                  <ListItemIcon sx={{ justifyContent: !open && 'center', color: '#0f0f0f' }}>
                     {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
                   </ListItemIcon>
                   <ListItemText primary={item.textTitle}
+                    sx={{ color: '#0f0f0f' }}
                     primaryTypographyProps={{
                       fontSize: !open && 12,
                     }} />
@@ -166,7 +166,7 @@ export const Sidebar = () => {
 
           {open && (
             <List>
-              <IconButton disableTouchRipple sx={{ color: '#0f0f0f', width: '100%', borderRadius: 2, justifyContent: 'start', alignItems: 'center' }}  >
+              <IconButton disableTouchRipple sx={{ color: '#0f0f0f', width: '100%', borderRadius: 3, justifyContent: 'start', alignItems: 'center' }}  >
                 <Typography variant='h6' fontWeight={400}>you</Typography>
                 <ChevronRightIcon />
               </IconButton>
