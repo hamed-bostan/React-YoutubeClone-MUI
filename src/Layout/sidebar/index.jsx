@@ -131,11 +131,13 @@ export const Sidebar = () => {
                 }}
                 onClick={() => navigate(item.path)}
               >
-                <ListItemButton sx={{
-                  flexDirection: open ? 'row' : 'column',
-                  ":hover": { borderRadius: 3 },
-                  p: open ? 0.3 : 1
-                }}  >
+                <ListItemButton
+                  disableRipple
+                  sx={{
+                    flexDirection: open ? 'row' : 'column',
+                    ":hover": { borderRadius: 3 },
+                    p: open ? 0.3 : 1
+                  }}  >
                   <ListItemIcon sx={{ justifyContent: !open && 'center', color: 'black' }}>
                     {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
                   </ListItemIcon>
@@ -159,8 +161,10 @@ export const Sidebar = () => {
                   }}
                   onClick={() => navigate(item.path)}
                 >
-                  <ListItemButton sx={{ minHeight: 50 }}>
-                    <ListItemIcon sx={{color:'black'}}>
+                  <ListItemButton
+                    disableRipple
+                    sx={{ minHeight: 50 }}>
+                    <ListItemIcon sx={{ color: 'black' }}>
                       {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
                     </ListItemIcon>
                     <ListItemText primary={item.textTitle} />
@@ -180,7 +184,9 @@ export const Sidebar = () => {
                   }}
                   onClick={() => navigate(item.path)}
                 >
-                  <ListItemButton sx={{ minHeight: 50, columnGap: 3 }}>
+                  <ListItemButton
+                    disableRipple
+                    sx={{ minHeight: 50, columnGap: 3 }}>
                     <Avatar src={item.avater} sx={{ width: 28, height: 28 }} />
                     <ListItemText primary={item.textTitle} />
                   </ListItemButton>
@@ -199,7 +205,9 @@ export const Sidebar = () => {
                   }}
                   onClick={() => navigate(item.path)}
                 >
-                  <ListItemButton sx={{ minHeight: 50 }}>
+                  <ListItemButton
+                    disableRipple
+                    sx={{ minHeight: 50 }}>
                     <ListItemIcon>
                       {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
                     </ListItemIcon>
@@ -236,7 +244,7 @@ const YouIcons = [
 const SubscriptionIcons = [
   { id: "1", textTitle: "fireship", avater: './images/profileImages/fireship.jpg', path: '/fireship' },
   { id: "2", textTitle: "traversy media", avater: './images/profileImages/traversy-media.jpg', path: '/traversy-media' },
-  { id: "3", textTitle: "kevin powell", avater: './images/profileImages/kevin-powell.jpg' ,path:'/kevin-powell'},
+  { id: "3", textTitle: "kevin powell", avater: './images/profileImages/kevin-powell.jpg', path: '/kevin-powell' },
   { id: "4", textTitle: "web dev simplified", avater: './images/profileImages/webdevsimplified.jpg', path: '/web-dev-simplified' },
   { id: "5", textTitle: "caleb curry", avater: './images/profileImages/caleb-curry.jpg', path: '/caleb-curry' },
   { id: "6", textTitle: "sonny sangha", avater: './images/profileImages/sonny-sangha.jpg', path: '/sonny-sangha' },

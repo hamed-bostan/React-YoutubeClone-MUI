@@ -28,9 +28,10 @@ const Search = styled("div")(({ theme }) => ({
   width: "90%",
   borderRadius: 20,
   height: 40,
-  border: "1px solid gray",
+  border: "1px solid rgba(0,0,0,0.05)",
   display: 'flex',
-  alignItems: "center"
+  alignItems: "center",
+  boxShadow: 'inset 1px 1px 3px 0.05px #eee'
 }))
 
 
@@ -55,11 +56,11 @@ export const Navbar = () => {
       <Toolbar sx={{ bgcolor: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} >
           <IconButton
-            color="inherit"
             aria-label="open drawer"
             onClick={handleDrawer}
             edge="start"
-            sx={{ color: '#0f0f0f' }}
+            sx={{ color: '#0f0f0f', ":hover": { bgcolor: 'rgba(0,0,0,0.1)' } }}
+            disableTouchRipple
           >
             <MenuIcon />
           </IconButton>
@@ -71,12 +72,12 @@ export const Navbar = () => {
             <InputBase placeholder="Search" sx={{ ml: 2, width: "95%" }} />
           </Search>
           <Box sx={{
-            bgcolor: 'rgba(0,0,0,0.05)', borderRadius: "50%", width: 38, height: 38, display: 'flex', justifyContent: 'center', alignItems: 'center',
+            bgcolor: 'rgba(0,0,0,0.05)', borderRadius: "50%", width: 40, height: 40, display: 'flex', justifyContent: 'center', alignItems: 'center',
             ":hover": {
               bgcolor: 'rgba(0,0,0,0.1)'
             }
           }}>
-            <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
+            <MicOutlinedIcon sx={{ color: "#0f0f0f", cursor: 'pointer' }} />
           </Box>
         </Box>
 
@@ -87,8 +88,8 @@ export const Navbar = () => {
             sx={{
               justifyContent: 'center',
               alignItems: 'center',
-              width: 45,
-              height: 45,
+              width: 40,
+              height: 40,
               borderRadius: '50%',
               ":hover": {
                 borderRadius: '50%',
@@ -102,8 +103,8 @@ export const Navbar = () => {
             sx={{
               justifyContent: 'center',
               alignItems: 'center',
-              width: 45,
-              height: 45,
+              width: 40,
+              height: 40,
               borderRadius: '50%',
               ":hover": {
                 borderRadius: '50%',
@@ -115,7 +116,7 @@ export const Navbar = () => {
               <NotificationsNoneOutlinedIcon sx={{ color: "#0f0f0f" }} />
             </StyledBadge>
           </ListItemButton>
-          <Avatar src='./images/profileImages/caleb-curry.jpg' sx={{ width: 38, height: 38, cursor: 'pointer' }} />
+          <Avatar src='./images/profileImages/caleb-curry.jpg' sx={{ width: 35, height: 35, cursor: 'pointer' }} />
         </Box>
 
       </Toolbar>
