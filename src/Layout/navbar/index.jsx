@@ -31,8 +31,11 @@ const Search = styled("div")(({ theme }) => ({
   border: "1px solid rgba(0,0,0,0.05)",
   display: 'flex',
   alignItems: "center",
-  boxShadow: 'inset 1px 1px 3px 0.05px #eee'
+  boxShadow: 'inset 1px 1px 1px 0.05px #eee'
 }))
+
+
+
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -68,7 +71,7 @@ export const Navbar = () => {
         </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', width: "40%" }} gap={2}>
-          <Search >
+          <Search>
             <InputBase placeholder="Search" sx={{ ml: 2, width: "95%" }} />
           </Search>
           <Box sx={{
