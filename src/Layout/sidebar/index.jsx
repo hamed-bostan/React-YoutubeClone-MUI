@@ -53,7 +53,7 @@ import PodcastsOutlinedIcon from '@mui/icons-material/PodcastsOutlined';
 
 
 import { useUIContext } from '../../context/ui';
-import { Avatar, Icon, IconButton, Typography } from '@mui/material';
+import { Avatar, IconButton, Typography, darkScrollbar } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -90,7 +90,6 @@ export const DrawerHeader = styled('div')(({ theme }) => ({
 
 
 
-
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     width: drawerWidth,
@@ -105,8 +104,24 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
       ...closedMixin(theme),
       '& .MuiDrawer-paper': closedMixin(theme),
     }),
+
+    "& ::-webkit-scrollbar": {
+      width: "8px",
+      minWidth: "unset"
+    },
+    "& ::-webkit-scrollbar-track": {
+      background: "#fff",
+    },
+    "& ::-webkit-scrollbar-thumb": {
+      background: "#CCCCCC",
+      borderRadius: "1px",
+    },
+    "& ::-webkit-scrollbar-thumb:hover": {
+      background: "#C1C1C1",
+    },
   }),
 );
+
 
 export const Sidebar = () => {
   const { open } = useUIContext()
@@ -116,8 +131,7 @@ export const Sidebar = () => {
   return (
     <Box>
       <CssBaseline />
-
-      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}>
+      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}   >
         <DrawerHeader />
 
         <Box sx={{}}>
