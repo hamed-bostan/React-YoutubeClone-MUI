@@ -129,7 +129,7 @@ export const Sidebar = () => {
   return (
     <Box>
       <CssBaseline />
-      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none' } }}   >
+      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none', minWidth: !open && '75px' } }} >
         <DrawerHeader />
 
         <Box sx={{ px: open ? 1.5 : 0.5 }}>
@@ -144,10 +144,11 @@ export const Sidebar = () => {
                     bgcolor: location.pathname == item.path && open && 'rgba(0,0,0,0.05)',
                     borderRadius: location.pathname == item.path && 3,
                     flexDirection: open ? 'row' : 'column',
+                    padding: 0,
+                    px: open && 1,
                     py: open ? 0.6 : 2,
-                    px: open ? 1 : 3,
                     ":hover": { borderRadius: 3, bgcolor: 'rgba(0,0,0,0.05)' },
-                  }}  >
+                  }}>
                   <ListItemIcon sx={{ justifyContent: !open && 'center', color: '#0f0f0f' }}>
                     {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
                   </ListItemIcon>
