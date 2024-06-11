@@ -26,17 +26,6 @@ const AppBar = styled(MuiAppBar, {
 }));
 
 
-const Search = styled("div")(({ theme }) => ({
-  width: "90%",
-  borderRadius: 20,
-  height: 40,
-  border: "1px solid rgba(0,0,0,0.05)",
-  boxShadow: 'inset 1px 1px 1px 0.05px #eee',
-  display: 'flex',
-  alignItems: "center",
-}))
-
-
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     top: 5,
@@ -74,21 +63,6 @@ export const Navbar = () => {
             <img src='./images/logo.jpg' alt='Youtube logo' width={"115px"} style={{ cursor: 'pointer' }} />
           </Box>
 
-          {/* <Box sx={{ display: 'flex', alignItems: 'center', width: "40%" }} gap={2}>
-            <Search >
-              <InputBase placeholder="Search" sx={{ ml: 2, width: "95%", color: '#0f0f0f' }} />
-            </Search>
-            <IconButton
-              disableRipple
-              sx={{
-                width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.05)',
-                ":hover": { bgcolor: 'rgba(0,0,0,0.1)' }
-              }}>
-              <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
-            </IconButton>
-          </Box> */}
-
-          {/* search goes here */}
           <Box sx={{ display: 'flex', flex: 3, justifyContent: 'end', alignItems: 'center', bgcolor: 'red' }} gap={2}>
             <Box sx={{ width: isFocus ? '100%' : '85%' }}>
               <SearchComponent isFocus={isFocus} setIsFocus={setIsFocus} />
@@ -102,10 +76,6 @@ export const Navbar = () => {
               <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
             </IconButton>
           </Box>
-
-          {/* search goes here */}
-
-
 
           <Box
             gap={3}
