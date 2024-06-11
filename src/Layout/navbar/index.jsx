@@ -1,7 +1,7 @@
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, Avatar, Badge, Box, InputBase, styled, ListItemButton, Stack, Button } from '@mui/material';
+import { IconButton, Avatar, Badge, Box, styled, Stack } from '@mui/material';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
@@ -63,7 +63,23 @@ export const Navbar = () => {
             <img src='./images/logo.jpg' alt='Youtube logo' width={"115px"} style={{ cursor: 'pointer' }} />
           </Box>
 
-          <Box sx={{ display: 'flex', flex: 3, justifyContent: 'end', alignItems: 'center', bgcolor: 'red' }} gap={2}>
+
+          {/* <Box sx={{ display: 'flex', alignItems: 'center', width: "40%" }} gap={2}>
+            <Search >
+              <InputBase placeholder="Search" sx={{ ml: 2, width: "95%", color: '#0f0f0f' }} />
+            </Search>
+            <IconButton
+              disableRipple
+              sx={{
+                width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.05)',
+                ":hover": { bgcolor: 'rgba(0,0,0,0.1)' }
+              }}>
+              <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
+            </IconButton>
+          </Box> */}
+
+
+          <Box sx={{ display: 'flex', flex: 3, justifyContent: 'end', alignItems: 'center' }} gap={2}>
             <Box sx={{ width: isFocus ? '100%' : '85%' }}>
               <SearchComponent isFocus={isFocus} setIsFocus={setIsFocus} />
             </Box>

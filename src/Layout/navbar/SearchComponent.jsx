@@ -18,7 +18,23 @@ export const SearchComponent = ({ isFocus, setIsFocus }) => {
           '.MuiInputBase-input': {
             height: 40,
             padding: 0,
-          }
+          },
+
+
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: 'rgba(0,0,0,0.05)',
+            },
+            '&:hover fieldset': {
+              borderColor: 'rgba(0,0,0,0.05)',
+            },
+            '&.Mui-focused fieldset': {
+              border: '1px solid blue'
+            },
+          },
+
+
+
         }}
 
         InputProps={{
@@ -27,7 +43,7 @@ export const SearchComponent = ({ isFocus, setIsFocus }) => {
             padding: 0,
           },
           startAdornment: (
-            <InputAdornment position="start">
+            <InputAdornment position="start" sx={{ pl: isFocus && 2 }}>
               {isFocus && <SearchIcon color='error' />}
             </InputAdornment>
           ),
