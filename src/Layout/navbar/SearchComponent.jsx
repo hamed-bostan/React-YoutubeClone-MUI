@@ -2,10 +2,8 @@ import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import { Box } from '@mui/material';
-import { useState } from 'react';
 
-export const SearchComponent = () => {
-  const [isFocus, setIsFocus] = useState(false)
+export const SearchComponent = ({ isFocus, setIsFocus }) => {
 
   return (
     <>
@@ -16,13 +14,10 @@ export const SearchComponent = () => {
         placeholder='Search'
         autoComplete='off'
         sx={{
+          width: '100%',
           '.MuiInputBase-input': {
             height: 40,
             padding: 0,
-            // overflowX: 'hidden',
-            width: '30rem',
-            // width: '60%',
-            // bgcolor: 'green'
           }
         }}
 
@@ -34,7 +29,6 @@ export const SearchComponent = () => {
           startAdornment: (
             <InputAdornment position="start">
               {isFocus && <SearchIcon color='error' />}
-              {/* <SearchIcon color='error' /> */}
             </InputAdornment>
           ),
           endAdornment: (

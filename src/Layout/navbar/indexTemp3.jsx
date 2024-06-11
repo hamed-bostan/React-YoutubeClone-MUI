@@ -7,7 +7,6 @@ import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import { useUIContext } from '../../context/ui';
 import { SearchComponent } from './SearchComponent';
-import { useState } from 'react';
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -48,7 +47,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export const Navbar = () => {
   const { open, setOpen } = useUIContext()
-  const [isFocus, setIsFocus] = useState(false)
 
   const handleDrawer = () => {
     setOpen(!open);
@@ -90,9 +88,7 @@ export const Navbar = () => {
 
           {/* search goes here */}
           <Box sx={{ display: 'flex', flex: 3, justifyContent: 'end', alignItems: 'center', bgcolor: 'red' }} gap={2}>
-            <Box sx={{ width: isFocus ? '100%' : '85%' }}>
-              <SearchComponent isFocus={isFocus} setIsFocus={setIsFocus} />
-            </Box>
+            <SearchComponent />
             <IconButton
               disableRipple
               sx={{
