@@ -6,7 +6,6 @@ import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNone
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import { useUIContext } from '../../context/ui';
-import { SearchComponent } from './SearchComponent';
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -56,7 +55,7 @@ export const Navbar = () => {
     <AppBar position="fixed" open={open} elevation={0} >
       <Toolbar sx={{ bgcolor: '#fff', }} style={{ padding: 0 }} >
         <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', px: 3 }}>
-          <Box sx={{ display: 'flex', flex: 2, alignItems: 'center' }} >
+          <Box sx={{ display: 'flex', alignItems: 'center' }} >
             <IconButton
               aria-label="open drawer"
               onClick={handleDrawer}
@@ -72,7 +71,7 @@ export const Navbar = () => {
             <img src='./images/logo.jpg' alt='Youtube logo' width={"115px"} style={{ cursor: 'pointer' }} />
           </Box>
 
-          {/* <Box sx={{ display: 'flex', alignItems: 'center', width: "40%" }} gap={2}>
+          <Box sx={{ display: 'flex', alignItems: 'center', width: "40%" }} gap={2}>
             <Search >
               <InputBase placeholder="Search" sx={{ ml: 2, width: "95%", color: '#0f0f0f' }} />
             </Search>
@@ -84,28 +83,11 @@ export const Navbar = () => {
               }}>
               <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
             </IconButton>
-          </Box> */}
-
-          {/* search goes here */}
-          <Box sx={{ display: 'flex', flex: 3, justifyContent: 'end', alignItems: 'center', bgcolor: 'red' }} gap={2}>
-            <SearchComponent />
-            <IconButton
-              disableRipple
-              sx={{
-                width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.05)',
-                ":hover": { bgcolor: 'rgba(0,0,0,0.1)' }
-              }}>
-              <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
-            </IconButton>
           </Box>
-
-          {/* search goes here */}
-
-
 
           <Box
             gap={3}
-            sx={{ display: 'flex', flex: 2, alignItems: 'center', justifyContent: 'end' }} >
+            sx={{ display: 'flex', alignItems: 'center' }} >
             <IconButton
               disableRipple
               sx={{
