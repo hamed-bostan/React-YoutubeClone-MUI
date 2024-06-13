@@ -125,9 +125,17 @@ export const Navbar = () => {
             {/* AutoComplete Component goes here */}
 
             {/* latest AutoComplete try */}
-            <Box sx={{ display: 'flex', flex: 3, justifyContent: 'center', alignItems: 'center' }} gap={2}>
+            <Box sx={{ display: 'flex', flexDirection: 'row-reverse', flex: 3, alignItems: 'center' }} gap={2}>
+              <IconButton
+                disableRipple
+                sx={{
+                  width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.05)',
+                  ":hover": { bgcolor: 'rgba(0,0,0,0.1)' }
+                }}>
+                <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
+              </IconButton>
               <Box sx={{
-                display: 'flex', alignItems: 'center', width: '100%',
+                display: 'flex', alignItems: 'center', width: isFocus ? '85%' : '80%', justifyContent: 'end',
                 border: '1px solid rgba(0,0,0,0.05)', borderRadius: 40, minHeight: '2.5rem',
                 boxShadow: 'inset 1px 1px 1px 0.05px #eee',
               }}>
@@ -146,14 +154,7 @@ export const Navbar = () => {
 
               </Box>
 
-              <IconButton
-                disableRipple
-                sx={{
-                  width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.05)',
-                  ":hover": { bgcolor: 'rgba(0,0,0,0.1)' }
-                }}>
-                <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
-              </IconButton>
+
             </Box>
             {/* latest AutoComplete try */}
 

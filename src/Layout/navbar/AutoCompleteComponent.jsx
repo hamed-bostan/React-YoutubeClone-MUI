@@ -46,7 +46,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
 
                         }}
                         sx={{
-                            width: '80%',
+                            width: '100%',
                             '.MuiInputBase-input': {
                                 padding: 0,
                             },
