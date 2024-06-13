@@ -1,7 +1,7 @@
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, Avatar, Badge, Box, styled, Stack, Divider } from '@mui/material';
+import { IconButton, Avatar, Badge, Box, styled, Stack } from '@mui/material';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
@@ -9,7 +9,6 @@ import { useUIContext } from '../../context/ui';
 import { SearchComponent } from './SearchComponent';
 import { useState } from 'react';
 import { AutoCompleteComponent } from './AutoCompleteComponent';
-import SearchIcon from '@mui/icons-material/Search';
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -97,55 +96,10 @@ export const Navbar = () => {
             </Box> */}
 
             {/* AutoComplete Component goes here */}
-
-            {/* <Box sx={{ display: 'flex', flex: 3, justifyContent: 'end', alignItems: 'center' }} gap={2}>
+            <Box sx={{ display: 'flex', flex: 3, justifyContent: 'end', alignItems: 'center' }} gap={2}>
               <Box sx={{ width: isFocus ? '100%' : '85%' }}>
                 <AutoCompleteComponent isFocus={isFocus} setIsFocus={setIsFocus} />
               </Box>
-
-              <Box sx={{
-                width: '2rem',
-                bgcolor: '#f8f8f8', height: 40, px: 2, display: 'flex', alignItems: 'center',
-                borderTopRightRadius: 40, borderBottomRightRadius: 40,
-                borderLeftColor: 'red'
-              }}>
-                <SearchIcon />
-              </Box>
-
-              <IconButton
-                disableRipple
-                sx={{
-                  width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.05)',
-                  ":hover": { bgcolor: 'rgba(0,0,0,0.1)' }
-                }}>
-                <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
-              </IconButton>
-            </Box> */}
-
-            {/* AutoComplete Component goes here */}
-
-            {/* latest AutoComplete try */}
-            <Box sx={{ display: 'flex', flex: 3, justifyContent: 'center', alignItems: 'center' }} gap={2}>
-              <Box sx={{
-                display: 'flex', alignItems: 'center', width: '100%',
-                border: '1px solid rgba(0,0,0,0.05)', borderRadius: 40, minHeight: '2.5rem',
-                boxShadow: 'inset 1px 1px 1px 0.05px #eee',
-              }}>
-                <AutoCompleteComponent isFocus={isFocus} setIsFocus={setIsFocus} />
-                <Box sx={{
-                  bgcolor: '#f8f8f8',
-                  px: 2, borderTopRightRadius: 40, borderBottomRightRadius: 40, minHeight: '2.5rem', display: 'flex', alignItems: 'center',
-                  ":hover": { bgcolor: 'rgba(0,0,0,0.1)' },
-                  borderLeft: '1px solid rgba(0,0,0,0.05)',
-                  cursor: 'pointer'
-                }}>
-                  <SearchIcon sx={{
-                    color: "#0f0f0f",
-                  }} />
-                </Box>
-
-              </Box>
-
               <IconButton
                 disableRipple
                 sx={{
@@ -155,7 +109,8 @@ export const Navbar = () => {
                 <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
               </IconButton>
             </Box>
-            {/* latest AutoComplete try */}
+            {/* AutoComplete Component goes here */}
+
 
 
             <Box
@@ -184,9 +139,7 @@ export const Navbar = () => {
 
           </Stack>
         </Toolbar>
-
       </AppBar >
-
     </>
   )
 }

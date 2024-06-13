@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Divider, Typography } from '@mui/material'
 import { DrawerHeader } from '../../Layout/sidebar'
 
 export const HomePage = () => {
