@@ -5,11 +5,23 @@ import { Box } from '@mui/material';
 
 export const SearchComponent = ({ isFocus, setIsFocus }) => {
 
+  const handleFucos = () => {
+    setIsFocus(true)
+  }
+
+  const handleBlur = () => {
+    setIsFocus(false)
+  }
+
+
+
+
   return (
     <>
       <TextField
-        onFocus={() => setIsFocus(true)}
-        onBlur={() => setIsFocus(false)}
+        onFocus={handleFucos}
+        onBlur={handleBlur}
+        onClick={handleClick}
         variant='outlined'
         placeholder='Search'
         autoComplete='off'
@@ -19,8 +31,6 @@ export const SearchComponent = ({ isFocus, setIsFocus }) => {
             height: 40,
             padding: 0,
           },
-
-
           '& .MuiOutlinedInput-root': {
             '& fieldset': {
               borderColor: 'rgba(0,0,0,0.05)',
@@ -32,9 +42,6 @@ export const SearchComponent = ({ isFocus, setIsFocus }) => {
               border: '1px solid blue'
             },
           },
-
-
-
         }}
 
         InputProps={{
@@ -49,9 +56,11 @@ export const SearchComponent = ({ isFocus, setIsFocus }) => {
           ),
           endAdornment: (
             <InputAdornment position="end">
+
               <Box sx={{
-                bgcolor: '#f8f8f8', height: 40, display: 'flex', alignItems: 'center', px: 2,
+                bgcolor: '#f8f8f8', height: 40, px: 2, display: 'flex', alignItems: 'center',
                 borderTopRightRadius: 40, borderBottomRightRadius: 40,
+                borderLeftColor: 'red'
               }}>
                 <SearchIcon />
               </Box>
