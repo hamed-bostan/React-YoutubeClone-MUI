@@ -16,7 +16,8 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
     }
 
 
-    const handleChange = (e) => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log("handle change is working");
         const value = e.target.value
         console.log(value);
@@ -58,34 +59,36 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                 }
 
                 renderInput={(params) => (
-                    <TextField
-                        variant='standard'
-                        placeholder='Serach'
-                        onFocus={handleFucos}
-                        onBlur={handleBlur}
-                        onChange={handleChange}
-                        {...params}
-                        InputProps={{
-                            ...params.InputProps,
-                            type: 'search',
-                            disableUnderline: true,
-                            style: {
-                                borderRadius: 40,
-                                padding: 0,
-                            },
-                            startAdornment: (
-                                <InputAdornment position="start" sx={{ pl: isFocus && 2 }}>
-                                    {isFocus && <SearchIcon sx={{ color: '#0f0f0f' }} />}
-                                </InputAdornment>
-                            ),
-                        }}
-                        sx={{
-                            width: '100%',
-                            '.MuiInputBase-input': {
-                                padding: 0,
-                            },
-                        }}
-                    />
+                    <form onSubmit={handleSubmit}>
+                        <TextField
+                            variant='standard'
+                            placeholder='Serach'
+                            onFocus={handleFucos}
+                            onBlur={handleBlur}
+                            // onChange={handleChange}
+                            {...params}
+                            InputProps={{
+                                ...params.InputProps,
+                                type: 'search',
+                                disableUnderline: true,
+                                style: {
+                                    borderRadius: 40,
+                                    padding: 0,
+                                },
+                                startAdornment: (
+                                    <InputAdornment position="start" sx={{ pl: isFocus && 2 }}>
+                                        {isFocus && <SearchIcon sx={{ color: '#0f0f0f' }} />}
+                                    </InputAdornment>
+                                ),
+                            }}
+                            sx={{
+                                width: '100%',
+                                '.MuiInputBase-input': {
+                                    padding: 0,
+                                },
+                            }}
+                        />
+                    </form>
                 )}
                 ListboxProps={
                     {
