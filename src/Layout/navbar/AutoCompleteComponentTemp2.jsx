@@ -1,4 +1,3 @@
-import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -16,12 +15,6 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
     }
 
 
-    const handleChange = (e) => {
-        console.log("handle change is working");
-        const value = e.target.value
-        console.log(value);
-    }
-
     return (
         <Stack sx={{ width: '100%' }}>
             <Autocomplete
@@ -31,28 +24,14 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                 options={top100Films}
                 getOptionLabel={(option) => option.title}
                 renderOption={(props, option) => (
-                    <Box key={option.id}>
-                        <Box
-                            sx={{
-                                display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 1,
-                                ":hover": {
-                                    bgcolor: 'rgba(0,0,0,0.1)'
-                                }
-                            }}
-                        >
-                            <Box sx={{ display: 'flex', alignItems: 'center', columnGap: 1 }}>
-                                <RestoreOutlinedIcon />
-                                <Typography sx={{ cursor: 'default' }}> {option.title} </Typography>
-                            </Box>
-                            <Button variant='text' disableRipple
-                                sx={{
-                                    "&.MuiButtonBase-root:hover": {
-                                        bgcolor: "transparent"
-                                    }
-                                }}
-                            > remove
-                            </Button>
+                    <Box key={option.id}
+                        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 2, py: 1 }}
+                    >
+                        <Box sx={{ display: 'flex', alignItems: 'center', columnGap: 1 }}>
+                            <RestoreOutlinedIcon />
+                            {option.title}
                         </Box>
+                        <Button variant='text'>remove</Button>
                     </Box>
                 )
                 }
@@ -63,7 +42,6 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                         placeholder='Serach'
                         onFocus={handleFucos}
                         onBlur={handleBlur}
-                        onChange={handleChange}
                         {...params}
                         InputProps={{
                             ...params.InputProps,
@@ -75,9 +53,10 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                             },
                             startAdornment: (
                                 <InputAdornment position="start" sx={{ pl: isFocus && 2 }}>
-                                    {isFocus && <SearchIcon sx={{ color: '#0f0f0f' }} />}
+                                    {isFocus && <SearchIcon color='error' />}
                                 </InputAdornment>
                             ),
+
                         }}
                         sx={{
                             width: '100%',
@@ -91,12 +70,8 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                     {
                         style: {
                             maxHeight: '20rem',
-                            padding: "1rem 0",
-                            background: '#fff',
-                        },
-
+                        }
                     }
-
                 }
             />
         </Stack >

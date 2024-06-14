@@ -16,7 +16,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
 
 
     return (
-        <Stack>
+        <Stack sx={{width:'100%'}}>
             <Autocomplete
                 freeSolo
                 id="free-solo-2-demo"
