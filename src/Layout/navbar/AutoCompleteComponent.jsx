@@ -2,7 +2,7 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
-import { Box, Button, InputAdornment, Typography } from '@mui/material';
+import { Box, Button, IconButton, InputAdornment, Typography } from '@mui/material';
 import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -59,35 +59,62 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                 }
 
                 renderInput={(params) => (
-                    <form onSubmit={handleSubmit}>
-                        <TextField
-                            variant='standard'
-                            placeholder='Serach'
-                            onFocus={handleFucos}
-                            onBlur={handleBlur}
-                            // onChange={handleChange}
-                            {...params}
-                            InputProps={{
-                                ...params.InputProps,
-                                type: 'search',
-                                disableUnderline: true,
-                                style: {
-                                    borderRadius: 40,
-                                    padding: 0,
-                                },
-                                startAdornment: (
-                                    <InputAdornment position="start" sx={{ pl: isFocus && 2 }}>
-                                        {isFocus && <SearchIcon sx={{ color: '#0f0f0f' }} />}
-                                    </InputAdornment>
-                                ),
-                            }}
-                            sx={{
-                                width: '100%',
-                                '.MuiInputBase-input': {
-                                    padding: 0,
-                                },
-                            }}
-                        />
+                    <form onSubmit={handleSubmit} >
+                        <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                            <TextField
+                                variant='standard'
+                                placeholder='Serach'
+                                onFocus={handleFucos}
+                                onBlur={handleBlur}
+                                // onChange={handleChange}
+                                {...params}
+                                InputProps={{
+                                    ...params.InputProps,
+                                    type: 'search',
+                                    disableUnderline: true,
+                                    style: {
+                                        borderRadius: 40,
+                                        padding: 0,
+                                    },
+                                    startAdornment: (
+                                        <InputAdornment position="start" sx={{ pl: isFocus && 2 }}>
+                                            {isFocus && <SearchIcon sx={{ color: '#0f0f0f' }} />}
+                                        </InputAdornment>
+                                    ),
+                                }}
+                                sx={{
+                                    width: '100%',
+                                    '.MuiInputBase-input': {
+                                        padding: 0,
+                                    },
+                                }}
+                            />
+                            {/* <IconButton
+                                sx={{
+                                    bgcolor: '#f8f8f8',
+                                    px: 2, borderTopRightRadius: 40, borderBottomRightRadius: 40, minHeight: '2.5rem', display: 'flex', alignItems: 'center',
+                                    ":hover": { bgcolor: 'rgba(0,0,0,0.1)' },
+                                    borderLeft: '1px solid rgba(0,0,0,0.05)',
+                                    cursor: 'pointer'
+                                }}
+                            >
+                                <SearchIcon sx={{
+                                    color: "#0f0f0f",
+                                }} />
+                            </IconButton> */}
+
+                            <IconButton type='submit'
+                                sx={{
+                                    borderRadius: 0, borderTopRightRadius: 40, borderBottomRightRadius: 40,
+                                    px: 2, borderLeft: '1px solid rgba(0,0,0,0.05)',
+                                    ":hover": { bgcolor: 'rgba(0,0,0,0.1)' },
+                                }} >
+                                <SearchIcon sx={{
+                                    color: "#0f0f0f",
+                                }} />
+                            </IconButton>
+
+                        </Box>
                     </form>
                 )}
                 ListboxProps={
