@@ -1,12 +1,26 @@
-import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Box, Button, IconButton, InputAdornment, Typography } from '@mui/material';
 import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
 import SearchIcon from '@mui/icons-material/Search';
+import { useState } from 'react';
+
+let nextId = 6;
+
 
 export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
+    const [searchValue, setSearchValue] = useState("")
+    const [top100Films, setTop100Films] = useState([
+        { id: "1", title: 'The Shawshank Redemption' },
+        { id: "2", title: 'The Godfather' },
+        { id: "3", title: 'The Godfather: Part II' },
+        { id: "4", title: 'The Dark Knight' },
+        { id: "5", title: "Schindler's List" },
+    ])
+
+
+
     const handleFucos = () => {
         setIsFocus(true)
     }
@@ -16,11 +30,20 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
     }
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("handle change is working");
+    const handleChange = (e) => {
         const value = e.target.value
-        console.log(value);
+        setSearchValue(value)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (searchValue && searchValue !== " ") {
+            top100Films.push({
+                id: nextId++,
+                title: searchValue
+            })
+        }
+        setSearchValue("")
     }
 
     return (
@@ -30,7 +53,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                 id="free-solo-2-demo"
                 disableClearable
                 options={top100Films}
-                getOptionLabel={(option) => option.title}
+                getOptionLabel={(option) => option.title || ""}
                 renderOption={(props, option) => (
                     <Box key={option.id}>
                         <Box
@@ -66,15 +89,21 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                                 placeholder='Serach'
                                 onFocus={handleFucos}
                                 onBlur={handleBlur}
-                                // onChange={handleChange}
+                                onChange={handleChange}
+                                sx={{
+                                    width: '100%',
+                                    '.MuiInputBase-input': {
+                                        padding: 0,
+                                    },
+                                }}
                                 {...params}
                                 InputProps={{
                                     ...params.InputProps,
                                     type: 'search',
                                     disableUnderline: true,
                                     style: {
-                                        borderRadius: 40,
-                                        padding: 0,
+                                        // borderRadius: 40,
+                                        // padding: 0,
                                     },
                                     startAdornment: (
                                         <InputAdornment position="start" sx={{ pl: isFocus && 2 }}>
@@ -82,29 +111,11 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                                         </InputAdornment>
                                     ),
                                 }}
-                                sx={{
-                                    width: '100%',
-                                    '.MuiInputBase-input': {
-                                        padding: 0,
-                                    },
-                                }}
-                            />
-                            {/* <IconButton
-                                sx={{
-                                    bgcolor: '#f8f8f8',
-                                    px: 2, borderTopRightRadius: 40, borderBottomRightRadius: 40, minHeight: '2.5rem', display: 'flex', alignItems: 'center',
-                                    ":hover": { bgcolor: 'rgba(0,0,0,0.1)' },
-                                    borderLeft: '1px solid rgba(0,0,0,0.05)',
-                                    cursor: 'pointer'
-                                }}
-                            >
-                                <SearchIcon sx={{
-                                    color: "#0f0f0f",
-                                }} />
-                            </IconButton> */}
 
+                            />
                             <IconButton type='submit'
                                 sx={{
+                                    bgcolor: 'red',
                                     borderRadius: 0, borderTopRightRadius: 40, borderBottomRightRadius: 40,
                                     px: 2, borderLeft: '1px solid rgba(0,0,0,0.05)',
                                     ":hover": { bgcolor: 'rgba(0,0,0,0.1)' },
@@ -126,17 +137,16 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                         },
 
                     }
-
                 }
             />
         </Stack >
     );
 }
 
-const top100Films = [
-    { id: "1", title: 'The Shawshank Redemption' },
-    { id: "2", title: 'The Godfather' },
-    { id: "3", title: 'The Godfather: Part II' },
-    { id: "4", title: 'The Dark Knight' },
-    { id: "5", title: "Schindler's List" },
-];
+// const top100Films = [
+//     { id: "1", title: 'The Shawshank Redemption' },
+//     { id: "2", title: 'The Godfather' },
+//     { id: "3", title: 'The Godfather: Part II' },
+//     { id: "4", title: 'The Dark Knight' },
+//     { id: "5", title: "Schindler's List" },
+// ];
