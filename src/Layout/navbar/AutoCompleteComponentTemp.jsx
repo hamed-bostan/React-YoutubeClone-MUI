@@ -63,10 +63,10 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
         setSearchValue("")
     }
 
+
     const uniqueStoredData = storedData.filter((obj, index) => {
         return index === storedData.findIndex(o => obj.textInformation === o.textInformation);
     });
-
 
     return (
         <Stack sx={{ width: '100%' }}>
@@ -74,7 +74,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                 freeSolo
                 id="free-solo-2-demo"
                 disableClearable
-                options={uniqueStoredData}
+                options={storedData}
                 getOptionLabel={(option) => option.textInformation || ""}
                 renderOption={(props, option) => (
                     <Box key={option.id}>
