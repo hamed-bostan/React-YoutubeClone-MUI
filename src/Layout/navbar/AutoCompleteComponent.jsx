@@ -6,6 +6,7 @@ import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid'
+import { capitalizeFirstLetter } from '../../utility/Utilities';
 
 export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
     const initialData = [
@@ -96,7 +97,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                                         bgcolor: "transparent"
                                     }
                                 }}
-                            > remove
+                            > {capitalizeFirstLetter("remove")}
                             </Button>
                         </Box>
                     </Box>
