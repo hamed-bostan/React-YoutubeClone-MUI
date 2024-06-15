@@ -91,6 +91,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                                 onClick={() => removeFunction(option.id)}
                                 variant='text' disableRipple
                                 sx={{
+                                    textTransform: 'none',
                                     "&.MuiButtonBase-root:hover": {
                                         bgcolor: "transparent"
                                     }

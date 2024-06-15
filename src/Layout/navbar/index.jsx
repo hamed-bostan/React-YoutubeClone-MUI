@@ -8,7 +8,6 @@ import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import { useUIContext } from '../../context/ui';
 import { useState } from 'react';
 import { AutoCompleteComponent } from './AutoCompleteComponent';
-import SearchIcon from '@mui/icons-material/Search';
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
