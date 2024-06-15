@@ -8,17 +8,16 @@ import { useState } from 'react';
 import { v4 as uuid } from 'uuid'
 
 export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
-    const [searchValue, setSearchValue] = useState("")
-    const [storedData, setStoredData] = useState([
-        { id: "1", textInformation: 'The Shawshank Redemption' },
-        { id: "2", textInformation: 'The Godfather' },
-        { id: "3", textInformation: 'The Godfather: Part II' },
-        { id: "4", textInformation: 'The Dark Knight' },
-        { id: "5", textInformation: "Schindler's List" },
-        { id: "6", textInformation: "hamed" },
-    ])
+    const initialData = [
+        { id: "1", textInformation: 'react JS tutorial' },
+        { id: "2", textInformation: 'learn react with traversy media' },
+        { id: "3", textInformation: 'big bang theory best scenes' },
+        { id: "4", textInformation: 'jean-luc godard best films' },
+        { id: "5", textInformation: "typescript crash course" },
+    ]
 
-    const newUuid = uuid()
+    const [searchValue, setSearchValue] = useState("")
+    const [storedData, setStoredData] = useState(initialData)
 
     const removeFunction = (id) => {
         const newStoredData = storedData.filter(item => item.id !== id)
@@ -33,23 +32,35 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
         setIsFocus(false)
     }
 
-
     const handleChange = (e) => {
         const value = e.target.value
         setSearchValue(value)
     }
 
-    const isDuplicationTemp = !!storedData.filter(item => item.textInformation === searchValue)
-    const isDuplication = storedData.map(item => item.textInformation.includes(searchValue))
+    // const isDuplicationTemp = !!storedData.filter(item => item.textInformation === searchValue)
+    // const isDuplication = storedData.map(item => item.textInformation.includes(searchValue))
 
+
+    const handleSubmitWithPush = (e) => {
+        // push method mutates the data
+        e.preventDefault()
+        if (searchValue.trim() !== "") {
+            storedData.push({
+                id: uuid(),
+                textInformation: searchValue
+            })
+        }
+        setSearchValue("")
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (searchValue.trim() !== "") {
-            storedData.push({
-                id: newUuid,
-                textInformation: searchValue
-            })
+            setStoredData([
+                { id: uuid(), textInformation: searchValue },
+                ...storedData,
+            ]
+            );
         }
         setSearchValue("")
     }
@@ -125,7 +136,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                             />
                             <IconButton type='submit'
                                 sx={{
-                                    bgcolor: 'red',
+                                    bgcolor: '#f8f8f8',
                                     borderRadius: 0, borderTopRightRadius: 40, borderBottomRightRadius: 40,
                                     px: 2, borderLeft: '1px solid rgba(0,0,0,0.05)',
                                     ":hover": { bgcolor: 'rgba(0,0,0,0.1)' },
