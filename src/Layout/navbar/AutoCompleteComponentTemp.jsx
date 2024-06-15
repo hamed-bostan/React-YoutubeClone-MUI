@@ -5,7 +5,9 @@ import { Box, Button, IconButton, InputAdornment, Typography } from '@mui/materi
 import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
-import { v4 as uuid } from 'uuid'
+
+let nextId = 6;
+
 
 export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
     const [searchValue, setSearchValue] = useState("")
@@ -15,15 +17,8 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
         { id: "3", textInformation: 'The Godfather: Part II' },
         { id: "4", textInformation: 'The Dark Knight' },
         { id: "5", textInformation: "Schindler's List" },
-        { id: "6", textInformation: "hamed" },
     ])
 
-    const newUuid = uuid()
-
-    const removeFunction = (id) => {
-        const newStoredData = storedData.filter(item => item.id !== id)
-        setStoredData(newStoredData)
-    }
 
     const handleFucos = () => {
         setIsFocus(true)
@@ -39,15 +34,16 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
         setSearchValue(value)
     }
 
-    const isDuplicationTemp = !!storedData.filter(item => item.textInformation === searchValue)
-    const isDuplication = storedData.map(item => item.textInformation.includes(searchValue))
+    // const newData = !!storedData.filter(item => item.textInformation === searchValue)
+    // const isDuplication = storedData.map(item => !item.textInformation.includes(searchValue))
 
+    // console.log(isDuplication);
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (searchValue.trim() !== "") {
             storedData.push({
-                id: newUuid,
+                id: nextId++,
                 textInformation: searchValue
             })
         }
@@ -76,9 +72,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                                 <RestoreOutlinedIcon />
                                 <Typography sx={{ cursor: 'default' }}> {option.textInformation} </Typography>
                             </Box>
-                            <Button
-                                onClick={() => removeFunction(option.id)}
-                                variant='text' disableRipple
+                            <Button variant='text' disableRipple
                                 sx={{
                                     "&.MuiButtonBase-root:hover": {
                                         bgcolor: "transparent"
