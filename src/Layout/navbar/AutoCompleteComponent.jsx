@@ -117,6 +117,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                                     width: '100%',
                                     '.MuiInputBase-input': {
                                         padding: 0,
+                                        ml: !isFocus && 1
                                     },
                                 }}
                                 {...params}

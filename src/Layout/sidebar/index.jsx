@@ -55,6 +55,7 @@ import PodcastsOutlinedIcon from '@mui/icons-material/PodcastsOutlined';
 import { useUIContext } from '../../context/ui';
 import { Avatar, IconButton, Typography } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { capitalizeFirstLetter } from '../../utility/Utilities';
 
 const drawerWidth = 240;
 
@@ -152,7 +153,7 @@ export const Sidebar = () => {
                   <ListItemIcon sx={{ justifyContent: !isDrawerOpen && 'center', color: '#0f0f0f' }}>
                     {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
                   </ListItemIcon>
-                  <ListItemText primary={item.textTitle}
+                  <ListItemText primary={capitalizeFirstLetter(item.textTitle)}
                     sx={{ color: '#0f0f0f' }}
                     primaryTypographyProps={{
                       fontSize: isDrawerOpen ? '14px' : '10px',
