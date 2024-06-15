@@ -19,7 +19,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
         { id: "5", title: "Schindler's List" },
     ])
 
-
+    console.log(top100Films);
 
     const handleFucos = () => {
         setIsFocus(true)
@@ -37,7 +37,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (searchValue && searchValue !== " ") {
+        if (searchValue.trim() !== "") {
             top100Films.push({
                 id: nextId++,
                 title: searchValue
