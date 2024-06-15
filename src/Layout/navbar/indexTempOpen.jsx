@@ -36,16 +36,16 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 
 export const Navbar = () => {
-  const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
+  const { open, setOpen } = useUIContext()
   const [isFocus, setIsFocus] = useState(false)
 
   const handleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
+    setOpen(!open);
   };
 
   return (
     <>
-      <AppBar position="fixed" open={isDrawerOpen} elevation={0} >
+      <AppBar position="fixed" open={open} elevation={0} >
         <Toolbar sx={{ bgcolor: '#fff', }} style={{ padding: 0 }} >
           <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', px: 3 }}>
 

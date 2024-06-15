@@ -122,17 +122,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 
 export const Sidebar = () => {
-  const { isDrawerOpen } = useUIContext()
+  const { open } = useUIContext()
   const navigate = useNavigate()
   const location = useLocation()
 
   return (
     <Box>
       <CssBaseline />
-      <Drawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '75px' } }} >
+      <Drawer variant="permanent" open={open} PaperProps={{ style: { border: 'none', minWidth: !open && '75px' } }} >
         <DrawerHeader />
 
-        <Box sx={{ px: isDrawerOpen ? 1.5 : 0.5 }}>
+        <Box sx={{ px: open ? 1.5 : 0.5 }}>
           <List>
             {HeadingIcons.map((item => (
               <ListItem key={item.id} disablePadding
@@ -141,30 +141,30 @@ export const Sidebar = () => {
                 <ListItemButton
                   disableRipple
                   sx={{
-                    bgcolor: location.pathname == item.path && isDrawerOpen && 'rgba(0,0,0,0.05)',
+                    bgcolor: location.pathname == item.path && open && 'rgba(0,0,0,0.05)',
                     borderRadius: location.pathname == item.path && 3,
-                    flexDirection: isDrawerOpen ? 'row' : 'column',
+                    flexDirection: open ? 'row' : 'column',
                     padding: 0,
-                    px: isDrawerOpen && 1,
-                    py: isDrawerOpen ? 0.6 : 2,
+                    px: open && 1,
+                    py: open ? 0.6 : 2,
                     ":hover": { borderRadius: 3, bgcolor: 'rgba(0,0,0,0.05)' },
                   }}>
-                  <ListItemIcon sx={{ justifyContent: !isDrawerOpen && 'center', color: '#0f0f0f' }}>
+                  <ListItemIcon sx={{ justifyContent: !open && 'center', color: '#0f0f0f' }}>
                     {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
                   </ListItemIcon>
                   <ListItemText primary={item.textTitle}
                     sx={{ color: '#0f0f0f' }}
                     primaryTypographyProps={{
-                      fontSize: isDrawerOpen ? '14px' : '10px',
+                      fontSize: open ? '14px' : '10px',
                     }} />
                 </ListItemButton>
               </ListItem>
             )))}
           </List>
 
-          {isDrawerOpen && <Divider />}
+          {open && <Divider />}
 
-          {isDrawerOpen && (
+          {open && (
             <List>
               <IconButton disableTouchRipple sx={{ color: '#0f0f0f', width: '100%', borderRadius: 3, justifyContent: 'start', alignItems: 'center' }}  >
                 <Typography variant='h6' fontWeight={600} fontSize={'16px'}>you</Typography>
@@ -174,7 +174,7 @@ export const Sidebar = () => {
               {YouIcons.map((item => (
                 <ListItem key={item.id} disablePadding
                   sx={{
-                    bgcolor: location.pathname == item.path && isDrawerOpen && '#f4f4f4',
+                    bgcolor: location.pathname == item.path && open && '#f4f4f4',
                   }}
                   onClick={() => navigate(item.path)}
                 >
@@ -190,15 +190,15 @@ export const Sidebar = () => {
               )))}
             </List>
           )}
-          {isDrawerOpen && <Divider />}
+          {open && <Divider />}
 
-          {isDrawerOpen && (
+          {open && (
             <List>
               <Typography variant='body1' fontWeight={500}>subscriptions</Typography>
               {SubscriptionIcons.map((item => (
                 <ListItem key={item.id} disablePadding
                   sx={{
-                    bgcolor: location.pathname == item.path && isDrawerOpen && '#f4f4f4',
+                    bgcolor: location.pathname == item.path && open && '#f4f4f4',
                   }}
                   onClick={() => navigate(item.path)}
                 >
@@ -212,15 +212,15 @@ export const Sidebar = () => {
               )))}
             </List>
           )}
-          {isDrawerOpen && <Divider />}
+          {open && <Divider />}
 
-          {isDrawerOpen && (
+          {open && (
             <List>
               <Typography variant='body1' fontWeight={500}>explore</Typography>
               {ExploreIcons.map((item => (
                 <ListItem key={item.id} disablePadding
                   sx={{
-                    bgcolor: location.pathname == item.path && isDrawerOpen && '#f4f4f4',
+                    bgcolor: location.pathname == item.path && open && '#f4f4f4',
                   }}
                   onClick={() => navigate(item.path)}
                 >
