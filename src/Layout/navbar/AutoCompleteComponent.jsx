@@ -71,6 +71,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
     return (
         <Stack sx={{ width: '100%' }}>
             <Autocomplete
+                componentsProps={{ popper: { style: { width: '31.5%', paddingTop: '0.5rem' } } }}
                 freeSolo
                 id="free-solo-2-demo"
                 disableClearable
@@ -128,7 +129,7 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                                     type: 'search',
                                     disableUnderline: true,
                                     style: {
-                                        // borderRadius: 40,
+                                        // borderRadius: '10rem',
                                         // padding: 0,
                                     },
                                     startAdornment: (

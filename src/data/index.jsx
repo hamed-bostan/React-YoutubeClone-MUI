@@ -1,0 +1,18 @@
+export const categoryItems = [
+    { id: '1', categoryText: 'all' },
+    { id: '2', categoryText: 'javaScript' },
+    { id: '3', categoryText: 'live' },
+    { id: '4', categoryText: 'news' },
+    { id: '5', categoryText: 'AI' },
+    { id: '6', categoryText: 'music' },
+    { id: '7', categoryText: 'typeScript' },
+    { id: '8', categoryText: 'history' },
+    { id: '9', categoryText: 'animated films' },
+    { id: '10', categoryText: 'watched' },
+    { id: '11', categoryText: 'recently uploaded' },
+    { id: '12', categoryText: 'new to you' },
+    { id: '13', categoryText: 'biology' },
+    { id: '14', categoryText: 'react js' },
+    { id: '15', categoryText: 'tv series' },
+    { id: '16', categoryText: 'videos' },
+]
