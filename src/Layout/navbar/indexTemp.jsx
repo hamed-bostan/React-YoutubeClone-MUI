@@ -1,14 +1,13 @@
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, Avatar, Badge, Box, styled, Stack, Typography } from '@mui/material';
+import { IconButton, Avatar, Badge, Box, styled, Stack } from '@mui/material';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import { useUIContext } from '../../context/ui';
 import { useState } from 'react';
 import { AutoCompleteComponent } from './AutoCompleteComponent';
-import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -50,7 +49,7 @@ export const Navbar = () => {
         <Toolbar sx={{ bgcolor: '#fff', }} style={{ padding: 0 }} >
           <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', px: 3 }}>
 
-            <Box sx={{ display: 'flex', flex: 2, alignItems: 'center', columnGap: 2 }} >
+            <Box sx={{ display: 'flex', flex: 2, alignItems: 'center' }} >
               <IconButton
                 aria-label="open drawer"
                 onClick={handleDrawer}
@@ -63,19 +62,7 @@ export const Navbar = () => {
               >
                 <MenuIcon />
               </IconButton>
-              <IconButton
-                disableRipple
-                sx={{
-                  display: 'flex', alignItems: 'center',
-                  padding: 0,
-                  minWidth: 0, minHeight: 0,
-                  ":hover": { backgroundColor: 'transparent' }
-                }}
-              >
-                <SmartDisplayIcon sx={{ color: 'red', fontSize: '1.8rem' }} />
-                <Typography fontWeight='700'>YouTube</Typography>
-              </IconButton>
-              {/* <img src='./images/logo.jpg' alt='Youtube logo' width={"115px"} style={{ cursor: 'pointer' }} /> */}
+              <img src='./images/logo.jpg' alt='Youtube logo' width={"115px"} style={{ cursor: 'pointer' }} />
             </Box>
 
 
