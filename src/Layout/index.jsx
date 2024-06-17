@@ -8,8 +8,8 @@ export const Layout = () => {
 
     return (
         <>
-            <CategoryItem />
             <Navbar />
+            <CategoryItem />
             <Box sx={{ display: 'flex' }}>
                 <Sidebar />
                 <Outlet />
