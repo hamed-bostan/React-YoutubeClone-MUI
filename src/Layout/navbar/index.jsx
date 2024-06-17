@@ -69,7 +69,7 @@ export const Navbar = () => {
                   display: 'flex', alignItems: 'center',
                   padding: 0,
                   minWidth: 0, minHeight: 0,
-                  ":hover": { backgroundColor: 'transparent' }
+                  ":hover": { backgroundColor: 'none' }
                 }}
               >
                 <SmartDisplayIcon sx={{ color: 'red', fontSize: '1.8rem' }} />
