@@ -134,13 +134,13 @@ export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
                                     },
                                     startAdornment: (
                                         <InputAdornment position="start" sx={{ pl: isFocus && 2 }}>
-                                            {isFocus && <SearchIcon sx={{ color: '#0f0f0f' }} />}
+                                            {isFocus && <SearchIcon sx={{ color: '#0f0f0f', cursor: 'default' }} />}
                                         </InputAdornment>
                                     ),
                                 }}
 
                             />
-                            <IconButton type='submit'
+                            <IconButton type='submit' disableRipple
                                 sx={{
                                     bgcolor: '#f8f8f8',
                                     borderRadius: 0, borderTopRightRadius: 40, borderBottomRightRadius: 40,

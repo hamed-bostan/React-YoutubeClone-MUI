@@ -1,26 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { categoryItems } from "../data";
+import { categories } from "../data";
 import { Box, Button, Typography } from "@mui/material";
 import { DrawerHeader } from "../Layout/sidebar";
 import { capitalizeFirstLetter } from "../utility/Utilities";
 
-export const CategoryItem = () => {
-    const [highlighted, setHighlighted] = useState(false)
+export const CategoryPills = () => {
+    const [selectedCategory, setSelectedCategory] = useState(categories[1].categoryTitle)
 
     return (
         <>
             <DrawerHeader />
             <Box sx={{ display: 'flex', columnGap: '0.75rem' }}>
-                {categoryItems.map((item) => (
+                {categories.map((item) => (
                     <Button key={item.id} variant="contained" disableRipple disableElevation
+                        onClick={() => setSelectedCategory(item.categoryTitle)}
                         sx={{
-                            bgcolor: 'rgba(0,0,0,0.05)',
-                            color: '#0f0f0f',
+                            backgroundColor: selectedCategory === item.categoryTitle ? '#0f0f0f' : 'rgba(0,0,0,0.05)',
+                            color: selectedCategory === item.categoryTitle ? '#fff' : '#0f0f0f',
                             padding: 0,
                             px: '0.75rem', py: '0.125rem',
                             fontSize: '0.87rem',
-                            // fontSize: '5vh',
                             minHeight: 0,
                             minWidth: 0,
                             whiteSpace: 'nowrap', fontWeight: 500,
@@ -29,7 +29,7 @@ export const CategoryItem = () => {
                                 bgcolor: "rgba(0,0,0,0.1)"
                             },
                         }}>
-                        {capitalizeFirstLetter(item.categoryText)}
+                        {capitalizeFirstLetter(item.categoryTitle)}
                     </Button>
                 )
                 )}
