@@ -9,7 +9,7 @@ export const Layout = () => {
     return (
         <>
             <Navbar />
-            <CategoryItem />
+            {/* <CategoryItem /> */}
             <Box sx={{ display: 'flex' }}>
                 <Sidebar />
                 <Outlet />

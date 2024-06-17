@@ -11,13 +11,20 @@ export const CategoryItem = () => {
     return (
         <>
             <DrawerHeader />
-            <Box sx={{ display: 'flex', columnGap: '0.75rem', }}>
+            <Box sx={{ display: 'flex', columnGap: '0.75rem' }}>
                 {categoryItems.map((item) => (
                     <Button key={item.id} variant="contained" disableRipple disableElevation
                         sx={{
                             bgcolor: 'rgba(0,0,0,0.05)',
-                            color: '#0f0f0f', px: '0.75rem', py: '0.125rem',
-                            whiteSpace: 'nowrap', fontWeight: 500, fontSize: '0.87rem', borderRadius: '0.5rem',
+                            color: '#0f0f0f',
+                            padding: 0,
+                            px: '0.75rem', py: '0.125rem',
+                            fontSize: '0.87rem',
+                            // fontSize: '5vh',
+                            minHeight: 0,
+                            minWidth: 0,
+                            whiteSpace: 'nowrap', fontWeight: 500,
+                            borderRadius: '0.5rem',
                             ":hover": {
                                 bgcolor: "rgba(0,0,0,0.1)"
                             },
@@ -26,7 +33,7 @@ export const CategoryItem = () => {
                     </Button>
                 )
                 )}
-            </Box>
+            </Box >
         </>
     );
 };
