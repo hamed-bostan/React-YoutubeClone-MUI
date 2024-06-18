@@ -9,7 +9,7 @@ export const Layout = () => {
     return (
         <>
             <Navbar />
-            <CategoryPills />
+            {/* <CategoryPills /> */}
             <Box sx={{ display: 'flex' }}>
                 <Sidebar />
                 <Outlet />
