@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { categories } from "../data";
+import { categories } from "../data/categories"; 
 import { Box, Button, Typography } from "@mui/material";
 import { DrawerHeader } from "../Layout/sidebar";
 import { capitalizeFirstLetter } from "../utility/Utilities";
