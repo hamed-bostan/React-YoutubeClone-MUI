@@ -1,18 +1,34 @@
 import { Avatar, Box, Grid, IconButton, Stack, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import VolumeUpOutlinedIcon from '@mui/icons-material/VolumeUpOutlined';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import SubtitlesIcon from '@mui/icons-material/Subtitles';
 import SubtitlesOutlinedIcon from '@mui/icons-material/SubtitlesOutlined';
 
-export default function HomePageDetails({ thumbnailUrl, channel, title }) {
+export default function HomePageDetails({ thumbnailUrl, channel, title, videoUrl, duration }) {
     const [isTurnOn, setIsTurnOn] = useState({
         volume: false,
         filled: true,
     })
 
     const [isMouseOver, setIsMouseOver] = useState(false)
+
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+    const videoRef = useRef(null)
+
+    useEffect(() => {
+        if (videoRef.current == null) return
+
+        if (isVideoPlaying) {
+            videoRef.current.currentTime = 0
+            videoRef.current.play()
+        }
+        else {
+            videoRef.current.pause()
+        }
+
+    }, [isVideoPlaying])
 
     const handleClickVolume = () => {
         setIsTurnOn(previousState => {
@@ -32,25 +48,40 @@ export default function HomePageDetails({ thumbnailUrl, channel, title }) {
                 width: '21rem', height: '20.625rem', display: 'flex', flexDirection: 'column', alignItems: 'center', rowGap: 1.5, cursor: 'pointer'
             }}
         >
-            <Box sx={{ position: 'relative' }}>
-                <img src={thumbnailUrl} width='100%' style={{ borderRadius: '0.875rem' }} />
+            <Box sx={{ position: 'relative', width: '100%' }}
+                onMouseEnter={() => setIsVideoPlaying(true)} onMouseLeave={() => setIsVideoPlaying(false)}
+            >
+                <img src={thumbnailUrl} width='100%'
+                style={{ borderRadius: !isVideoPlaying && '0.875rem' }}
+                />
+                <video ref={videoRef} muted playsInline src={videoUrl}
+                    style={{
+                        position: 'absolute', inset: '0', opacity: isVideoPlaying ? '100%' : '0%', width: '100%',
+                        // display: 'block'
+                    }} />
                 <IconButton onClick={handleClickVolume} onMouseOver={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}
                     disableRipple
                     sx={{
                         position: 'absolute', top: '1.25rem', right: '0.875rem', color: '#fff', bgcolor: isMouseOver && '#0f0f0f'
                     }}>
-                    {isTurnOn.volume ? <VolumeUpOutlinedIcon /> : <VolumeOffIcon />}
+                    {isTurnOn.volume ? <VolumeUpOutlinedIcon fontSize='small' /> : <VolumeOffIcon fontSize='small' />}
                 </IconButton>
                 <IconButton onClick={handleClickFilled} onMouseOver={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}
                     disableRipple
                     sx={{
                         position: 'absolute', top: '4.25rem', right: '0.875rem', color: '#fff', bgcolor: isMouseOver && '#0f0f0f'
                     }}>
-                    {isTurnOn.filled ? <SubtitlesIcon /> : <SubtitlesOutlinedIcon />}
+                    {isTurnOn.filled ? <SubtitlesIcon fontSize='small' /> : <SubtitlesOutlinedIcon fontSize='small' />}
                 </IconButton>
+                <Typography
+                    sx={{
+                        position: 'absolute', bottom: '1rem', right: '0.875rem', color: '#fff',
+                        bgcolor: '#0f0f0f', borderRadius: '0.25rem', fontSize: '0.75rem', px: 0.5
+                    }}>{duration}
+                </Typography>
             </Box>
             <Stack flexDirection='row' columnGap={1} width='100%'>
-                <Avatar src={channel.profileUrl} />
+                <Avatar src={channel.profileUrl} sx={{ width: '2.25rem', height: '2.25rem' }} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', rowGap: 0.5, width: '100%' }}>
                     <Stack flexDirection='row' justifyContent='space-between'>
                         <Typography fontSize='1rem' color='#0f0f0f'>{title}</Typography>
