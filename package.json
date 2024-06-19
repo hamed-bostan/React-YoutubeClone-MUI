@@ -15,10 +15,11 @@
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
     "framer-motion": "^11.2.10",
+    "javascript-time-ago": "^2.5.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "react-timeago": "^7.2.0",
+    "react-time-ago": "^7.3.3",
     "uuid": "^10.0.0"
   },
   "devDependencies": {

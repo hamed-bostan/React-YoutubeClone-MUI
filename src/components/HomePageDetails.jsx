@@ -8,7 +8,14 @@ import SubtitlesOutlinedIcon from '@mui/icons-material/SubtitlesOutlined';
 import { formatDuration } from '../utility/formatDuration';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
-export default function HomePageDetails({ thumbnailUrl, channel, title, videoUrl, duration, views }) {
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
+
+TimeAgo.addDefaultLocale(en)
+
+import ReactTimeAgo from 'react-time-ago'
+
+export default function HomePageDetails({ thumbnailUrl, channel, title, videoUrl, duration, views, postedAt }) {
     const [isTurnOn, setIsTurnOn] = useState({
         volume: false,
         filled: true,
@@ -107,7 +114,9 @@ export default function HomePageDetails({ thumbnailUrl, channel, title, videoUrl
                                     mt: '0.4rem',
                                 }} />
                             </Stack>
-                            <Typography fontSize='0.875rem'>1 year ago</Typography>
+                            {/* <Typography fontSize='0.875rem'>1 year ago</Typography> */}
+                            {/* <ReactTimeAgo date={postedAt} locale="en-US" /> */}
+                            <ReactTimeAgo date={postedAt} locale="en-US" />
                         </Stack>
                     </Box>
                 </Box>
