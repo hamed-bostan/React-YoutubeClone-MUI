@@ -23,7 +23,7 @@ export const videos = [
 
     },
     views: 257136,
-    postedAt: new Date("2023-08-22"),
+    postedAt: new Date("2023-12-22"),
     duration: 732,
     thumbnailUrl: './images/thumbnail/Thumbnail-02.jpg',
     videoUrl: './videos/ForBiggerJoyrides.mp4',
@@ -51,7 +51,7 @@ export const videos = [
       profileUrl: './images/profileImages/kevin-powell.jpg',
     },
     views: 112,
-    postedAt: new Date("2018-9-19"),
+    postedAt: new Date("2022-05-19"),
     duration: 4343,
     thumbnailUrl: './images/thumbnail/Thumbnail-04.jpg',
     videoUrl: './videos/ForBiggerJoyrides.mp4',

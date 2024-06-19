@@ -114,9 +114,7 @@ export default function HomePageDetails({ thumbnailUrl, channel, title, videoUrl
                                     mt: '0.4rem',
                                 }} />
                             </Stack>
-                            {/* <Typography fontSize='0.875rem'>1 year ago</Typography> */}
-                            {/* <ReactTimeAgo date={postedAt} locale="en-US" /> */}
-                            <ReactTimeAgo date={postedAt} locale="en-US" />
+                            <ReactTimeAgo date={postedAt} locale="en-US" style={{ fontSize: '0.875rem' }} />
                         </Stack>
                     </Box>
                 </Box>
