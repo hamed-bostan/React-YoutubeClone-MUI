@@ -5,7 +5,7 @@ import VolumeUpOutlinedIcon from '@mui/icons-material/VolumeUpOutlined';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import SubtitlesIcon from '@mui/icons-material/Subtitles';
 import SubtitlesOutlinedIcon from '@mui/icons-material/SubtitlesOutlined';
-import { formatDuration } from '../utility/formatDuration';
+import { formatDuration } from '../../utility/formatDuration';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 import TimeAgo from 'javascript-time-ago'
@@ -15,7 +15,7 @@ TimeAgo.addDefaultLocale(en)
 
 import ReactTimeAgo from 'react-time-ago'
 
-export default function HomePageDetails({ thumbnailUrl, channel, title, videoUrl, duration, views, postedAt }) {
+export const HomePageDetails = ({ thumbnailUrl, channel, title, videoUrl, duration, views, postedAt }) => {
     const [isTurnOn, setIsTurnOn] = useState({
         volume: false,
         filled: true,

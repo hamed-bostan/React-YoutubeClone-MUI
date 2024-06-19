@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material'
 import { DrawerHeader } from '../../Layout/sidebar'
 import { videos } from '../../data/videos'
-import HomePageDetails from '../../components/HomePageDetails';
+import { HomePageDetails } from '../../components/homePageDetails';
 
 
 export const HomePage = () => {
