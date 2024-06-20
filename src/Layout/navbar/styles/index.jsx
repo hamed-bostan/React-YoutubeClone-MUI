@@ -1,8 +1,42 @@
-import { Avatar, Badge, Box, IconButton, Typography, styled } from "@mui/material";
+import { Avatar, Badge, Box, IconButton, Stack, Toolbar, Typography, styled } from "@mui/material";
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+import MuiAppBar from '@mui/material/AppBar';
+
+
+export const StyledAppBar = styled(MuiAppBar, {
+    shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+    position: 'fixed',
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+    }),
+    ...(open && {
+        transition: theme.transitions.create(['width', 'margin'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+    }),
+}));
+
+
+export const StyledToolbar = styled(Toolbar)(() => ({
+    backgroundColor: '#fff',
+    padding: 0
+}))
+
+export const StackContainer = styled(Stack)(() => ({
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    // px: 3
+    padding: '0 2rem'
+}))
 
 
 export const MenuANDLogoContainer = styled(Box)(() => ({
@@ -40,6 +74,11 @@ export const YoutubeText = styled(Typography)(() => ({
     fontWeight: '700'
 }))
 
+
+
+
+
+
 export const SearchContainer = styled(Box)(() => ({
     display: 'flex',
     flexDirection: 'row-reverse',
@@ -62,7 +101,7 @@ export const MicIcon = styled(MicOutlinedIcon)(() => ({
     color: "#0f0f0f"
 }))
 
-export const AutoCompleteContainer = styled(Box)(({ isFocus }) => ({
+export const AutoCompleteContainer = styled('div')(({ isFocus }) => ({
     width: isFocus ? '85%' : '80%',
     display: 'flex',
     alignItems: 'center',
@@ -72,6 +111,11 @@ export const AutoCompleteContainer = styled(Box)(({ isFocus }) => ({
     minHeight: '2.5rem',
     boxShadow: 'inset 1px 1px 1px 0.05px #eee',
 }))
+
+
+
+
+
 
 
 export const IconsContainer = styled(Box)(() => ({

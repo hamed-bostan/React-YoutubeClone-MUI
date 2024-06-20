@@ -1,39 +1,11 @@
-import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, Avatar, Badge, Box, styled, Stack, Typography } from '@mui/material';
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
-import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import { useUIContext } from '../../context/ui';
 import { useState } from 'react';
 import { AutoCompleteComponent } from './AutoCompleteComponent';
-import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(['width', 'margin'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
 
 
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  '& .MuiBadge-badge': {
-    top: 5,
-    border: '2px solid white',
-    padding: '0 5px',
-  },
-}));
+import { MenuANDLogoContainer, MenuIconButton, CameraIcon, CameraIconButton, MicIcon, AutoCompleteContainer, IconsContainer, LogoIconButton, MicIconButton, NotificationIcon, NotificationIconButton, SearchContainer, StyledAvatar, YoutubeIcon, YoutubeText, StackContainer, StyledToolbar, StyledAppBar, StyledBadge }
+  from './styles';
 
 
 export const Navbar = () => {
@@ -46,85 +18,47 @@ export const Navbar = () => {
 
   return (
     <>
-      <AppBar position="fixed" open={isDrawerOpen} elevation={0} >
-        <Toolbar sx={{ bgcolor: '#fff', }} style={{ padding: 0 }} >
-          <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', px: 3 }}>
+      <StyledAppBar open={isDrawerOpen} elevation={0} >
+        <StyledToolbar>
+          <StackContainer>
 
-            <Box sx={{ display: 'flex', flex: 2, alignItems: 'center', columnGap: 2 }} >
-              <IconButton
-                aria-label="open drawer"
-                onClick={handleDrawer}
-                edge="start"
-                sx={{
-                  color: '#0f0f0f',
-                  ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
-                }}
-                disableTouchRipple
-              >
+            <MenuANDLogoContainer>
+              <MenuIconButton aria-label="open drawer" edge="start" disableTouchRipple onClick={handleDrawer}>
                 <MenuIcon />
-              </IconButton>
-              <IconButton
-                disableRipple
-                sx={{
-                  display: 'flex', alignItems: 'center',
-                  padding: 0,
-                  minWidth: 0, minHeight: 0,
-                  ":hover": { backgroundColor: 'none' }
-                }}
-              >
-                <SmartDisplayIcon sx={{ color: 'red', fontSize: '1.8rem' }} />
-                <Typography fontWeight='700'>YouTube</Typography>
-              </IconButton>
-              {/* <img src='./images/logo.jpg' alt='Youtube logo' width={"115px"} style={{ cursor: 'pointer' }} /> */}
-            </Box>
+              </MenuIconButton>
+              <LogoIconButton disableRipple>
+                <YoutubeIcon />
+                <YoutubeText>YouTube</YoutubeText>
+              </LogoIconButton>
+            </MenuANDLogoContainer>
 
 
-            <Box sx={{ display: 'flex', flexDirection: 'row-reverse', flex: 3, alignItems: 'center' }} gap={2}>
-              <IconButton
-                disableRipple
-                sx={{
-                  width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.05)',
-                  ":hover": { bgcolor: 'rgba(0,0,0,0.1)' }
-                }}>
-                <MicOutlinedIcon sx={{ color: "#0f0f0f" }} />
-              </IconButton>
-              <Box sx={{
-                display: 'flex', alignItems: 'center', width: isFocus ? '85%' : '80%', justifyContent: 'end',
-                border: '1px solid rgba(0,0,0,0.05)', borderRadius: 40, minHeight: '2.5rem',
-                boxShadow: 'inset 1px 1px 1px 0.05px #eee',
-              }}>
+            <SearchContainer>
+              <MicIconButton disableRipple>
+                <MicIcon />
+              </MicIconButton>
+              <AutoCompleteContainer isFocus={isFocus}>
                 <AutoCompleteComponent isFocus={isFocus} setIsFocus={setIsFocus} />
-              </Box>
-            </Box>
+              </AutoCompleteContainer>
+            </SearchContainer>
 
 
-            <Box
-              gap={3}
-              sx={{ display: 'flex', flex: 2, alignItems: 'center', justifyContent: 'end' }} >
-              <IconButton
-                disableRipple
-                sx={{
-                  ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
-                }}>
-                <VideocamOutlinedIcon sx={{ color: "#0f0f0f" }} />
-              </IconButton>
+            <IconsContainer>
+              <CameraIconButton disableRipple>
+                <CameraIcon />
+              </CameraIconButton>
 
-              <IconButton
-                disableRipple
-                sx={{
-                  ":hover": { width: 40, height: 40, bgcolor: 'rgba(0,0,0,0.1)' }
-                }}
-              >
+              <NotificationIconButton disableRipple>
                 <StyledBadge badgeContent={"9+"} color='error' >
-                  <NotificationsNoneOutlinedIcon sx={{ color: "#0f0f0f" }} />
+                  <NotificationIcon />
                 </StyledBadge>
-              </IconButton>
-              <Avatar src='./images/profileImages/caleb-curry.jpg' sx={{ width: 35, height: 35, cursor: 'pointer' }} />
-            </Box>
+              </NotificationIconButton>
+              <StyledAvatar src='./images/profileImages/caleb-curry.jpg' />
+            </IconsContainer>
 
-          </Stack>
-        </Toolbar>
-      </AppBar >
+          </StackContainer>
+        </StyledToolbar>
+      </StyledAppBar >
 
     </>
   )
