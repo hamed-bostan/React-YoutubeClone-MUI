@@ -94,7 +94,6 @@ export const Navbar = () => {
                 boxShadow: 'inset 1px 1px 1px 0.05px #eee',
               }}>
                 <AutoCompleteComponent isFocus={isFocus} setIsFocus={setIsFocus} />
-
               </Box>
             </Box>
 
