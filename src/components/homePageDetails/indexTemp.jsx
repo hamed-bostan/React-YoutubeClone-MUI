@@ -7,7 +7,6 @@ import SubtitlesIcon from '@mui/icons-material/Subtitles';
 import SubtitlesOutlinedIcon from '@mui/icons-material/SubtitlesOutlined';
 import { formatDuration } from '../../utility/formatDuration';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 
@@ -69,7 +68,6 @@ export const HomePageDetails = ({ thumbnailUrl, channel, title, videoUrl, durati
                 <video ref={videoRef} muted playsInline src={videoUrl}
                     style={{
                         position: 'absolute', inset: '0', opacity: isVideoPlaying ? '100%' : '0%', width: '100%',
-                        // display: 'block'
                     }} />
                 <IconButton onClick={handleClickVolume} onMouseOver={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}
                     disableRipple
@@ -94,6 +92,8 @@ export const HomePageDetails = ({ thumbnailUrl, channel, title, videoUrl, durati
                     }}>{formatDuration(duration)}
                 </Typography>
             </Box>
+
+
             <Stack flexDirection='row' columnGap={1} width='100%'>
                 <Avatar src={channel.profileUrl} sx={{ width: '2.25rem', height: '2.25rem' }} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', rowGap: 0.5, width: '100%' }}>

@@ -7,13 +7,17 @@ import SubtitlesIcon from '@mui/icons-material/Subtitles';
 import SubtitlesOutlinedIcon from '@mui/icons-material/SubtitlesOutlined';
 import { formatDuration } from '../../utility/formatDuration';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
+import ReactTimeAgo from 'react-time-ago'
 
 TimeAgo.addDefaultLocale(en)
 
-import ReactTimeAgo from 'react-time-ago'
+import {
+    ImageContainer, ThumbnailImage, StyledVideo, StyledIconButton, StyledDuration, StackInformationContainer, StyledAvatar,
+    BoxWrapper, StackTitleContainer, StyledTitle, StyledChannelName, StackViewsContainer, StackViewsWrapper, StyledViews
+} from './styles';
+
 
 export const HomePageDetails = ({ thumbnailUrl, channel, title, videoUrl, duration, views, postedAt }) => {
     const [isTurnOn, setIsTurnOn] = useState({
@@ -60,17 +64,9 @@ export const HomePageDetails = ({ thumbnailUrl, channel, title, videoUrl, durati
                 width: '21rem', height: '20.625rem', display: 'flex', flexDirection: 'column', alignItems: 'center', rowGap: 1.5, cursor: 'pointer'
             }}
         >
-            <Box sx={{ position: 'relative', width: '100%' }}
-                onMouseEnter={() => setIsVideoPlaying(true)} onMouseLeave={() => setIsVideoPlaying(false)}
-            >
-                <img src={thumbnailUrl} width='100%'
-                    style={{ borderRadius: !isVideoPlaying && '0.875rem' }}
-                />
-                <video ref={videoRef} muted playsInline src={videoUrl}
-                    style={{
-                        position: 'absolute', inset: '0', opacity: isVideoPlaying ? '100%' : '0%', width: '100%',
-                        // display: 'block'
-                    }} />
+            <ImageContainer onMouseEnter={() => setIsVideoPlaying(true)} onMouseLeave={() => setIsVideoPlaying(false)}>
+                <ThumbnailImage src={thumbnailUrl} isVideoPlaying={isVideoPlaying} />
+                <StyledVideo ref={videoRef} muted playsInline src={videoUrl} isVideoPlaying={isVideoPlaying} />
                 <IconButton onClick={handleClickVolume} onMouseOver={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}
                     disableRipple
                     sx={{
@@ -87,13 +83,10 @@ export const HomePageDetails = ({ thumbnailUrl, channel, title, videoUrl, durati
                     }}>
                     {isTurnOn.filled ? <SubtitlesIcon fontSize='small' /> : <SubtitlesOutlinedIcon fontSize='small' />}
                 </IconButton>
-                <Typography
-                    sx={{
-                        position: 'absolute', bottom: '1rem', right: '0.875rem', color: '#fff',
-                        bgcolor: '#0f0f0f', borderRadius: '0.25rem', fontSize: '0.75rem', px: 0.5
-                    }}>{formatDuration(duration)}
-                </Typography>
-            </Box>
+                <StyledDuration>{formatDuration(duration)}</StyledDuration>
+            </ImageContainer>
+
+
             <Stack flexDirection='row' columnGap={1} width='100%'>
                 <Avatar src={channel.profileUrl} sx={{ width: '2.25rem', height: '2.25rem' }} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', rowGap: 0.5, width: '100%' }}>
