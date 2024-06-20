@@ -1,6 +1,22 @@
-import { Avatar, Box, IconButton, Stack, Typography, styled } from "@mui/material";
+import { Avatar, Box, Grid, IconButton, Stack, Typography, styled } from "@mui/material";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import ReactTimeAgo from 'react-time-ago'
+import VolumeUpOutlinedIcon from '@mui/icons-material/VolumeUpOutlined';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
+import SubtitlesIcon from '@mui/icons-material/Subtitles';
+import SubtitlesOutlinedIcon from '@mui/icons-material/SubtitlesOutlined';
+
+export const StyledGrid = styled(Grid)(() => ({
+    width: '21rem',
+    height: '20.625rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    cursor: 'pointer',
+    // rowGap: 1.5,
+    rowGap: '1rem',
+}))
+
 
 export const ImageContainer = styled(Box)(() => ({
     position: 'relative',
@@ -21,14 +37,61 @@ export const StyledVideo = styled('video')(({ src, isVideoPlaying }) => ({
     opacity: isVideoPlaying ? '100%' : '0%',
 }))
 
-export const StyledIconButton = styled(IconButton)(() => ({
+
+// IconButton 
+export const VolumeIconButton = styled(IconButton)(() => ({
     position: 'absolute',
     top: '1.25rem',
     right: '0.875rem',
     color: '#fff',
+
+}));
+
+export const StyledVolumeIconButton = styled(VolumeIconButton, {
+    shouldForwardProp: (prop) => {
+        return prop !== "isMouseOver" && prop !== "isVideoPlaying"
+    }
+})(({ isMouseOver, isVideoPlaying }) => ({
     backgroundColor: isMouseOver && '#0f0f0f',
     display: !isVideoPlaying && 'none'
+
 }))
+
+export const SubtitleIconButton = styled(IconButton)(() => ({
+    position: 'absolute',
+    top: '4.25rem',
+    right: '0.875rem',
+    color: '#fff',
+
+}));
+
+export const StyledSubtitleIconButton = styled(SubtitleIconButton, {
+    shouldForwardProp: (prop) => {
+        return prop !== "isMouseOver" && prop !== "isVideoPlaying"
+    }
+})(({ isMouseOver, isVideoPlaying }) => ({
+    backgroundColor: isMouseOver && '#0f0f0f',
+    display: !isVideoPlaying && 'none'
+
+}))
+
+export const StyledVolumeOnIcon = styled(VolumeUpOutlinedIcon)(() => ({
+    fontSize: 'large'
+}));
+
+export const StyledVolumeOffIcon = styled(VolumeOffIcon)(() => ({
+    fontSize: 'large'
+}));
+
+export const StyledSubtitleIcon = styled(SubtitlesIcon)(() => ({
+    fontSize: 'large'
+}));
+
+export const StyledSubtitleOutlinedIcon = styled(SubtitlesOutlinedIcon)(() => ({
+    fontSize: 'large'
+}));
+// IconButton 
+
 
 export const StyledDuration = styled(Typography)(() => ({
     position: 'absolute',
