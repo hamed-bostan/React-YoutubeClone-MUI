@@ -1,4 +1,6 @@
 import { Avatar, Box, IconButton, Stack, Typography, styled } from "@mui/material";
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import ReactTimeAgo from 'react-time-ago'
 
 export const ImageContainer = styled(Box)(() => ({
     position: 'relative',
@@ -49,7 +51,8 @@ export const StackInformationContainer = styled(Stack)(() => ({
     width: '100%'
 }))
 
-export const StyledAvatar = styled(Avatar)(() => ({
+export const StyledAvatar = styled(Avatar)(({ src }) => ({
+    src: `url(${src})`,
     width: '2.25rem',
     height: '2.25rem'
 }))
@@ -69,14 +72,14 @@ export const StackTitleContainer = styled(Stack)(() => ({
 
 export const StyledTitle = styled(Typography)(() => ({
     fontSize: '1rem',
-    color: '#0f0f0f'
+    color: '#0f0f0f',
 }))
 
 export const StyledChannelName = styled(Typography)(() => ({
     fontSize: '0.875rem',
     color: '#606060',
     ":hover": {
-        color: '#404040'
+        color: '#404040',
     }
 }))
 
@@ -94,5 +97,16 @@ export const StackViewsWrapper = styled(Stack)(() => ({
 }))
 
 export const StyledViews = styled(Typography)(() => ({
+    fontSize: '0.875rem'
+}))
+
+export const StyledBulletPoint = styled(FiberManualRecordIcon)(() => ({
+    height: '100%',
+    width: '0.3rem',
+    // mt: '0.4rem',
+    marginTop: '0.4rem'
+}))
+
+export const StyledReactTimeAgo = styled(ReactTimeAgo)(() => ({
     fontSize: '0.875rem'
 }))
