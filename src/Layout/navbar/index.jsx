@@ -1,7 +1,7 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import { useUIContext } from '../../context/ui';
 import { useState } from 'react';
-import { AutoCompleteComponent } from './AutoCompleteComponent';
+import { AutoComplete } from './autoComplete';
 
 
 import { MenuANDLogoContainer, MenuIconButton, CameraIcon, CameraIconButton, MicIcon, AutoCompleteContainer, IconsContainer, LogoIconButton, MicIconButton, NotificationIcon, NotificationIconButton, SearchContainer, StyledAvatar, YoutubeIcon, YoutubeText, StackContainer, StyledToolbar, StyledAppBar, StyledBadge }
@@ -38,7 +38,7 @@ export const Navbar = () => {
                 <MicIcon />
               </MicIconButton>
               <AutoCompleteContainer isFocus={isFocus}>
-                <AutoCompleteComponent isFocus={isFocus} setIsFocus={setIsFocus} />
+                <AutoComplete isFocus={isFocus} setIsFocus={setIsFocus} />
               </AutoCompleteContainer>
             </SearchContainer>
 

@@ -35,7 +35,7 @@ export const StackContainer = styled(Stack)(() => ({
     alignItems: 'center',
     width: '100%',
     // px: 3
-    padding: '0 2rem'
+    padding: '0 0.3rem'
 }))
 
 

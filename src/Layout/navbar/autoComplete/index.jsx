@@ -6,9 +6,9 @@ import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid'
-import { capitalizeFirstLetter } from '../../utility/Utilities';
+import { capitalizeFirstLetter } from '../../../utility/Utilities';
 
-export const AutoCompleteComponent = ({ isFocus, setIsFocus, }) => {
+export const AutoComplete = ({ isFocus, setIsFocus, }) => {
     const initialData = [
         { id: "1", textInformation: 'react JS tutorial' },
         { id: "2", textInformation: 'learn react with traversy media' },
