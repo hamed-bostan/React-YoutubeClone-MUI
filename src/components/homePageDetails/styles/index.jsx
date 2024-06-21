@@ -105,7 +105,7 @@ export const StyledDuration = styled(Typography)(() => ({
     fontSize: '0.75rem',
     // px: 0.5,
     paddingRight: '0.25rem',
-    paddingLeft:'0.25rem'
+    paddingLeft: '0.25rem'
 }))
 
 // Bottom of container
