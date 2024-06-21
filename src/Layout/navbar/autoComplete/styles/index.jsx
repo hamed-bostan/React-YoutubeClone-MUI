@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Stack, TextField, Typography, styled } from "@mui/material";
+import { Box, Button, IconButton, InputAdornment, Stack, TextField, Typography, styled } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
 export const StackContainer = styled(Stack)(() => ({
@@ -77,4 +77,12 @@ export const StyledIconButton = styled(IconButton)(() => ({
 
 export const SubmitSearchIcon = styled(SearchIcon)(() => ({
     color: "#0f0f0f"
+}))
+
+
+export const StyledInputAdornment = styled(InputAdornment, {
+    shouldForwardProp: (prop => prop !== 'isFocus')
+})(({ isFocus }) => ({
+    // pl: isFocus && 2,
+    paddingLeft: isFocus && '1rem',
 }))

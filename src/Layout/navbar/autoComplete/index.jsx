@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid'
 import { capitalizeFirstLetter } from '../../../utility/Utilities';
 import {
     StackContainer, InformationContainer, RenderInputContainer, RenderOptionContainer, StyledButton,
-    StyledIconButton, StyledInformation, StyledSearchIcon, StyledTextField, SubmitSearchIcon
+    StyledIconButton, StyledInformation, StyledSearchIcon, StyledTextField, SubmitSearchIcon, StyledInputAdornment
 } from './styles';
 
 export const AutoComplete = ({ isFocus, setIsFocus, }) => {
@@ -107,13 +107,11 @@ export const AutoComplete = ({ isFocus, setIsFocus, }) => {
                                     type: 'search',
                                     disableUnderline: true,
                                     startAdornment: (
-                                        <InputAdornment position="start" sx={{ pl: isFocus && 2 }}>
+                                        <StyledInputAdornment position="start" isFocus={isFocus}>
                                             {isFocus && <StyledSearchIcon />}
-                                        </InputAdornment>
+                                        </StyledInputAdornment>
                                     ),
-                                }}
-
-                            />
+                                }} />
                             <StyledIconButton type='submit' disableRipple >
                                 <SubmitSearchIcon />
                             </StyledIconButton>
