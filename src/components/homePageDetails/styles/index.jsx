@@ -14,7 +14,7 @@ export const StyledGrid = styled(Grid)(() => ({
     alignItems: 'center',
     cursor: 'pointer',
     // rowGap: 1.5,
-    rowGap: '1rem',
+    rowGap: '0.75rem',
 }))
 
 
@@ -104,7 +104,8 @@ export const StyledDuration = styled(Typography)(() => ({
     borderRadius: '0.25rem',
     fontSize: '0.75rem',
     // px: 0.5,
-    padding: '0 0.2rem'
+    paddingRight: '0.25rem',
+    paddingLeft:'0.25rem'
 }))
 
 // Bottom of container
@@ -126,7 +127,7 @@ export const BoxWrapper = styled(Box)(() => ({
     display: 'flex',
     flexDirection: 'column',
     // rowGap: 0.5,
-    rowGap: '0.1rem',
+    rowGap: '0.25rem',
     width: '100%'
 }))
 
@@ -153,7 +154,7 @@ export const StackViewsContainer = styled(Stack)(() => ({
     color: '#606060',
     alignItems: 'center',
     // columnGap={ 2},
-    columnGap: '1.5rem'
+    columnGap: '1rem'
 }))
 
 export const StackViewsWrapper = styled(Stack)(() => ({

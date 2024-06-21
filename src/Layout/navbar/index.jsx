@@ -19,7 +19,7 @@ export const Navbar = () => {
   return (
     <>
       <StyledAppBar open={isDrawerOpen} elevation={0} >
-        <StyledToolbar>
+        <StyledToolbar disableGutters>
           <StackContainer>
 
             <MenuANDLogoContainer>

@@ -26,7 +26,7 @@ export const StyledAppBar = styled(MuiAppBar, {
 
 export const StyledToolbar = styled(Toolbar)(() => ({
     backgroundColor: '#fff',
-    padding: 0
+    padding: '0',
 }))
 
 export const StackContainer = styled(Stack)(() => ({
@@ -34,8 +34,8 @@ export const StackContainer = styled(Stack)(() => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
-    // px: 3
-    padding: '0 0.3rem'
+    paddingRight: '1.5rem',
+    paddingLeft: '1.5rem'
 }))
 
 
@@ -120,7 +120,7 @@ export const AutoCompleteContainer = styled('div')(({ isFocus }) => ({
 
 export const IconsContainer = styled(Box)(() => ({
     // gap={ 3}
-    gap: '2rem',
+    gap: '1.5rem',
     display: 'flex',
     flex: 2,
     alignItems: 'center',

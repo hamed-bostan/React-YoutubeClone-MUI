@@ -10,7 +10,8 @@ export const RenderOptionContainer = styled(Box)(() => ({
     alignItems: 'center',
     justifyContent: 'space-between',
     // px: 1,
-    padding: '0 0.1rem',
+    paddingLeft: '0.5rem',
+    paddingRight: '0.5rem',
     ":hover": {
         backgroundColor: 'rgba(0,0,0,0.1)'
     }
@@ -20,7 +21,7 @@ export const InformationContainer = styled(Box)(() => ({
     display: 'flex',
     alignItems: 'center',
     // columnGap: 1,
-    columnGap: '0.2rem'
+    columnGap: '0.5rem'
 }))
 
 export const StyledInformation = styled(Typography)(() => ({
@@ -49,7 +50,7 @@ export const StyledTextField = styled(TextField)(({ isFocus }) => ({
         // padding: 0,
         padding: '0',
         // ml: !isFocus && 1,
-        marginLeft: !isFocus && '0.1rem',
+        marginLeft: !isFocus && '0.5rem',
     },
 }))
 
@@ -67,7 +68,8 @@ export const StyledIconButton = styled(IconButton)(() => ({
     borderTopRightRadius: 40,
     borderBottomRightRadius: 40,
     // px: 2,
-    padding: '0 0.3rem',
+    paddingRight: '1rem',
+    paddingLeft: '1rem',
     borderLeft: '1px solid rgba(0,0,0,0.05)',
     ":hover": {
         backgroundColor: 'rgba(0,0,0,0.1)'

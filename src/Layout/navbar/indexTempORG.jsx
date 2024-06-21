@@ -48,7 +48,10 @@ export const Navbar = () => {
     <>
       <AppBar position="fixed" open={isDrawerOpen} elevation={0} >
         <Toolbar sx={{ bgcolor: '#fff', }} style={{ padding: 0 }} >
-          <Stack sx={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%', px: 3 }}>
+          <Stack sx={{
+            flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%',
+            // px: 3
+          }}>
 
             <Box sx={{ display: 'flex', flex: 2, alignItems: 'center', columnGap: 2 }} >
               <IconButton
