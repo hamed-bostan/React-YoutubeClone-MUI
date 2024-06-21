@@ -65,15 +65,17 @@ export const SubtitleIconButton = styled(IconButton)(() => ({
 
 }));
 
-export const StyledSubtitleIconButton = styled(SubtitleIconButton, {
-    shouldForwardProp: (prop) => {
-        return prop !== "isMouseOver" && prop !== "isVideoPlaying"
-    }
-})(({ isMouseOver, isVideoPlaying }) => ({
-    backgroundColor: isMouseOver && '#0f0f0f',
-    display: !isVideoPlaying && 'none'
+export const StyledSubtitleIconButton = styled(SubtitleIconButton,
+    {
+        shouldForwardProp: (prop) => {
+            return prop !== "isMouseOver" && prop !== "isVideoPlaying"
+        }
+    })
+    (({ isMouseOver, isVideoPlaying }) => ({
+        backgroundColor: isMouseOver && '#0f0f0f',
+        display: !isVideoPlaying && 'none'
 
-}))
+    }))
 
 export const StyledVolumeOnIcon = styled(VolumeUpOutlinedIcon)(() => ({
     fontSize: 'large'
