@@ -7,10 +7,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid'
 import { capitalizeFirstLetter } from '../../../utility/Utilities';
-import {
-    StackContainer, InformationContainer, RenderInputContainer, RenderOptionContainer, StyledButton,
-    StyledIconButton, StyledInformation, StyledSearchIcon, StyledTextField, SubmitSearchIcon
-} from './styles';
 
 export const AutoComplete = ({ isFocus, setIsFocus, }) => {
     const initialData = [
@@ -82,29 +78,31 @@ export const AutoComplete = ({ isFocus, setIsFocus, }) => {
                 options={uniqueStoredData}
                 getOptionLabel={(option) => option.textInformation || ""}
                 renderOption={(props, option) => (
-                    <Box key={option.id}
-                        sx={{
-                            display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 1,
-                            ":hover": {
-                                backgroundColor: 'rgba(0,0,0,0.1)'
-                            }
-                        }}
-                    >
-                        <Box sx={{ display: 'flex', alignItems: 'center', columnGap: 1 }}>
-                            <RestoreOutlinedIcon />
-                            <Typography sx={{ cursor: 'default' }}> {option.textInformation} </Typography>
-                        </Box>
-                        <Button
-                            onClick={() => removeFunction(option.id)}
-                            variant='text' disableRipple
+                    <Box key={option.id}>
+                        <Box
                             sx={{
-                                textTransform: 'none',
-                                "&.MuiButtonBase-root:hover": {
-                                    bgcolor: "transparent"
+                                display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 1,
+                                ":hover": {
+                                    bgcolor: 'rgba(0,0,0,0.1)'
                                 }
                             }}
-                        > {capitalizeFirstLetter("remove")}
-                        </Button>
+                        >
+                            <Box sx={{ display: 'flex', alignItems: 'center', columnGap: 1 }}>
+                                <RestoreOutlinedIcon />
+                                <Typography sx={{ cursor: 'default' }}> {option.textInformation} </Typography>
+                            </Box>
+                            <Button
+                                onClick={() => removeFunction(option.id)}
+                                variant='text' disableRipple
+                                sx={{
+                                    textTransform: 'none',
+                                    "&.MuiButtonBase-root:hover": {
+                                        bgcolor: "transparent"
+                                    }
+                                }}
+                            > {capitalizeFirstLetter("remove")}
+                            </Button>
+                        </Box>
                     </Box>
                 )
                 }
