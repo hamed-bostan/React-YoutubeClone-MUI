@@ -1,5 +1,4 @@
 import { Box, Button, styled } from "@mui/material";
-import { theme } from "../../../theme";
 
 
 export const BoxContainer = styled(Box)(() => ({
@@ -9,7 +8,7 @@ export const BoxContainer = styled(Box)(() => ({
 
 export const StyledButton = styled(Button,
     { shouldForwardProp: (prop) => prop !== 'selectedCategory' && prop !== 'categoryTitle' })
-    (({ selectedCategory, categoryTitle }) => ({
+    (({ selectedCategory, categoryTitle, theme }) => ({
         // backgroundColor: selectedCategory === categoryTitle ? '#0f0f0f' : 'rgba(0,0,0,0.05)',
         // color: selectedCategory === categoryTitle ? '#fff' : '#0f0f0f',
         backgroundColor: selectedCategory === categoryTitle ? theme.palette.primary.main : theme.palette.secondary.light,
