@@ -39,11 +39,12 @@ export const StyledVideo = styled('video')(({ src, isVideoPlaying }) => ({
 
 
 // IconButton 
-export const VolumeIconButton = styled(IconButton)(() => ({
+export const VolumeIconButton = styled(IconButton)(({ theme }) => ({
     position: 'absolute',
     top: '1.25rem',
     right: '0.875rem',
-    color: '#fff',
+    // color: '#fff',
+    color: theme.palette.primary.light,
 
 }));
 
@@ -51,18 +52,19 @@ export const StyledVolumeIconButton = styled(VolumeIconButton, {
     shouldForwardProp: (prop) => {
         return prop !== "isMouseOver" && prop !== "isVideoPlaying"
     }
-})(({ isMouseOver, isVideoPlaying }) => ({
-    backgroundColor: isMouseOver && '#0f0f0f',
+})(({ isMouseOver, isVideoPlaying ,theme}) => ({
+    // backgroundColor: isMouseOver && '#0f0f0f',
+    backgroundColor: isMouseOver && theme.palette.primary.main,
     display: !isVideoPlaying && 'none'
 
 }))
 
-export const SubtitleIconButton = styled(IconButton)(() => ({
+export const SubtitleIconButton = styled(IconButton)(({ theme }) => ({
     position: 'absolute',
     top: '4.25rem',
     right: '0.875rem',
-    color: '#fff',
-
+    // color: '#fff',
+    color: theme.palette.primary.light,
 }));
 
 export const StyledSubtitleIconButton = styled(SubtitleIconButton,
@@ -71,8 +73,9 @@ export const StyledSubtitleIconButton = styled(SubtitleIconButton,
             return prop !== "isMouseOver" && prop !== "isVideoPlaying"
         }
     })
-    (({ isMouseOver, isVideoPlaying }) => ({
-        backgroundColor: isMouseOver && '#0f0f0f',
+    (({ isMouseOver, isVideoPlaying ,theme}) => ({
+        // backgroundColor: isMouseOver && '#0f0f0f',
+        backgroundColor: isMouseOver && theme.palette.primary.main,
         display: !isVideoPlaying && 'none'
 
     }))
@@ -95,12 +98,13 @@ export const StyledSubtitleOutlinedIcon = styled(SubtitlesOutlinedIcon)(() => ({
 // IconButton 
 
 
-export const StyledDuration = styled(Typography)(() => ({
+export const StyledDuration = styled(Typography)(({ theme }) => ({
     position: 'absolute',
     bottom: '1rem',
     right: '0.875rem',
     color: '#fff',
-    backgroundColor: '#0f0f0f',
+    // backgroundColor: '#0f0f0f',
+    backgroundColor: theme.palette.primary.main,
     borderRadius: '0.25rem',
     fontSize: '0.75rem',
     // px: 0.5,
@@ -136,9 +140,10 @@ export const StackTitleContainer = styled(Stack)(() => ({
     justifyContent: 'space-between'
 }))
 
-export const StyledTitle = styled(Typography)(() => ({
+export const StyledTitle = styled(Typography)(({ theme }) => ({
     fontSize: '1rem',
-    color: '#0f0f0f',
+    // color: '#0f0f0f',
+    color: theme.palette.primary.main,
     marginTop: '0.3rem'
 }))
 

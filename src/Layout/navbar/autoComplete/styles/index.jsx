@@ -5,7 +5,7 @@ export const StackContainer = styled(Stack)(() => ({
     width: '100%'
 }))
 
-export const RenderOptionContainer = styled(Box)(() => ({
+export const RenderOptionContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -13,7 +13,8 @@ export const RenderOptionContainer = styled(Box)(() => ({
     paddingLeft: '0.5rem',
     paddingRight: '0.5rem',
     ":hover": {
-        backgroundColor: 'rgba(0,0,0,0.1)'
+        // backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: theme.palette.secondary.main,
     }
 }))
 
@@ -56,13 +57,14 @@ export const StyledTextField = styled(TextField)(({ isFocus }) => ({
 
 
 
-export const StyledSearchIcon = styled(SearchIcon)(() => ({
-    color: '#0f0f0f',
+export const StyledSearchIcon = styled(SearchIcon)(({ theme }) => ({
+    // color: '#0f0f0f',
+    color: theme.palette.primary.main,
     cursor: 'default'
 }))
 
 
-export const StyledIconButton = styled(IconButton)(() => ({
+export const StyledIconButton = styled(IconButton)(({ theme }) => ({
     backgroundColor: '#f8f8f8',
     borderRadius: 0,
     borderTopRightRadius: 40,
@@ -72,13 +74,15 @@ export const StyledIconButton = styled(IconButton)(() => ({
     paddingLeft: '1rem',
     borderLeft: '1px solid rgba(0,0,0,0.05)',
     ":hover": {
-        backgroundColor: 'rgba(0,0,0,0.1)'
+        // backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: theme.palette.secondary.main
     },
 }))
 
 
-export const SubmitSearchIcon = styled(SearchIcon)(() => ({
-    color: "#0f0f0f"
+export const SubmitSearchIcon = styled(SearchIcon)(({ theme }) => ({
+    // color: "#0f0f0f",
+    color: theme.palette.primary.main,
 }))
 
 
