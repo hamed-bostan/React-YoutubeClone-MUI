@@ -9,7 +9,8 @@ import MuiAppBar from '@mui/material/AppBar';
 export const StyledAppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
+    backgroundColor: theme.palette.primary.light,
     position: 'fixed',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -48,8 +49,9 @@ export const MenuANDLogoContainer = styled(Box)(() => ({
     columnGap: '1rem'
 }))
 
-export const MenuIconButton = styled(IconButton)(() => ({
-    color: '#0f0f0f',
+export const MenuIconButton = styled(IconButton)(({ theme }) => ({
+    // color: '#0f0f0f',
+    color: theme.palette.primary.main,
     ":hover": {
         width: 40,
         height: 40,
@@ -89,17 +91,21 @@ export const SearchContainer = styled(Box)(() => ({
     gap: '1rem',
 }))
 
-export const MicIconButton = styled(IconButton)(() => ({
+export const MicIconButton = styled(IconButton)(({ theme }) => ({
     width: 40,
     height: 40,
-    backgroundColor: 'rgba(0,0,0,0.05)',
+    // backgroundColor: 'rgba(0,0,0,0.05)',
+    backgroundColor: theme.palette.secondary.light,
     ":hover": {
-        backgroundColor: 'rgba(0,0,0,0.1)'
+        // backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: theme.palette.secondary.main,
+
     }
 }))
 
-export const MicIcon = styled(MicOutlinedIcon)(() => ({
-    color: "#0f0f0f"
+export const MicIcon = styled(MicOutlinedIcon)(({ theme }) => ({
+    // color: "#0f0f0f",
+    color: theme.palette.primary.main,
 }))
 
 export const AutoCompleteContainer = styled('div')(({ isFocus }) => ({
@@ -128,40 +134,44 @@ export const IconsContainer = styled(Box)(() => ({
     justifyContent: 'end'
 }))
 
-export const CameraIconButton = styled(IconButton)(() => ({
+export const CameraIconButton = styled(IconButton)(({ theme }) => ({
     ":hover": {
         width: 40,
         height: 40,
-        backgroundColor: 'rgba(0,0,0,0.1)'
+        // backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: theme.palette.secondary.main,
     }
 }))
 
-export const CameraIcon = styled(VideocamOutlinedIcon)(() => ({
-    color: "#0f0f0f"
+export const CameraIcon = styled(VideocamOutlinedIcon)(({ theme }) => ({
+    // color: "#0f0f0f",
+    color: theme.palette.primary.main,
 }))
 
 
-export const NotificationIconButton = styled(IconButton)(() => ({
+export const NotificationIconButton = styled(IconButton)(({ theme }) => ({
     ":hover": {
         width: 40,
         height: 40,
-        backgroundColor: 'rgba(0,0,0,0.1)'
+        // backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: theme.palette.secondary.main,
     }
 }))
 
 
-export const StyledBadge = styled(Badge)(() => ({
+export const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         top: 5,
-        border: '2px solid white',
+        border: `2px solid ${theme.palette.primary.light}`,
         padding: '0 5px',
     },
 }))
 
 
 
-export const NotificationIcon = styled(NotificationsNoneOutlinedIcon)(() => ({
-    color: "#0f0f0f"
+export const NotificationIcon = styled(NotificationsNoneOutlinedIcon)(({ theme }) => ({
+    // color: "#0f0f0f",
+    color: theme.palette.primary.main,
 }))
 
 
