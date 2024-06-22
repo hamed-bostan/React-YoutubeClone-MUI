@@ -9,6 +9,7 @@ import MuiAppBar from '@mui/material/AppBar';
 export const StyledAppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
+    backgroundColor: '#fff',
     position: 'fixed',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -25,7 +26,7 @@ export const StyledAppBar = styled(MuiAppBar, {
 
 
 export const StyledToolbar = styled(Toolbar)(() => ({
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     padding: '0',
 }))
 
