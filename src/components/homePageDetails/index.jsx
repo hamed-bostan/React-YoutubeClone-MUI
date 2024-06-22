@@ -1,10 +1,10 @@
-import { Box } from '@mui/material'
+import { Box, IconButton } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { formatDuration } from '../../utility/formatDuration';
 import {
     ImageContainer, ThumbnailImage, StyledVideo, StyledVolumeIconButton, StyledDuration, StackInformationContainer, StyledAvatar, BoxWrapper,
-    StackTitleContainer, StyledTitle, StyledChannelName, StackViewsContainer, StackViewsWrapper, StyledViews, StyledBulletPoint, StyledReactTimeAgo, StyledSubtitleIconButton, StyledGrid, StyledSubtitleIcon, StyledVolumeOffIcon, StyledVolumeOnIcon, StyledSubtitleOutlinedIcon
+    StackTitleContainer, StyledTitle, StyledChannelName, StackViewsContainer, StackViewsWrapper, StyledViews, StyledBulletPoint, StyledReactTimeAgo, StyledSubtitleIconButton, StyledGrid, StyledSubtitleIcon, StyledVolumeOffIcon, StyledVolumeOnIcon, StyledSubtitleOutlinedIcon, MoreIconContainer
 } from './styles';
 import { useUIContext } from '../../context/ui';
 import { MenuComponent } from '../MenuComponent';
@@ -82,13 +82,15 @@ export const HomePageDetails = ({ thumbnailUrl, channel, title, videoUrl, durati
                     <BoxWrapper>
                         <StackTitleContainer>
                             <StyledTitle>{title}</StyledTitle>
-                            <MoreVertIcon onClick={handleOpenMenu} />
+                            <MoreIconContainer onClick={handleOpenMenu}>
+                                <MoreVertIcon />
+                            </MoreIconContainer>
                         </StackTitleContainer>
                         <Box>
                             <StyledChannelName>{channel.name}</StyledChannelName>
                             <StackViewsContainer>
                                 <StackViewsWrapper>
-                                    <StyledViews>{VIEW_FORMATTER.format(views)}views</StyledViews>
+                                    <StyledViews>{VIEW_FORMATTER.format(views)} views</StyledViews>
                                     <StyledBulletPoint />
                                 </StackViewsWrapper>
                                 <StyledReactTimeAgo date={postedAt} locale="en-US" />

@@ -139,7 +139,17 @@ export const StackTitleContainer = styled(Stack)(() => ({
 export const StyledTitle = styled(Typography)(() => ({
     fontSize: '1rem',
     color: '#0f0f0f',
+    marginTop: '0.3rem'
 }))
+
+
+export const MoreIconContainer = styled(IconButton)(() => ({
+    width: 40,
+    height: 40,
+    ":hover": { backgroundColor: 'transparent' }
+}))
+
+
 
 export const StyledChannelName = styled(Typography)(() => ({
     fontSize: '0.875rem',
