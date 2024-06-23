@@ -1,7 +1,4 @@
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { useUIContext } from '../../context/ui';
-
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
@@ -10,8 +7,9 @@ import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import BlockOutlinedIcon from '@mui/icons-material/BlockOutlined';
 import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
 import OutlinedFlagIcon from '@mui/icons-material/OutlinedFlag';
-import { Box, Divider, ListItemIcon, Paper } from '@mui/material';
+import { Box, Divider } from '@mui/material';
 import { capitalizeFirstLetter } from '../../utility/Utilities';
+import { StyledMenu, StyledListItemIcon, StyledMenuItem } from './styles';
 
 export const MenuComponent = () => {
     const { anchorEl, setAnchorEl, open } = useUIContext()
@@ -22,36 +20,20 @@ export const MenuComponent = () => {
 
     return (
         <>
-            <Menu
+            <StyledMenu
                 anchorEl={anchorEl}
                 open={open}
-                onClose={handleClose}
-                sx={{
-                    '.MuiMenu-paper': {
-                        boxShadow: '0px 0px 0.7px rgba(0,0,0,0.1)',
-                        borderRadius: '0.725rem'
-                    }
-                }}
-            // elevation={0}
-            >
+                onClose={handleClose}>
                 {menuItems.map((item, index) => (
                     <Box key={item.id}>
-                        <MenuItem onClick={handleClose}
-                            sx={{
-                                color: '#0f0f0f',
-                                ":hover": {
-                                    backgroundColor: "rgba(0,0,0,0.1)"
-                                }
-                            }}>
-                            <ListItemIcon sx={{ color: '#0f0f0f' }}>
-                                {item.iconUrl}
-                            </ListItemIcon>
+                        <StyledMenuItem onClick={handleClose}>
+                            <StyledListItemIcon> {item.iconUrl} </StyledListItemIcon>
                             {capitalizeFirstLetter(item.text)}
-                        </MenuItem>
+                        </StyledMenuItem>
                         {index == 4 && <Divider />}
                     </Box>
                 ))}
-            </Menu>
+            </StyledMenu>
         </>
     );
 }
