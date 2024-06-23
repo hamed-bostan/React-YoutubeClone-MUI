@@ -130,10 +130,12 @@ export const Sidebar = () => {
   return (
     <Box>
       <CssBaseline />
-      <Drawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '75px' } }} >
+      <Drawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }} >
         <DrawerHeader />
 
-        <Box sx={{ px: isDrawerOpen ? 1.5 : 0.5 }}>
+        <Box sx={{ px: isDrawerOpen && '0.725rem' }}>
+
+
           <List>
             {HeadingIcons.map((item => (
               <ListItem key={item.id} disablePadding
@@ -142,13 +144,15 @@ export const Sidebar = () => {
                 <ListItemButton
                   disableRipple
                   sx={{
-                    bgcolor: location.pathname == item.path && isDrawerOpen && 'rgba(0,0,0,0.05)',
-                    borderRadius: location.pathname == item.path && 3,
+                    backgroundColor: location.pathname == item.path && isDrawerOpen && 'rgba(0,0,0,0.05)',
+                    borderRadius: location.pathname == item.path && '0.875rem',
                     flexDirection: isDrawerOpen ? 'row' : 'column',
                     padding: 0,
-                    px: isDrawerOpen && 1,
-                    py: isDrawerOpen ? 0.6 : 2,
-                    ":hover": { borderRadius: 3, bgcolor: 'rgba(0,0,0,0.05)' },
+                    // px: isDrawerOpen && '0.5rem',
+                    // py: isDrawerOpen ? '0.25rem' : '1rem',
+                    px: isDrawerOpen && '0.5rem',
+                    py: isDrawerOpen ? '0.25rem' : '1rem',
+                    ":hover": { borderRadius: '0.875rem', backgroundColor: location.pathname == item.path && isDrawerOpen ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0.05)' },
                   }}>
                   <ListItemIcon sx={{ justifyContent: !isDrawerOpen && 'center', color: '#0f0f0f' }}>
                     {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
@@ -156,12 +160,14 @@ export const Sidebar = () => {
                   <ListItemText primary={capitalizeFirstLetter(item.textTitle)}
                     sx={{ color: '#0f0f0f' }}
                     primaryTypographyProps={{
-                      fontSize: isDrawerOpen ? '14px' : '10px',
+                      fontSize: isDrawerOpen ? '0.875rem' : '0.625rem',
                     }} />
                 </ListItemButton>
               </ListItem>
             )))}
           </List>
+
+
 
           {isDrawerOpen && <Divider />}
 
