@@ -1,12 +1,12 @@
 import Autocomplete from '@mui/material/Autocomplete';
-import { InputAdornment } from '@mui/material';
+import { InputAdornment, Tooltip } from '@mui/material';
 import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid'
 import { capitalizeFirstLetter } from '../../../utility/Utilities';
 import {
     StackContainer, InformationContainer, RenderInputContainer, RenderOptionContainer, StyledButton,
-    StyledIconButton, StyledInformation, StyledSearchIcon, StyledTextField, SubmitSearchIcon, StyledInputAdornment
+    StyledIconButton, StyledInformation, StyledSearchIcon, StyledTextField, SubmitSearchIcon, StyledInputAdornment, StyledTooltip
 } from './styles';
 
 export const AutoComplete = ({ isFocus, setIsFocus, }) => {
@@ -112,9 +112,11 @@ export const AutoComplete = ({ isFocus, setIsFocus, }) => {
                                         </StyledInputAdornment>
                                     ),
                                 }} />
-                            <StyledIconButton type='submit' disableRipple >
-                                <SubmitSearchIcon />
-                            </StyledIconButton>
+                            <StyledTooltip title='Search'>
+                                <StyledIconButton type='submit' disableRipple >
+                                    <SubmitSearchIcon />
+                                </StyledIconButton>
+                            </StyledTooltip>
                         </RenderInputContainer>
                     </form>
                 )}

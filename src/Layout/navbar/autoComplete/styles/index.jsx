@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, InputAdornment, Stack, TextField, Typography, styled } from "@mui/material";
+import { Box, Button, IconButton, InputAdornment, Stack, TextField, Tooltip, Typography, styled } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
 export const StackContainer = styled(Stack)(() => ({
@@ -91,4 +91,8 @@ export const StyledInputAdornment = styled(InputAdornment, {
 })(({ isFocus }) => ({
     // pl: isFocus && 2,
     paddingLeft: isFocus && '1rem',
+}))
+
+export const StyledTooltip = styled(Tooltip)(() => ({
+
 }))

@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, IconButton, Stack, Toolbar, Typography, styled } from "@mui/material";
+import { Avatar, Badge, Box, IconButton, Stack, Toolbar, Tooltip, Typography, styled } from "@mui/material";
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
@@ -180,4 +180,9 @@ export const StyledAvatar = styled(Avatar)(({ src }) => ({
     width: 35,
     height: 35,
     cursor: 'pointer'
+}))
+
+
+export const StyledTooltip = styled(Tooltip)(() => ({
+
 }))

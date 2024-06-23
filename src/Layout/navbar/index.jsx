@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { AutoComplete } from './autoComplete';
 
 
-import { MenuANDLogoContainer, MenuIconButton, CameraIcon, CameraIconButton, MicIcon, AutoCompleteContainer, IconsContainer, LogoIconButton, MicIconButton, NotificationIcon, NotificationIconButton, SearchContainer, StyledAvatar, YoutubeIcon, YoutubeText, StackContainer, StyledToolbar, StyledAppBar, StyledBadge }
+import { MenuANDLogoContainer, MenuIconButton, CameraIcon, CameraIconButton, MicIcon, AutoCompleteContainer, IconsContainer, LogoIconButton, MicIconButton, NotificationIcon, NotificationIconButton, SearchContainer, StyledAvatar, YoutubeIcon, YoutubeText, StackContainer, StyledToolbar, StyledAppBar, StyledBadge, StyledTooltip }
   from './styles';
+import { Tooltip } from '@mui/material';
 
 
 export const Navbar = () => {
@@ -34,9 +35,12 @@ export const Navbar = () => {
 
 
             <SearchContainer>
-              <MicIconButton disableRipple>
-                <MicIcon />
-              </MicIconButton>
+              <StyledTooltip title='Search with your voice'>
+                <MicIconButton disableRipple>
+                  <MicIcon />
+                </MicIconButton>
+              </StyledTooltip>
+
               <AutoCompleteContainer isFocus={isFocus}>
                 <AutoComplete isFocus={isFocus} setIsFocus={setIsFocus} />
               </AutoCompleteContainer>
@@ -44,15 +48,20 @@ export const Navbar = () => {
 
 
             <IconsContainer>
-              <CameraIconButton disableRipple>
-                <CameraIcon />
-              </CameraIconButton>
+              <StyledTooltip title='Create'>
+                <CameraIconButton disableRipple>
+                  <CameraIcon />
+                </CameraIconButton>
+              </StyledTooltip>
 
-              <NotificationIconButton disableRipple>
-                <StyledBadge badgeContent={"9+"} color='error' >
-                  <NotificationIcon />
-                </StyledBadge>
-              </NotificationIconButton>
+              <StyledTooltip title='Notifications'>
+                <NotificationIconButton disableRipple>
+                  <StyledBadge badgeContent={"9+"} color='error' >
+                    <NotificationIcon />
+                  </StyledBadge>
+                </NotificationIconButton>
+              </StyledTooltip>
+
               <StyledAvatar src='./images/profileImages/caleb-curry.jpg' />
             </IconsContainer>
 
