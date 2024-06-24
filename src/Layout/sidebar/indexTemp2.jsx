@@ -150,7 +150,7 @@ export const Sidebar = () => {
                     columnGap: '1.725rem',
                     padding: 0,
                     px: isDrawerOpen && '0.5rem',
-                    py: isDrawerOpen ? '0.35rem' : '1rem',
+                    py: isDrawerOpen ? '0.25rem' : '1rem',
                     ":hover": { borderRadius: '0.875rem', backgroundColor: location.pathname == item.path && isDrawerOpen ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0.05)' },
                   }}>
                   <ListItemIcon sx={{ justifyContent: !isDrawerOpen && 'center', color: '#0f0f0f', minWidth: 0 }}>
@@ -172,10 +172,10 @@ export const Sidebar = () => {
 
           {isDrawerOpen && (
             <List>
-              <Box sx={{ color: '#0f0f0f', display: 'flex', alignItems: 'center', pl: '0.5rem' }}  >
-                <Typography variant='h6' fontWeight='600' fontSize='1rem'>You</Typography>
+              <IconButton disableTouchRipple sx={{ color: '#0f0f0f', width: '100%', borderRadius: 3, justifyContent: 'start', alignItems: 'center' }}  >
+                <Typography variant='h6' fontWeight={600} fontSize={'16px'}>you</Typography>
                 <ChevronRightIcon />
-              </Box>
+              </IconButton>
 
 
 
@@ -193,8 +193,7 @@ export const Sidebar = () => {
                       columnGap: '1.725rem',
                       padding: 0,
                       px: isDrawerOpen && '0.5rem',
-                      py: isDrawerOpen ? '0.35rem' : '1rem',
-
+                      py: isDrawerOpen ? '0.25rem' : '1rem',
                       ":hover": { borderRadius: '0.875rem', backgroundColor: location.pathname == item.path && isDrawerOpen ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0.05)' },
                     }}>
                     <ListItemIcon sx={{ justifyContent: !isDrawerOpen && 'center', color: '#0f0f0f', minWidth: 0 }}>
@@ -215,13 +214,26 @@ export const Sidebar = () => {
 
           {isDrawerOpen && (
             <List>
-
-              <Box sx={{ color: '#0f0f0f', display: 'flex', alignItems: 'center', pl: '0.5rem' }}  >
-                <Typography variant='h6' fontWeight='600' fontSize='1rem'>Subscriptions</Typography>
-              </Box>
+              <Typography variant='body1' fontWeight={500}>subscriptions</Typography>
 
 
+              {/* {SubscriptionIcons.map((item => (
+                <ListItem key={item.id} disablePadding
+                  sx={{
+                    bgcolor: location.pathname == item.path && isDrawerOpen && '#f4f4f4',
+                  }}
+                  onClick={() => navigate(item.path)}
+                >
+                  <ListItemButton
+                    disableRipple
+                    sx={{ minHeight: 50, columnGap: 3 }}>
+                    <Avatar src={item.avater} sx={{ width: 28, height: 28 }} />
+                    <ListItemText primary={item.textTitle} />
+                  </ListItemButton>
+                </ListItem>
+              )))} */}
 
+              {/* goes here */}
 
               {SubscriptionIcons.map((item => (
                 <ListItem key={item.id} disablePadding
@@ -236,11 +248,13 @@ export const Sidebar = () => {
                       flexDirection: isDrawerOpen ? 'row' : 'column',
                       padding: 0,
                       px: isDrawerOpen && '0.5rem',
-                      py: isDrawerOpen ? '0.35rem' : '1rem',
-
+                      py: isDrawerOpen ? '0.25rem' : '1rem',
                       ":hover": { borderRadius: '0.875rem', backgroundColor: location.pathname == item.path && isDrawerOpen ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0.05)' },
                     }}>
-                    <Avatar src={item.avater} sx={{ width: '1.5rem', height: '1.5rem' }} />
+                    {/* <ListItemIcon sx={{ justifyContent: !isDrawerOpen && 'center', color: '#0f0f0f' }}>
+                      {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
+                    </ListItemIcon> */}
+                    <Avatar src={item.avater} sx={{ width: 28, height: 28 }} />
                     <ListItemText primary={capitalizeFirstLetter(item.textTitle)}
                       sx={{ color: '#0f0f0f' }}
                       primaryTypographyProps={{
@@ -250,6 +264,7 @@ export const Sidebar = () => {
                 </ListItem>
               )))}
 
+              {/* goes here */}
 
             </List>
           )}
@@ -257,40 +272,24 @@ export const Sidebar = () => {
 
           {isDrawerOpen && (
             <List>
-              <Box sx={{ color: '#0f0f0f', display: 'flex', alignItems: 'center', pl: '0.5rem' }}  >
-                <Typography variant='h6' fontWeight='600' fontSize='1rem'>Explore</Typography>
-              </Box>
-
-
+              <Typography variant='body1' fontWeight={500}>explore</Typography>
               {ExploreIcons.map((item => (
                 <ListItem key={item.id} disablePadding
+                  sx={{
+                    bgcolor: location.pathname == item.path && isDrawerOpen && '#f4f4f4',
+                  }}
                   onClick={() => navigate(item.path)}
                 >
                   <ListItemButton
                     disableRipple
-                    sx={{
-                      backgroundColor: location.pathname == item.path && isDrawerOpen && 'rgba(0,0,0,0.05)',
-                      borderRadius: location.pathname == item.path && '0.875rem',
-                      flexDirection: isDrawerOpen ? 'row' : 'column',
-                      columnGap: '1.725rem',
-                      padding: 0,
-                      px: isDrawerOpen && '0.5rem',
-                      py: isDrawerOpen ? '0.35rem' : '1rem',
-                      ":hover": { borderRadius: '0.875rem', backgroundColor: location.pathname == item.path && isDrawerOpen ? 'rgba(0,0,0,0.1)' : 'rgba(0,0,0,0.05)' },
-                    }}>
-                    <ListItemIcon sx={{ justifyContent: !isDrawerOpen && 'center', color: '#0f0f0f', minWidth: 0 }}>
+                    sx={{ minHeight: 50 }}>
+                    <ListItemIcon>
                       {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
                     </ListItemIcon>
-                    <ListItemText primary={capitalizeFirstLetter(item.textTitle)}
-                      sx={{ color: '#0f0f0f' }}
-                      primaryTypographyProps={{
-                        fontSize: isDrawerOpen ? '0.875rem' : '0.625rem',
-                      }} />
+                    <ListItemText primary={item.textTitle} />
                   </ListItemButton>
                 </ListItem>
               )))}
-
-
             </List>
           )}
 
