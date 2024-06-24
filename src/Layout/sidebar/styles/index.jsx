@@ -2,8 +2,6 @@ import { Avatar, Box, ListItemButton, ListItemIcon, ListItemText, Typography, st
 import MuiDrawer from '@mui/material/Drawer';
 
 
-// goes here
-
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -69,8 +67,14 @@ export const StyledDrawer = styled(MuiDrawer, { shouldForwardProp: (prop) => pro
 );
 
 
-// goes here
 
+export const BoxContainer = styled(Box, {
+    shouldForwardProp: (prop) => prop !== 'isDrawerOpen'
+})(({ isDrawerOpen }) => ({
+    // px: isDrawerOpen && '0.7rem',
+    paddingRight: isDrawerOpen ? '0.7rem' : '0.25rem',
+    paddingLeft: isDrawerOpen ? '0.7rem' : '0.25rem',
+}))
 
 
 
@@ -86,8 +90,8 @@ export const StyledListItemButton = styled(ListItemButton, {
     padding: 0,
     // px: isDrawerOpen && '0.5rem',
     // py: isDrawerOpen ? '0.35rem' : '1rem',
-    paddingRight: isDrawerOpen && '0.75rem',
-    paddingLeft: isDrawerOpen && '0.75rem',
+    paddingRight: isDrawerOpen && '0.8rem',
+    paddingLeft: isDrawerOpen && '0.8rem',
     paddingTop: isDrawerOpen ? '0.35rem' : '1rem',
     paddingBottom: isDrawerOpen ? '0.35rem' : '1rem',
     ":hover": {
