@@ -177,8 +177,8 @@ export const NotificationIcon = styled(NotificationsNoneOutlinedIcon)(({ theme }
 
 export const StyledAvatar = styled(Avatar)(({ src }) => ({
     src: `url(${src})`,
-    width: 35,
-    height: 35,
+    width: '2rem',
+    height: '2rem',
     cursor: 'pointer'
 }))
 
