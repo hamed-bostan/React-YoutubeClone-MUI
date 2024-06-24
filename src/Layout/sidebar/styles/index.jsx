@@ -86,8 +86,8 @@ export const StyledListItemButton = styled(ListItemButton, {
     padding: 0,
     // px: isDrawerOpen && '0.5rem',
     // py: isDrawerOpen ? '0.35rem' : '1rem',
-    paddingRight: isDrawerOpen && '0.5rem',
-    paddingLeft: isDrawerOpen && '0.5rem',
+    paddingRight: isDrawerOpen && '0.75rem',
+    paddingLeft: isDrawerOpen && '0.75rem',
     paddingTop: isDrawerOpen ? '0.35rem' : '1rem',
     paddingBottom: isDrawerOpen ? '0.35rem' : '1rem',
     ":hover": {

@@ -36,8 +36,8 @@ export const StackContainer = styled(Stack)(() => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
-    paddingRight: '1.5rem',
-    paddingLeft: '1.5rem'
+    paddingRight: '0.95rem',
+    paddingLeft: '0.95rem'
 }))
 
 

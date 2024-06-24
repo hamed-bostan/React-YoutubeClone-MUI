@@ -24,7 +24,7 @@ export const Navbar = () => {
           <StackContainer>
 
             <MenuANDLogoContainer>
-              <MenuIconButton aria-label="open drawer" edge="start" disableTouchRipple onClick={handleDrawer}>
+              <MenuIconButton aria-label="open drawer" disableTouchRipple onClick={handleDrawer}>
                 <MenuIcon />
               </MenuIconButton>
               <LogoIconButton disableRipple>

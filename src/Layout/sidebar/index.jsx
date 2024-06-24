@@ -135,7 +135,7 @@ export const Sidebar = () => {
       <StyledDrawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }} >
         <DrawerHeader />
 
-        <Box sx={{ px: isDrawerOpen && '0.725rem' }}>
+        <Box sx={{ px: isDrawerOpen && '0.7rem' }}>
 
 
           <List>
