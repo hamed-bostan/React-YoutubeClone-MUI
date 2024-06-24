@@ -3,7 +3,8 @@ import { Box, Button, styled } from "@mui/material";
 
 export const BoxContainer = styled(Box)(() => ({
     display: 'flex',
-    columnGap: '0.75rem'
+    columnGap: '0.75rem',
+    paddingLeft: '1.5rem'
 }))
 
 export const StyledButton = styled(Button,
@@ -16,7 +17,8 @@ export const StyledButton = styled(Button,
         // padding: 0,
         // py: '0.125rem',
         // px: '0.75rem',
-        padding: '0.125rem 0.75rem',
+        textTransform: 'none',
+        padding: '0.3rem 0.75rem',
         fontSize: '0.87rem',
         minHeight: 0,
         minWidth: 0,
@@ -25,6 +27,6 @@ export const StyledButton = styled(Button,
         borderRadius: '0.5rem',
         ":hover": {
             // backgroundColor: "rgba(0,0,0,0.1)",
-            backgroundColor: theme.palette.secondary.main
+            backgroundColor: selectedCategory !== categoryTitle && theme.palette.secondary.main
         },
     }))

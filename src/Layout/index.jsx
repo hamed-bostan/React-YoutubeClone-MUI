@@ -9,10 +9,12 @@ export const Layout = () => {
     return (
         <>
             <Navbar />
-            {/* <CategoryPills /> */}
             <Box sx={{ display: 'flex' }}>
                 <Sidebar />
-                <Outlet />
+                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <CategoryPills />
+                    <Outlet />
+                </Box>
             </Box>
         </>
     )

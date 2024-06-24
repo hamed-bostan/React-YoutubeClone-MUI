@@ -6,7 +6,7 @@ import { BoxContainer, StyledButton } from "./styles";
 import { DrawerHeader } from "../../Layout/sidebar/styles";
 
 export const CategoryPills = () => {
-    const [selectedCategory, setSelectedCategory] = useState(categories[1].categoryTitle)
+    const [selectedCategory, setSelectedCategory] = useState(categories[0].categoryTitle)
 
     return (
         <>
