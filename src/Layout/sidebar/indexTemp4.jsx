@@ -57,71 +57,71 @@ import { Avatar, IconButton, Typography } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { capitalizeFirstLetter } from '../../utility/Utilities';
 
-import { StyledListItemButton, StyledListItemIcon, StyledListItemText, TextContainer, StyledTypography, StyledAvatar, DrawerHeader, StyledDrawer } from './styles';
+import { StyledListItemButton, StyledListItemIcon, StyledListItemText, TextContainer, StyledTypography, StyledAvatar } from './styles';
 
-// const drawerWidth = 240;
+const drawerWidth = 240;
 
-// const openedMixin = (theme) => ({
-//   width: drawerWidth,
-//   transition: theme.transitions.create('width', {
-//     easing: theme.transitions.easing.sharp,
-//     duration: theme.transitions.duration.enteringScreen,
-//   }),
-//   overflowX: 'hidden',
-// });
+const openedMixin = (theme) => ({
+  width: drawerWidth,
+  transition: theme.transitions.create('width', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.enteringScreen,
+  }),
+  overflowX: 'hidden',
+});
 
-// const closedMixin = (theme) => ({
-//   transition: theme.transitions.create('width', {
-//     easing: theme.transitions.easing.sharp,
-//     duration: theme.transitions.duration.leavingScreen,
-//   }),
-//   overflowX: 'hidden',
-//   width: `calc(${theme.spacing(7)} + 1px)`,
-//   [theme.breakpoints.up('sm')]: {
-//     width: `calc(${theme.spacing(8)} + 1px)`,
-//   },
-// });
+const closedMixin = (theme) => ({
+  transition: theme.transitions.create('width', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  overflowX: 'hidden',
+  width: `calc(${theme.spacing(7)} + 1px)`,
+  [theme.breakpoints.up('sm')]: {
+    width: `calc(${theme.spacing(8)} + 1px)`,
+  },
+});
 
-// export const DrawerHeader = styled('div')(({ theme }) => ({
-//   display: 'flex',
-//   alignItems: 'center',
-//   justifyContent: 'flex-end',
-//   padding: theme.spacing(0, 1),
-//   // necessary for content to be below app bar
-//   ...theme.mixins.toolbar,
-// }));
+export const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+}));
 
-// const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-//   ({ theme, open }) => ({
-//     width: drawerWidth,
-//     flexShrink: 0,
-//     whiteSpace: 'nowrap',
-//     boxSizing: 'border-box',
-//     ...(open && {
-//       ...openedMixin(theme),
-//       '& .MuiDrawer-paper': openedMixin(theme),
-//     }),
-//     ...(!open && {
-//       ...closedMixin(theme),
-//       '& .MuiDrawer-paper': closedMixin(theme),
-//     }),
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+  ({ theme, open }) => ({
+    width: drawerWidth,
+    flexShrink: 0,
+    whiteSpace: 'nowrap',
+    boxSizing: 'border-box',
+    ...(open && {
+      ...openedMixin(theme),
+      '& .MuiDrawer-paper': openedMixin(theme),
+    }),
+    ...(!open && {
+      ...closedMixin(theme),
+      '& .MuiDrawer-paper': closedMixin(theme),
+    }),
 
-//     "& ::-webkit-scrollbar": {
-//       width: "8px",
-//       minWidth: "unset"
-//     },
-//     "& ::-webkit-scrollbar-track": {
-//       background: "#fff",
-//     },
-//     "& ::-webkit-scrollbar-thumb": {
-//       background: "#CCCCCC",
-//       borderRadius: "1px",
-//     },
-//     "& ::-webkit-scrollbar-thumb:hover": {
-//       background: "#C1C1C1",
-//     },
-//   }),
-// );
+    "& ::-webkit-scrollbar": {
+      width: "8px",
+      minWidth: "unset"
+    },
+    "& ::-webkit-scrollbar-track": {
+      background: "#fff",
+    },
+    "& ::-webkit-scrollbar-thumb": {
+      background: "#CCCCCC",
+      borderRadius: "1px",
+    },
+    "& ::-webkit-scrollbar-thumb:hover": {
+      background: "#C1C1C1",
+    },
+  }),
+);
 
 
 export const Sidebar = () => {
@@ -132,7 +132,7 @@ export const Sidebar = () => {
   return (
     <Box>
       <CssBaseline />
-      <StyledDrawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }} >
+      <Drawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }} >
         <DrawerHeader />
 
         <Box sx={{ px: isDrawerOpen && '0.725rem' }}>
@@ -247,7 +247,7 @@ export const Sidebar = () => {
           )}
 
         </Box>
-      </StyledDrawer >
+      </Drawer >
 
     </Box >
   );

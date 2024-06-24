@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import { DrawerHeader } from '../../Layout/sidebar'
+import { DrawerHeader } from '../../Layout/sidebar/styles'
 
 export const LivePage = () => {
     return (
