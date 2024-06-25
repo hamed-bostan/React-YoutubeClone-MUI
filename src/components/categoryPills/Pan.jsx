@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { categories } from "../../data/categories";
 import { capitalizeFirstLetter } from "../../utility/Utilities";
-import { BoxContainer, StyledButton, BoxWrapper } from "./styles";
+import { BoxContainer, StyledButton } from "./styles";
 import { DrawerHeader } from "../../Layout/sidebar/styles";
 import { Box } from "@mui/material";
 
@@ -17,29 +17,28 @@ export const CategoryPills = () => {
 
     return (
         <>
-            <BoxWrapper component={motion.div}
+            <DrawerHeader />
+            <BoxContainer component={motion.div}
                 ref={carousel}
 
             >
-                <BoxContainer component={motion.div}
+                <Box component={motion.div}
                     drag="x"
                     dragConstraints={{ right: 0, left: -width }}>
                     {categories.map((item) => {
                         const { id, categoryTitle } = item;
                         return (
-                            <Box key={id} component={motion.div}>
-                                <StyledButton
-                                    selectedCategory={selectedCategory} categoryTitle={categoryTitle}
-                                    variant="contained" disableRipple disableElevation
-                                    onClick={() => setSelectedCategory(categoryTitle)}>
-                                    {capitalizeFirstLetter(categoryTitle)}
-                                </StyledButton>
-                            </Box>
+                            <StyledButton key={id}
+                                selectedCategory={selectedCategory} categoryTitle={categoryTitle}
+                                variant="contained" disableRipple disableElevation
+                                onClick={() => setSelectedCategory(categoryTitle)}>
+                                {capitalizeFirstLetter(categoryTitle)}
+                            </StyledButton>
                         )
                     }
                     )}
-                </BoxContainer>
-            </BoxWrapper >
+                </Box>
+            </BoxContainer >
         </>
     );
 };

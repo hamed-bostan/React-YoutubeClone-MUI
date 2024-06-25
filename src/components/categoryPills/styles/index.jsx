@@ -1,10 +1,18 @@
 import { Box, Button, styled } from "@mui/material";
 
 
+export const BoxWrapper = styled(Box)(() => ({
+    // width: '100%',
+    overflow: 'hidden',
+}))
+
 export const BoxContainer = styled(Box)(() => ({
     display: 'flex',
     columnGap: '0.75rem',
-    paddingLeft: '1.5rem'
+    paddingLeft: '1.5rem',
+    // backgroundColor: 'red',
+    // width: '100%',
+
 }))
 
 export const StyledButton = styled(Button,

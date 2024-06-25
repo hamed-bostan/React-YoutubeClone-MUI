@@ -10,6 +10,7 @@ export const StyledMenu = styled(Menu)(() => ({
 export const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
     // color: '#0f0f0f',
     color: theme.palette.primary.main,
+    fontSize: '0.875rem',
     ":hover": {
         // backgroundColor: "rgba(0,0,0,0.1)",
         backgroundColor: theme.palette.secondary.main
