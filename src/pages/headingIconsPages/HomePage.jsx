@@ -5,8 +5,11 @@ import { HomePageDetails } from '../../components/homePageDetails';
 export const HomePage = () => {
 
     return (
-        <Box  sx={{  p: '1.5rem' }}>
-            <Grid container spacing={2} rowGap={5}>
+        <Box sx={{
+            // p: '1.5rem',
+            // p: '1rem',
+        }}>
+            <Grid container rowGap='1.25rem' columnGap='1rem' justifyContent='center'>
                 {
                     videos.map(video => (
                         <HomePageDetails key={video.id} {...video} />

@@ -7,14 +7,14 @@ import SubtitlesIcon from '@mui/icons-material/Subtitles';
 import SubtitlesOutlinedIcon from '@mui/icons-material/SubtitlesOutlined';
 
 export const StyledGrid = styled(Grid)(() => ({
-    width: '21rem',
-    height: '20.625rem',
+    // width: '21rem',
+    // height: '20.625rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     cursor: 'pointer',
-    // rowGap: 1.5,
     rowGap: '0.75rem',
+    // backgroundColor: 'green'
 }))
 
 
@@ -52,7 +52,7 @@ export const StyledVolumeIconButton = styled(VolumeIconButton, {
     shouldForwardProp: (prop) => {
         return prop !== "isMouseOver" && prop !== "isVideoPlaying"
     }
-})(({ isMouseOver, isVideoPlaying ,theme}) => ({
+})(({ isMouseOver, isVideoPlaying, theme }) => ({
     // backgroundColor: isMouseOver && '#0f0f0f',
     backgroundColor: isMouseOver && theme.palette.primary.main,
     display: !isVideoPlaying && 'none'
@@ -73,7 +73,7 @@ export const StyledSubtitleIconButton = styled(SubtitleIconButton,
             return prop !== "isMouseOver" && prop !== "isVideoPlaying"
         }
     })
-    (({ isMouseOver, isVideoPlaying ,theme}) => ({
+    (({ isMouseOver, isVideoPlaying, theme }) => ({
         // backgroundColor: isMouseOver && '#0f0f0f',
         backgroundColor: isMouseOver && theme.palette.primary.main,
         display: !isVideoPlaying && 'none'

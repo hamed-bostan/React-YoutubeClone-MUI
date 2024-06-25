@@ -14,7 +14,7 @@ export const Layout = () => {
                 <Sidebar />
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <DrawerHeader />
-                    <CategoryPills />w
+                    {/* <CategoryPills /> */}
                     <Outlet />
                 </Box>
             </Box>
