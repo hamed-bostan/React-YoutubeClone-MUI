@@ -1,7 +1,7 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import { useUIContext } from '../../context/ui';
 import { useState } from 'react';
-import { AutoComplete } from './autoComplete';
+import { AutoComplete } from '../../components/autoComplete';
 import { Tooltip } from '@mui/material';
 
 

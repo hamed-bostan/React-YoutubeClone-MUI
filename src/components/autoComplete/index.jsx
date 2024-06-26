@@ -3,7 +3,7 @@ import { Tooltip } from '@mui/material';
 import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid'
-import { capitalizeFirstLetter } from '../../../utility/Utilities';
+import { capitalizeFirstLetter } from '../../utility/Utilities';
 import {
     StackContainer, InformationContainer, RenderInputContainer, RenderOptionContainer, StyledButton,
     StyledIconButton, StyledInformation, StyledSearchIcon, StyledTextField, SubmitSearchIcon, StyledInputAdornment,
