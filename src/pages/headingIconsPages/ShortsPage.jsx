@@ -1,10 +1,8 @@
 import { Box, Typography } from '@mui/material'
-import { DrawerHeader } from '../../Layout/sidebar/styles'
 
 export const ShortsPage = () => {
   return (
     <Box sx={{ p: 3 }}>
-      <DrawerHeader />
       <Typography>Wellcome to Shorts page</Typography>
       <Typography paragraph>
         Soprano Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

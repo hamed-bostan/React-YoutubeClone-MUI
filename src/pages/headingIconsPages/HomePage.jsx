@@ -5,10 +5,7 @@ import { HomePageDetails } from '../../components/homePageDetails';
 export const HomePage = () => {
 
     return (
-        <Box sx={{
-            // p: '1.5rem',
-            // p: '1rem',
-        }}>
+        <Box >
             <Grid container rowGap='1.25rem' columnGap='1rem' justifyContent='center'>
                 {
                     videos.map(video => (
