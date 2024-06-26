@@ -1,9 +1,9 @@
 import Box from '@mui/material/Box';
 import { Drawer } from '@mui/material';
 import { useUIContext } from '../../../context/ui';
-import { BoxContainer } from './styles';
+import { BoxContainer } from '../styles';
 import { DrawerHeader } from '../../../styles';
-import { DrawerList } from '../../../components/draweList';
+import { DrawerList } from '../../../components/drawerList';
 
 export const SidebarMobile = ({ isMobileScreen }) => {
   const { isDrawerOpen, setIsDrawerOpen } = useUIContext()

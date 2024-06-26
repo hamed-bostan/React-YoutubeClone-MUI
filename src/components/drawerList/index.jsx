@@ -51,7 +51,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import {
     StyledListItemButton, StyledListItemIcon, StyledListItemText, TextContainer, StyledTypography,
     StyledAvatar
-} from '../../Layout/sidebar/sidebarDesktop/styles';
+} from './styles';
 import { useUIContext } from '../../context/ui';
 
 export const DrawerList = ({ isMobileScreen }) => {

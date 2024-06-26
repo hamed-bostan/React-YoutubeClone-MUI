@@ -5,9 +5,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import { useUIContext } from '../../../context/ui';
 
-import { StyledDrawer, BoxContainer } from './styles';
+import { StyledDrawer, BoxContainer } from '../styles';
 import { DrawerHeader } from '../../../styles';
-import { DrawerList } from '../../../components/draweList';
+import { DrawerList } from '../../../components/drawerList';
 
 
 
