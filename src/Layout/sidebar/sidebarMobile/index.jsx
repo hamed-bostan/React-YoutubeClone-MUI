@@ -5,7 +5,7 @@ import { BoxContainer } from './styles';
 import { DrawerHeader } from '../../../styles';
 import { DrawerList } from '../../../components/draweList';
 
-export const SidebarMobile = ({ mobile }) => {
+export const SidebarMobile = ({ isMobileScreen }) => {
   const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
 
 
@@ -21,7 +21,7 @@ export const SidebarMobile = ({ mobile }) => {
         <BoxContainer isDrawerOpen={isDrawerOpen} >
 
 
-          <DrawerList mobile={mobile} />
+          <DrawerList isMobileScreen={isMobileScreen} />
 
 
 

@@ -54,7 +54,7 @@ import {
 } from '../../Layout/sidebar/sidebarDesktop/styles';
 import { useUIContext } from '../../context/ui';
 
-export const DrawerList = ({ mobile }) => {
+export const DrawerList = ({ isMobileScreen }) => {
     const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
 
     const navigate = useNavigate()
@@ -62,7 +62,7 @@ export const DrawerList = ({ mobile }) => {
 
     const handlClick = (path) => {
         navigate(path)
-        if (mobile) {
+        if (isMobileScreen) {
             setIsDrawerOpen(!isDrawerOpen)
         }
     }
