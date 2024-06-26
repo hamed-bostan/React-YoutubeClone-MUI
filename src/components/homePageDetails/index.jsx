@@ -57,7 +57,7 @@ export const HomePageDetails = ({ thumbnailUrl, channel, title, videoUrl, durati
 
     return (
         <>
-            <StyledGrid item xs={12} sm={6} md={2.8}>
+            <StyledGrid item xs={10} sm={10.3} md={5.5} lg={3.6} xl={2.8}>
                 <ImageContainer onMouseEnter={() => setIsVideoPlaying(true)} onMouseLeave={() => setIsVideoPlaying(false)}>
                     <ThumbnailImage src={thumbnailUrl} isVideoPlaying={isVideoPlaying} />
                     <StyledVideo ref={videoRef} muted playsInline src={videoUrl} isVideoPlaying={isVideoPlaying} />
