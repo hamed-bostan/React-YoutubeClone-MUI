@@ -54,8 +54,8 @@ import {
 } from './styles';
 import { useUIContext } from '../../context/ui';
 
-export const DrawerList = ({ isMobileScreen }) => {
-    const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
+export const DrawerList = () => {
+    const { isDrawerOpen, setIsDrawerOpen, isMobileScreen } = useUIContext()
 
     const navigate = useNavigate()
     const location = useLocation()
