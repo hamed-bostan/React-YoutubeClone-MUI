@@ -56,37 +56,26 @@ import {
   StyledAvatar, StyledDrawer, BoxContainer
 } from './styles';
 import { DrawerHeader } from '../../../styles';
-import { Drawer } from '@mui/material';
 
 
 
-export const SidebarMobile = () => {
-  const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
+export const SidebarDesktop = () => {
+  const { isDrawerOpen } = useUIContext()
   const navigate = useNavigate()
   const location = useLocation()
 
-  const handlerClick = (path) => {
-    navigate(path)
-    setIsDrawerOpen(!isDrawerOpen)
-  }
-
-
   return (
     <Box>
-
-      <Drawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }}
-        onClose={() => setIsDrawerOpen(false)}
-      >
+      <CssBaseline />
+      <StyledDrawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }} >
         <DrawerHeader />
 
         <BoxContainer isDrawerOpen={isDrawerOpen} >
+
           <List>
 
             {HeadingIcons.map((item => (
-              <ListItem key={item.id} disablePadding
-                onClick={() => handlerClick(item.path)}
-
-              >
+              <ListItem key={item.id} disablePadding onClick={() => navigate(item.path)}>
                 <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
                   <StyledListItemIcon isDrawerOpen={isDrawerOpen}>
                     {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
@@ -99,89 +88,94 @@ export const SidebarMobile = () => {
 
           </List>
 
-          <Divider />
+          {isDrawerOpen && <Divider />}
 
 
-          <List>
-            <TextContainer>
-              <StyledTypography variant='h6'>You</StyledTypography>
-              <ChevronRightIcon />
-            </TextContainer>
-
-
-
-
-            {YouIcons.map((item => (
-              <ListItem key={item.id} disablePadding
-                onClick={() => handlerClick(item.path)}
-              >
-                <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
-                  <StyledListItemIcon isDrawerOpen={isDrawerOpen}>
-                    {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
-                  </StyledListItemIcon>
-                  <StyledListItemText primary={capitalizeFirstLetter(item.textTitle)}
-                    primaryTypographyProps={{
-                      fontSize: isDrawerOpen ? '0.875rem' : '0.625rem',
-                    }}
-                  />
-                </StyledListItemButton>
-              </ListItem>
-            )))}
-
-          </List>
-          <Divider />
-
-          <List>
-            <TextContainer>
-              <StyledTypography variant='h6'>Subscriptions</StyledTypography>
-            </TextContainer>
-
-            {SubscriptionIcons.map((item => (
-              <ListItem key={item.id} disablePadding
-                onClick={() => handlerClick(item.path)}
-              >
-                <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
-                  <StyledAvatar src={item.avater} />
-                  <StyledListItemText primary={capitalizeFirstLetter(item.textTitle)}
-                    primaryTypographyProps={{
-                      fontSize: isDrawerOpen ? '0.875rem' : '0.625rem',
-                    }}
-                  />
-                </StyledListItemButton>
-              </ListItem>
-            )))}
-          </List>
-          <Divider />
-
-
-          <List>
-            <TextContainer>
-              <StyledTypography variant='h6'>Explore</StyledTypography>
-            </TextContainer>
+          {isDrawerOpen && (
+            <List>
+              <TextContainer>
+                <StyledTypography variant='h6'>You</StyledTypography>
+                <ChevronRightIcon />
+              </TextContainer>
 
 
 
-            {ExploreIcons.map((item => (
-              <ListItem key={item.id} disablePadding
-                onClick={() => handlerClick(item.path)}
-              >
-                <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
-                  <StyledListItemIcon isDrawerOpen={isDrawerOpen}>
-                    {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
-                  </StyledListItemIcon>
-                  <StyledListItemText primary={capitalizeFirstLetter(item.textTitle)}
-                    primaryTypographyProps={{
-                      fontSize: isDrawerOpen ? '0.875rem' : '0.625rem',
-                    }}
-                  />
-                </StyledListItemButton>
-              </ListItem>
-            )))}
 
-          </List>
+              {YouIcons.map((item => (
+                <ListItem key={item.id} disablePadding
+                  onClick={() => navigate(item.path)}
+                >
+                  <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
+                    <StyledListItemIcon isDrawerOpen={isDrawerOpen}>
+                      {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
+                    </StyledListItemIcon>
+                    <StyledListItemText primary={capitalizeFirstLetter(item.textTitle)}
+                      primaryTypographyProps={{
+                        fontSize: isDrawerOpen ? '0.875rem' : '0.625rem',
+                      }}
+                    />
+                  </StyledListItemButton>
+                </ListItem>
+              )))}
+
+            </List>
+          )}
+          {isDrawerOpen && <Divider />}
+
+          {isDrawerOpen && (
+            <List>
+              <TextContainer>
+                <StyledTypography variant='h6'>Subscriptions</StyledTypography>
+              </TextContainer>
+
+              {SubscriptionIcons.map((item => (
+                <ListItem key={item.id} disablePadding
+                  onClick={() => navigate(item.path)}
+                >
+                  <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
+                    <StyledAvatar src={item.avater} />
+                    <StyledListItemText primary={capitalizeFirstLetter(item.textTitle)}
+                      primaryTypographyProps={{
+                        fontSize: isDrawerOpen ? '0.875rem' : '0.625rem',
+                      }}
+                    />
+                  </StyledListItemButton>
+                </ListItem>
+              )))}
+            </List>
+          )}
+          {isDrawerOpen && <Divider />}
+
+          {isDrawerOpen && (
+            <List>
+              <TextContainer>
+                <StyledTypography variant='h6'>Explore</StyledTypography>
+              </TextContainer>
+
+
+
+              {ExploreIcons.map((item => (
+                <ListItem key={item.id} disablePadding
+                  onClick={() => navigate(item.path)}
+                >
+                  <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
+                    <StyledListItemIcon isDrawerOpen={isDrawerOpen}>
+                      {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
+                    </StyledListItemIcon>
+                    <StyledListItemText primary={capitalizeFirstLetter(item.textTitle)}
+                      primaryTypographyProps={{
+                        fontSize: isDrawerOpen ? '0.875rem' : '0.625rem',
+                      }}
+                    />
+                  </StyledListItemButton>
+                </ListItem>
+              )))}
+
+            </List>
+          )}
 
         </BoxContainer>
-      </Drawer >
+      </StyledDrawer >
 
     </Box >
   );

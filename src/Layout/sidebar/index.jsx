@@ -5,14 +5,20 @@ import { useUIContext } from "../../context/ui"
 
 export const Sidebar = () => {
   const theme = useTheme()
-  const { isDrawerOpen } = useUIContext()
   const desktop = useMediaQuery(theme.breakpoints.up('md'))
   const mobile = useMediaQuery(theme.breakpoints.down('md'))
+
+
+  const { isDrawerOpen } = useUIContext()
+
+
+
+
 
   return (
     <>
       {desktop && <SidebarDesktop />}
-      {mobile && isDrawerOpen && <SidebarMobile />}
+      {mobile && isDrawerOpen && <SidebarMobile mobile={mobile} />}
     </>
   )
 }
