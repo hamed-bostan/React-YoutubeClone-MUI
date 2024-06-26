@@ -9,7 +9,6 @@ import MuiAppBar from '@mui/material/AppBar';
 export const StyledAppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
-    // backgroundColor: '#fff',
     backgroundColor: theme.palette.primary.light,
     position: 'fixed',
     zIndex: theme.zIndex.drawer + 1,
@@ -25,9 +24,7 @@ export const StyledAppBar = styled(MuiAppBar, {
     }),
 }));
 
-
 export const StyledToolbar = styled(Toolbar)(() => ({
-    // backgroundColor: '#fff',
     padding: '0',
 }))
 
@@ -40,17 +37,14 @@ export const StackContainer = styled(Stack)(() => ({
     paddingLeft: '1rem'
 }))
 
-
 export const MenuANDLogoContainer = styled(Box)(() => ({
     display: 'flex',
     flex: 2,
     alignItems: 'center',
-    // columnGap: 2,
     columnGap: '1rem'
 }))
 
 export const MenuIconButton = styled(IconButton)(({ theme }) => ({
-    // color: '#0f0f0f',
     color: theme.palette.primary.main,
     ":hover": {
         width: 40,
@@ -77,34 +71,24 @@ export const YoutubeText = styled(Typography)(() => ({
     fontWeight: '700'
 }))
 
-
-
-
-
-
 export const SearchContainer = styled(Box)(() => ({
     display: 'flex',
     flexDirection: 'row-reverse',
     flex: 3,
     alignItems: 'center',
-    // gap: { 2}
     gap: '1rem',
 }))
 
 export const MicIconButton = styled(IconButton)(({ theme }) => ({
     width: 40,
     height: 40,
-    // backgroundColor: 'rgba(0,0,0,0.05)',
     backgroundColor: theme.palette.secondary.light,
     ":hover": {
-        // backgroundColor: 'rgba(0,0,0,0.1)',
         backgroundColor: theme.palette.secondary.main,
-
     }
 }))
 
 export const MicIcon = styled(MicOutlinedIcon)(({ theme }) => ({
-    // color: "#0f0f0f",
     color: theme.palette.primary.main,
 }))
 
@@ -119,14 +103,7 @@ export const AutoCompleteContainer = styled('div')(({ isFocus }) => ({
     boxShadow: 'inset 1px 1px 1px 0.05px #eee',
 }))
 
-
-
-
-
-
-
 export const IconsContainer = styled(Box)(() => ({
-    // gap={ 3}
     gap: '1.5rem',
     display: 'flex',
     flex: 2,
@@ -138,26 +115,21 @@ export const CameraIconButton = styled(IconButton)(({ theme }) => ({
     ":hover": {
         width: 40,
         height: 40,
-        // backgroundColor: 'rgba(0,0,0,0.1)',
         backgroundColor: theme.palette.secondary.main,
     }
 }))
 
 export const CameraIcon = styled(VideocamOutlinedIcon)(({ theme }) => ({
-    // color: "#0f0f0f",
     color: theme.palette.primary.main,
 }))
-
 
 export const NotificationIconButton = styled(IconButton)(({ theme }) => ({
     ":hover": {
         width: 40,
         height: 40,
-        // backgroundColor: 'rgba(0,0,0,0.1)',
         backgroundColor: theme.palette.secondary.main,
     }
 }))
-
 
 export const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -167,22 +139,13 @@ export const StyledBadge = styled(Badge)(({ theme }) => ({
     },
 }))
 
-
-
 export const NotificationIcon = styled(NotificationsNoneOutlinedIcon)(({ theme }) => ({
-    // color: "#0f0f0f",
     color: theme.palette.primary.main,
 }))
-
 
 export const StyledAvatar = styled(Avatar)(({ src }) => ({
     src: `url(${src})`,
     width: '2rem',
     height: '2rem',
     cursor: 'pointer'
-}))
-
-
-export const StyledTooltip = styled(Tooltip)(() => ({
-
 }))
