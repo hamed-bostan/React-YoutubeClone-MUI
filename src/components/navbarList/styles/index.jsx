@@ -71,15 +71,16 @@ export const AutoCompleteContainer = styled('div')(({ isFocus }) => ({
     boxShadow: 'inset 1px 1px 1px 0.05px #eee',
 }))
 
-export const IconsContainer = styled(Box)(() => ({
-    gap: '1.5rem',
+export const IconsContainer = styled(Box, { shouldForwardProp: (prop) => prop !== 'isMobileScreen' && prop !== 'isFocus' })(({ isMobileScreen, isFocus }) => ({
+    gap: isMobileScreen ? '0' : '1.5rem',
     display: 'flex',
-    flex: 2,
+    // flex: 2,
+    flex: !isFocus && !isMobileScreen && 2,
     alignItems: 'center',
     justifyContent: 'end'
 }))
 
-export const CameraIconButton = styled(IconButton)(({ theme }) => ({
+export const StyledIconsButton = styled(IconButton)(({ theme }) => ({
     ":hover": {
         width: 40,
         height: 40,
@@ -91,13 +92,7 @@ export const CameraIcon = styled(VideocamOutlinedIcon)(({ theme }) => ({
     color: theme.palette.primary.main,
 }))
 
-export const NotificationIconButton = styled(IconButton)(({ theme }) => ({
-    ":hover": {
-        width: 40,
-        height: 40,
-        backgroundColor: theme.palette.secondary.main,
-    }
-}))
+
 
 export const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -111,9 +106,10 @@ export const NotificationIcon = styled(NotificationsNoneOutlinedIcon)(({ theme }
     color: theme.palette.primary.main,
 }))
 
-export const StyledAvatar = styled(Avatar)(({ src }) => ({
+export const StyledAvatar = styled(Avatar, { shouldForwardProp: (prop) => prop !== 'isMobileScreen' })(({ src, isMobileScreen }) => ({
     src: `url(${src})`,
     width: '2rem',
     height: '2rem',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    marginLeft: isMobileScreen && '0.8rem'
 }))

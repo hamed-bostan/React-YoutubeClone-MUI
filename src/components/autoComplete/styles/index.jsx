@@ -59,7 +59,7 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
     borderBottomRightRadius: 40,
     paddingRight: '1rem',
     paddingLeft: '1rem',
-    borderLeft: '1px solid rgba(0,0,0,0.05)',
+    borderLeft: `1px solid ${theme.palette.secondary.light}`,
     ":hover": {
         backgroundColor: theme.palette.secondary.main
     },

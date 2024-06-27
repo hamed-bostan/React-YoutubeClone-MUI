@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Tooltip } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { AutoComplete } from '../../autoComplete';
-import { MenuANDLogoContainer, AutoCompleteContainer, CameraIcon, CameraIconButton, IconsContainer, LogoIconButton, MenuIconButton, MicIcon, MicIconButton, NotificationIcon, NotificationIconButton, SearchContainer, StyledAvatar, StyledBadge, YoutubeIcon, YoutubeText } from '../styles';
+import { MenuANDLogoContainer, AutoCompleteContainer, CameraIcon, IconsContainer, LogoIconButton, MenuIconButton, MicIcon, MicIconButton, NotificationIcon, SearchContainer, StyledAvatar, StyledBadge, YoutubeIcon, YoutubeText, StyledIconsButton } from '../styles';
 import { useUIContext } from '../../../context/ui';
 
 export const NavbarListDesktop = () => {
@@ -11,7 +11,7 @@ export const NavbarListDesktop = () => {
 
     const handleDrawer = () => {
         setIsDrawerOpen(!isDrawerOpen);
-      };
+    };
 
     return (
         <>
@@ -41,17 +41,17 @@ export const NavbarListDesktop = () => {
 
             <IconsContainer>
                 <Tooltip title='Create'>
-                    <CameraIconButton disableRipple>
+                    <StyledIconsButton disableRipple>
                         <CameraIcon />
-                    </CameraIconButton>
+                    </StyledIconsButton>
                 </Tooltip>
 
                 <Tooltip title='Notifications'>
-                    <NotificationIconButton disableRipple>
+                    <StyledIconsButton disableRipple>
                         <StyledBadge badgeContent={"9+"} color='error' >
                             <NotificationIcon />
                         </StyledBadge>
-                    </NotificationIconButton>
+                    </StyledIconsButton>
                 </Tooltip>
 
                 <StyledAvatar src='./images/profileImages/caleb-curry.jpg' />
