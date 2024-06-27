@@ -60,7 +60,8 @@ export const MicIcon = styled(MicOutlinedIcon)(({ theme }) => ({
     color: theme.palette.primary.main,
 }))
 
-export const AutoCompleteContainer = styled(Box)(() => ({
+export const AutoCompleteContainer = styled('div')(({ isFocus, isMobileScreen }) => ({
+    width: isFocus ? '85%' : '80%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'end',
@@ -70,15 +71,8 @@ export const AutoCompleteContainer = styled(Box)(() => ({
     boxShadow: 'inset 1px 1px 1px 0.05px #eee',
 }))
 
-export const AutoCompleteContainerDesktop = styled(AutoCompleteContainer,
-    { shouldForwardProp: (prop) => prop !== 'isFocus' })(({ isFocus }) => ({
-        width: isFocus ? '85%' : '80%',
-    }))
 
 
-export const AutoCompleteContainerMobile = styled(AutoCompleteContainer)(() => ({
-    width: '95%',
-}))
 
 export const IconsContainer = styled(Box, { shouldForwardProp: (prop) => prop !== 'isMobileScreen' && prop !== 'isFocus' })(({ isMobileScreen, isFocus }) => ({
     gap: isMobileScreen ? '0' : '1.5rem',

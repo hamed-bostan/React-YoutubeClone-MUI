@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { AutoComplete } from '../../autoComplete';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { MenuANDLogoContainer, AutoCompleteContainer, CameraIcon, IconsContainer, LogoIconButton, MenuIconButton, MicIcon, MicIconButton, NotificationIcon, SearchContainer, StyledAvatar, StyledBadge, YoutubeIcon, YoutubeText, StyledIconsButton } from '../styles';
+import { MenuANDLogoContainer, CameraIcon, IconsContainer, LogoIconButton, MenuIconButton, MicIcon, MicIconButton, NotificationIcon, SearchContainer, StyledAvatar, StyledBadge, YoutubeIcon, YoutubeText, StyledIconsButton ,AutoCompleteContainerMobile} from '../styles';
 import { useUIContext } from '../../../context/ui';
 
 export const NavbarListMobile = () => {
@@ -46,9 +46,9 @@ export const NavbarListMobile = () => {
 
             {isFocus && (
                 <SearchContainer>
-                    <AutoCompleteContainer isFocus={isFocus}>
+                    <AutoCompleteContainerMobile>
                         <AutoComplete isFocus={isFocus} setIsFocus={setIsFocus} />
-                    </AutoCompleteContainer>
+                    </AutoCompleteContainerMobile>
                 </SearchContainer>
             )}
 

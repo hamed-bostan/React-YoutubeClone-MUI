@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Tooltip } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { AutoComplete } from '../../autoComplete';
-import { MenuANDLogoContainer, AutoCompleteContainer, CameraIcon, IconsContainer, LogoIconButton, MenuIconButton, MicIcon, MicIconButton, NotificationIcon, SearchContainer, StyledAvatar, StyledBadge, YoutubeIcon, YoutubeText, StyledIconsButton } from '../styles';
+import { MenuANDLogoContainer, CameraIcon, IconsContainer, LogoIconButton, MenuIconButton, MicIcon, MicIconButton, NotificationIcon, SearchContainer, StyledAvatar, StyledBadge, YoutubeIcon, YoutubeText, StyledIconsButton, AutoCompleteContainerDesktop } from '../styles';
 import { useUIContext } from '../../../context/ui';
 
 export const NavbarListDesktop = () => {
@@ -33,9 +33,9 @@ export const NavbarListDesktop = () => {
                     </MicIconButton>
                 </Tooltip>
 
-                <AutoCompleteContainer isFocus={isFocus}>
+                <AutoCompleteContainerDesktop isFocus={isFocus}>
                     <AutoComplete isFocus={isFocus} setIsFocus={setIsFocus} />
-                </AutoCompleteContainer>
+                </AutoCompleteContainerDesktop>
             </SearchContainer>
 
 
