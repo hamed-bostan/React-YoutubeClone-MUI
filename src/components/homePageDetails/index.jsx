@@ -60,7 +60,7 @@ export const HomePageDetails = ({ thumbnailUrl, channel, title, videoUrl, durati
             <StyledGrid item xs={10} sm={10.3} md={5.5} lg={3.6} xl={2.8}>
                 <ImageContainer onMouseEnter={() => setIsVideoPlaying(true)} onMouseLeave={() => setIsVideoPlaying(false)}>
                     <ThumbnailImage src={thumbnailUrl} isVideoPlaying={isVideoPlaying} />
-                    <StyledVideo ref={videoRef} muted playsInline src={videoUrl} isVideoPlaying={isVideoPlaying} />
+                    <StyledVideo ref={videoRef} playsInline src={videoUrl} isVideoPlaying={isVideoPlaying} muted={!isTurnOn.volume} />
                     <StyledVolumeIconButton isMouseOver={isMouseOver} isVideoPlaying={isVideoPlaying}
                         disableRipple
                         onClick={handleClickVolume} onMouseOver={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}>

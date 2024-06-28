@@ -6,19 +6,17 @@ import { DrawerHeader } from '../../../styles';
 import { DrawerList } from '../../../components/drawerList';
 
 export const SidebarMobile = () => {
-  const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
+  const { isDrawerOpen } = useUIContext()
 
 
 
   return (
     <Box>
 
-      <Drawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }}
-        onClose={() => setIsDrawerOpen(false)}
-      >
+      <Drawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }}>
         <DrawerHeader />
 
-        <BoxContainer isDrawerOpen={isDrawerOpen} >
+        <BoxContainer isDrawerOpen={isDrawerOpen}>
 
 
           <DrawerList />

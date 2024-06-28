@@ -98,13 +98,14 @@ export const StyledDuration = styled(Typography)(({ theme }) => ({
 export const StackInformationContainer = styled(Stack)(() => ({
     flexDirection: 'row',
     columnGap: '0.5rem',
-    width: '100%'
+    width: '100%',
 }))
 
 export const StyledAvatar = styled(Avatar)(({ src }) => ({
     src: `url(${src})`,
     width: '2.25rem',
-    height: '2.25rem'
+    height: '2.25rem',
+    marginTop:'0.3rem',
 }))
 
 export const BoxWrapper = styled(Box)(() => ({
@@ -116,13 +117,14 @@ export const BoxWrapper = styled(Box)(() => ({
 
 export const StackTitleContainer = styled(Stack)(() => ({
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
 }))
 
 export const StyledTitle = styled(Typography)(({ theme }) => ({
     fontSize: '1rem',
     color: theme.palette.primary.main,
-    marginTop: '0.3rem'
+    marginTop:'0.3rem',
+
 }))
 
 
@@ -163,5 +165,6 @@ export const StyledBulletPoint = styled(FiberManualRecordIcon)(() => ({
 }))
 
 export const StyledReactTimeAgo = styled(ReactTimeAgo)(() => ({
-    fontSize: '0.875rem'
+    fontSize: '0.875rem',
+    fontFamily: 'sans-serif'
 }))
