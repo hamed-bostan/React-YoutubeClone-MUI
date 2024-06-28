@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Tooltip } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { AutoComplete } from '../../autoComplete';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { MenuANDLogoContainer, CameraIcon, IconsContainer, LogoIconButton, MenuIconButton, MicIcon, MicIconButton, NotificationIcon, SearchContainer, StyledAvatar, StyledBadge, YoutubeIcon, YoutubeText, StyledIconsButton ,AutoCompleteContainerMobile} from '../styles';
+import { MenuANDLogoContainer, CameraIcon, IconsContainer, LogoIconButton, MenuIconButton, MicIcon, MicIconButton, NotificationIcon, SearchContainer, StyledAvatar, StyledBadge, YoutubeIcon, YoutubeText, StyledIconsButton, AutoCompleteContainerMobile } from '../styles';
 import { useUIContext } from '../../../context/ui';
+import { SubmitSearchIcon } from './styles';
 
 export const NavbarListMobile = () => {
     const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
@@ -43,7 +44,6 @@ export const NavbarListMobile = () => {
                 </Tooltip>
             )}
 
-
             {isFocus && (
                 <SearchContainer>
                     <AutoCompleteContainerMobile>
@@ -55,13 +55,15 @@ export const NavbarListMobile = () => {
 
 
 
+
+
             <IconsContainer isMobileScreen={isMobileScreen} isFocus={isFocus}>
 
 
                 {!isFocus && (
                     <Tooltip title='Search'>
                         <StyledIconsButton disableRipple onClick={handleClick}>
-                            <SearchIcon />
+                            <SubmitSearchIcon />
                         </StyledIconsButton>
                     </Tooltip>
                 )}
@@ -93,7 +95,7 @@ export const NavbarListMobile = () => {
 
                 {!isFocus && <StyledAvatar src='./images/profileImages/caleb-curry.jpg' isMobileScreen={isMobileScreen} />}
 
-            </IconsContainer>
+            </IconsContainer >
         </>
     )
 }

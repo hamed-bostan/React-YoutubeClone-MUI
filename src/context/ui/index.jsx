@@ -14,10 +14,24 @@ export const UIProvider = ({ children }) => {
     const isDesktopScreen = useMediaQuery(theme.breakpoints.up('md'))
     const isMobileScreen = useMediaQuery(theme.breakpoints.down('md'))
 
+    const [storedData, setStoredData] = useState(initialData)
+
+
     const value = {
         isDrawerOpen, setIsDrawerOpen,
         anchorEl, setAnchorEl, open,
-        isDesktopScreen, isMobileScreen
+        isDesktopScreen, isMobileScreen,
+        storedData, setStoredData
     }
     return <UIContext.Provider value={value}>{children}</UIContext.Provider>
 }
+
+
+const initialData = [
+    { id: "1", textInformation: 'react JS tutorial' },
+    { id: "2", textInformation: 'learn react with traversy media' },
+    { id: "3", textInformation: 'big bang theory best scenes' },
+    { id: "4", textInformation: 'jean-luc godard best films' },
+    { id: "5", textInformation: "typescript crash course" },
+    { id: "6", textInformation: "hamed" },
+]

@@ -1,22 +1,37 @@
+import Autocomplete from '@mui/material/Autocomplete';
+import { Tooltip } from '@mui/material';
 import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
 import { useState } from 'react';
 import { capitalizeFirstLetter } from '../../utility/Utilities';
 import {
-    StackContainer, InformationContainer, RenderOptionContainer, StyledButton, StyledInformation, StyledAutocomplete
+    StackContainer, InformationContainer, RenderInputContainer, RenderOptionContainer, StyledButton,
+    StyledInformation, StyledSearchIcon, StyledTextField, StyledInputAdornment, StyledIconButton, SubmitSearchIcon, StyledAutocomplete
 } from './styles';
 import { theme } from '../../theme';
 import { useUIContext } from '../../context/ui';
 import { Form } from './form';
 
 export const AutoComplete = ({ isFocus, setIsFocus }) => {
+    const initialData = [
+        { id: "1", textInformation: 'react JS tutorial' },
+        { id: "2", textInformation: 'learn react with traversy media' },
+        { id: "3", textInformation: 'big bang theory best scenes' },
+        { id: "4", textInformation: 'jean-luc godard best films' },
+        { id: "5", textInformation: "typescript crash course" },
+        { id: "6", textInformation: "hamed" },
+    ]
 
-
-    const { isDesktopScreen, storedData, setStoredData } = useUIContext()
+    const [storedData, setStoredData] = useState(initialData)
+    const { isDesktopScreen } = useUIContext()
 
     const removeFunction = (id) => {
         const newStoredData = storedData.filter(item => item.id !== id)
         setStoredData(newStoredData)
     }
+
+
+
+
 
     const uniqueStoredData = storedData.filter((obj, index) => {
         return index === storedData.findIndex(o => obj.textInformation === o.textInformation);
