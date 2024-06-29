@@ -2,22 +2,16 @@ import { useState } from 'react';
 import { Tooltip } from '@mui/material'
 import { AutoComplete } from '../../autoComplete';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { IconsContainer, SearchContainer, StyledAvatar, StyledIconsButton, AutoCompleteContainerMobile } from '../styles';
+import { IconsContainer, SearchContainer, StyledAvatar, StyledIconsButton, AutoCompleteContainerMobile, SubmitSearchIconMobile } from '../styles';
 import { useUIContext } from '../../../context/ui';
-import { SubmitSearchIcon } from './styles';
-import { CameraComponent } from '../camera';
 import { NotificationComponent } from '../notificationComponent';
 import { LogoComponent } from '../logoComponent';
 import { MicComponent } from '../micComponent';
+import { CameraComponent } from '../cameraComponent';
 
 export const NavbarListMobile = () => {
-    const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
     const [isFocus, setIsFocus] = useState(false)
     const { isMobileScreen } = useUIContext()
-
-    const handleDrawer = () => {
-        setIsDrawerOpen(!isDrawerOpen);
-    };
 
     const handleClick = () => {
         setIsFocus(true)
@@ -47,7 +41,7 @@ export const NavbarListMobile = () => {
                 {!isFocus && (
                     <Tooltip title='Search'>
                         <StyledIconsButton disableRipple onClick={handleClick}>
-                            <SubmitSearchIcon />
+                            <SubmitSearchIconMobile />
                         </StyledIconsButton>
                     </Tooltip>
                 )}

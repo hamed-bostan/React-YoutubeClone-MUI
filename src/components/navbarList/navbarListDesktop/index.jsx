@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import { AutoComplete } from '../../autoComplete';
 import { IconsContainer, SearchContainer, StyledAvatar, AutoCompleteContainerDesktop } from '../styles';
-import { CameraComponent } from '../camera';
 import { NotificationComponent } from '../notificationComponent';
 import { LogoComponent } from '../logoComponent';
 import { MicComponent } from '../micComponent';
 import { useUIContext } from '../../../context/ui';
+import { CameraComponent } from '../cameraComponent';
 
 export const NavbarListDesktop = () => {
     const [isFocus, setIsFocus] = useState(false)
     const { isDesktopScreen } = useUIContext()
-
 
     return (
         <>

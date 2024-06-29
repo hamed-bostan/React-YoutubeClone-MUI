@@ -3,6 +3,7 @@ import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import { Avatar, Badge, Box, IconButton, Typography, styled } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
 
 
 export const MenuANDLogoContainer = styled(Box)(() => ({
@@ -122,4 +123,9 @@ export const StyledAvatar = styled(Avatar, { shouldForwardProp: (prop) => prop !
     height: '2rem',
     cursor: 'pointer',
     marginLeft: isMobileScreen && '0.8rem'
+}))
+
+
+export const SubmitSearchIconMobile = styled(SearchIcon)(({ theme }) => ({
+    color: theme.palette.primary.main,
 }))
