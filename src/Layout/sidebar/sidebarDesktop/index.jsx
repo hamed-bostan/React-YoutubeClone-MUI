@@ -7,7 +7,7 @@ import { useUIContext } from '../../../context/ui';
 
 import { StyledDrawer, BoxContainer } from '../styles';
 import { DrawerHeader } from '../../../styles';
-import { DrawerList } from '../../../components/drawerList';
+import { SidebarList } from '../../../components/sidebarList';
 
 
 
@@ -24,7 +24,7 @@ export const SidebarDesktop = () => {
         <BoxContainer isDrawerOpen={isDrawerOpen} >
 
 
-          <DrawerList />
+          <SidebarList />
 
 
 

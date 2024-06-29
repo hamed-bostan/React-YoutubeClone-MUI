@@ -54,7 +54,7 @@ import {
 } from './styles';
 import { useUIContext } from '../../context/ui';
 
-export const DrawerList = () => {
+export const SidebarList = () => {
     const { isDrawerOpen, setIsDrawerOpen, isMobileScreen } = useUIContext()
 
     const navigate = useNavigate()
@@ -219,4 +219,12 @@ const ExploreIcons = [
     { id: "7", textTitle: "sports", iconImageOutlined: < MilitaryTechOutlinedIcon />, iconImageFilled: <MilitaryTechIcon />, path: '/sports' },
     { id: "8", textTitle: "learning", iconImageOutlined: < LightbulbOutlinedIcon />, iconImageFilled: <LightbulbIcon />, path: '/learning' },
     { id: "9", textTitle: "podcasts", iconImageOutlined: < PodcastsOutlinedIcon />, iconImageFilled: <PodcastsIcon />, path: '/podcasts' },
+]
+
+
+const ShowMore = [
+    { id: "7", textTitle: "developedbyed", avater: './images/profileImages/developedbyed.jpg', path: '/developedbyed' },
+    { id: "8", textTitle: "tedx talks", avater: './images/profileImages/ted-talk.jpg', path: '/ted-talk' },
+    { id: "9", textTitle: "bbc", avater: './images/profileImages/bbc.jpg', path: '/bbc' },
+    { id: "10", textTitle: "reuters", avater: './images/profileImages/reuters.jpg', path: '/reuters' },
 ]

@@ -32,6 +32,10 @@ import { NewsPage } from './pages/explorePages/NewsPage'
 import { LearningPage } from './pages/explorePages/LearningPage'
 import { PodcastsPage } from './pages/explorePages/PodcastsPage'
 import { SportsPage } from './pages/explorePages/SportsPage'
+import { BbcPage } from './pages/subscriptionPages/BbcPage'
+import { DevelopedbyedPage } from './pages/subscriptionPages/DevelopedbyedPage'
+import { ReutersPage } from './pages/subscriptionPages/ReutersPage'
+import { TedTalkPage } from './pages/subscriptionPages/TedTalkPage'
 
 function App() {
 
@@ -56,6 +60,10 @@ function App() {
         <Route path="web-dev-simplified" element={<WebDevSimplifiedPage />} />
         <Route path="caleb-curry" element={<CalebCurryPage />} />
         <Route path="sonny-sangha" element={<SonnySanghaPage />} />
+        <Route path="developedbyed" element={<DevelopedbyedPage />} />
+        <Route path="ted-talk" element={<TedTalkPage />} />
+        <Route path="bbc" element={<BbcPage />} />
+        <Route path="reuters" element={<ReutersPage />} />
 
 
         <Route path="trending" element={<TrendingPage />} />
