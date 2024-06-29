@@ -52,7 +52,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import {
     StyledListItemButton, StyledListItemIcon, StyledListItemText, TextContainer, StyledTypography,
-    StyledAvatar, StyledListItemShowData,
+    StyledAvatar
 } from './styles';
 import { useUIContext } from '../../context/ui';
 import { useState } from 'react';
@@ -150,7 +150,7 @@ export const SidebarList = () => {
                                 </ListItem>
                             )))}
                             {!isShowMoreSidebar && (
-                                <StyledListItemShowData isDrawerOpen={isDrawerOpen} disableRipple onClick={() => setIsShowMoreSidebar(true)}>
+                                <StyledListItemButton  isDrawerOpen={isDrawerOpen} disableRipple onClick={() => setIsShowMoreSidebar(true)}>
                                     <StyledListItemIcon >
                                         <KeyboardArrowDownIcon />
                                     </StyledListItemIcon>
@@ -159,7 +159,7 @@ export const SidebarList = () => {
                                             fontSize: isDrawerOpen ? '0.875rem' : '0.625rem',
                                         }}
                                     />
-                                </StyledListItemShowData>
+                                </StyledListItemButton>
                             )}
                         </List>
                         {isShowMoreSidebar && (
@@ -182,7 +182,7 @@ export const SidebarList = () => {
                         )}
 
                         {isShowMoreSidebar && (
-                            <StyledListItemShowData disableRipple isDrawerOpen={isDrawerOpen} onClick={() => setIsShowMoreSidebar(false)}>
+                            <StyledListItemButton disableRipple isDrawerOpen={isDrawerOpen} onClick={() => setIsShowMoreSidebar(false)}>
                                 <StyledListItemIcon >
                                     <KeyboardArrowUpIcon />
                                 </StyledListItemIcon>
@@ -191,7 +191,7 @@ export const SidebarList = () => {
                                         fontSize: isDrawerOpen ? '0.875rem' : '0.625rem',
                                     }}
                                 />
-                            </StyledListItemShowData>
+                            </StyledListItemButton>
                         )}
 
                     </>
