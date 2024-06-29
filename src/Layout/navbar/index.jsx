@@ -8,7 +8,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <StyledAppBar open={isDrawerOpen} elevation={0} >
+      <StyledAppBar open={isDrawerOpen} isDesktopScreen={isDesktopScreen} elevation={0} >
         <StyledToolbar disableGutters>
           <StackContainer>
             {isDesktopScreen && <NavbarListDesktop />}

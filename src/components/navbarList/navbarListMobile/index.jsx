@@ -1,17 +1,19 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Tooltip } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu';
 import { AutoComplete } from '../../autoComplete';
-import SearchIcon from '@mui/icons-material/Search';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { MenuANDLogoContainer, CameraIcon, IconsContainer, LogoIconButton, MenuIconButton, MicIcon, MicIconButton, NotificationIcon, SearchContainer, StyledAvatar, StyledBadge, YoutubeIcon, YoutubeText, StyledIconsButton, AutoCompleteContainerMobile } from '../styles';
+import { IconsContainer, SearchContainer, StyledAvatar, StyledIconsButton, AutoCompleteContainerMobile } from '../styles';
 import { useUIContext } from '../../../context/ui';
 import { SubmitSearchIcon } from './styles';
+import { CameraComponent } from '../camera';
+import { NotificationComponent } from '../notificationComponent';
+import { LogoComponent } from '../logoComponent';
+import { MicComponent } from '../micComponent';
 
 export const NavbarListMobile = () => {
     const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
     const [isFocus, setIsFocus] = useState(false)
-    const { isMobileScreen, isDesktopScreen } = useUIContext()
+    const { isMobileScreen } = useUIContext()
 
     const handleDrawer = () => {
         setIsDrawerOpen(!isDrawerOpen);
@@ -23,18 +25,7 @@ export const NavbarListMobile = () => {
 
     return (
         <>
-            {!isFocus && (
-                <MenuANDLogoContainer>
-                    <MenuIconButton aria-label="open drawer" disableTouchRipple onClick={handleDrawer}>
-                        <MenuIcon />
-                    </MenuIconButton>
-                    <LogoIconButton disableRipple>
-                        <YoutubeIcon />
-                        <YoutubeText>YouTube</YoutubeText>
-                    </LogoIconButton>
-                </MenuANDLogoContainer>
-            )}
-
+            {!isFocus && (<LogoComponent />)}
 
             {isFocus && (
                 <Tooltip title='back'>
@@ -52,14 +43,7 @@ export const NavbarListMobile = () => {
                 </SearchContainer>
             )}
 
-
-
-
-
-
             <IconsContainer isMobileScreen={isMobileScreen} isFocus={isFocus}>
-
-
                 {!isFocus && (
                     <Tooltip title='Search'>
                         <StyledIconsButton disableRipple onClick={handleClick}>
@@ -67,34 +51,10 @@ export const NavbarListMobile = () => {
                         </StyledIconsButton>
                     </Tooltip>
                 )}
-
-
-                <Tooltip title='Search with your voice'>
-                    <StyledIconsButton disableRipple>
-                        <MicIcon />
-                    </StyledIconsButton>
-                </Tooltip>
-
-                {!isFocus && (
-                    <Tooltip title='Create'>
-                        <StyledIconsButton disableRipple>
-                            <CameraIcon />
-                        </StyledIconsButton>
-                    </Tooltip>
-                )}
-
-                {!isFocus && (
-                    <Tooltip title='Notifications'>
-                        <StyledIconsButton disableRipple>
-                            <StyledBadge badgeContent={"9+"} color='error' >
-                                <NotificationIcon />
-                            </StyledBadge>
-                        </StyledIconsButton>
-                    </Tooltip>
-                )}
-
+                <MicComponent />
+                {!isFocus && (<CameraComponent />)}
+                {!isFocus && (<NotificationComponent />)}
                 {!isFocus && <StyledAvatar src='./images/profileImages/caleb-curry.jpg' isMobileScreen={isMobileScreen} />}
-
             </IconsContainer >
         </>
     )

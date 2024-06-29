@@ -47,14 +47,15 @@ export const SearchContainer = styled(Box)(() => ({
     gap: '1rem',
 }))
 
-export const MicIconButton = styled(IconButton)(({ theme }) => ({
-    width: 40,
-    height: 40,
-    backgroundColor: theme.palette.secondary.light,
-    ":hover": {
-        backgroundColor: theme.palette.secondary.main,
-    }
-}))
+export const MicIconButton = styled(IconButton, { shouldForwardProp: (prop) => prop !== 'isDesktopScreen' })
+    (({ theme, isDesktopScreen }) => ({
+        width: 40,
+        height: 40,
+        backgroundColor: isDesktopScreen && theme.palette.secondary.light,
+        ":hover": {
+            backgroundColor: theme.palette.secondary.main,
+        }
+    }))
 
 export const MicIcon = styled(MicOutlinedIcon)(({ theme }) => ({
     color: theme.palette.primary.main,

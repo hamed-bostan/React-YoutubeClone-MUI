@@ -4,11 +4,11 @@ import MuiAppBar from '@mui/material/AppBar';
 
 
 export const StyledAppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
+    shouldForwardProp: (prop) => prop !== 'open' && prop !== 'isDesktopScreen'
+})(({ theme, open, isDesktopScreen }) => ({
     backgroundColor: theme.palette.primary.light,
     position: 'fixed',
-    zIndex: theme.zIndex.drawer + 1,
+    zIndex: isDesktopScreen && theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
