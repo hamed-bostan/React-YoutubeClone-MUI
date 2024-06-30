@@ -1,11 +1,11 @@
 import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
-import { capitalizeFirstLetter } from '../../utility/Utilities';
 import {
     StackContainer, InformationContainer, RenderOptionContainer, StyledButton, StyledInformation, StyledAutocomplete
 } from './styles';
-import { theme } from '../../theme';
-import { useUIContext } from '../../context/ui';
 import { Form } from './form';
+import { capitalizeFirstLetter } from '../../../utility/Utilities';
+import { theme } from '../../../theme';
+import { useUIContext } from '../../../context/ui';
 
 export const AutoComplete = () => {
 
