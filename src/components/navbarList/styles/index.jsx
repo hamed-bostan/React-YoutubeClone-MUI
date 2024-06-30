@@ -15,8 +15,8 @@ export const MenuANDLogoContainer = styled(Box, {
         alignItems: 'center',
         columnGap: '1rem',
         paddingLeft: isDrawerOpen && isMobileScreen && '1rem',
-        paddingTop: isDrawerOpen && isMobileScreen && '1.125rem',
-        paddingBottom: isDrawerOpen && isMobileScreen && '1.125rem',
+        paddingTop: isDrawerOpen && isMobileScreen && '0.5rem',
+        paddingBottom: isDrawerOpen && isMobileScreen && '0.5rem',
     }))
 
 export const MenuIconButton = styled(IconButton)(({ theme }) => ({
