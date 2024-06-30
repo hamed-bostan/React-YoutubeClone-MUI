@@ -2,16 +2,19 @@ import { Tooltip } from "@mui/material"
 import { v4 as uuid } from 'uuid'
 import { RenderInputContainer, StyledIconButton, StyledInputAdornment, StyledSearchIcon, StyledTextField, SubmitSearchIcon } from "../styles"
 import { useState } from "react"
+import { useUIContext } from "../../../context/ui"
 
-export const Form = ({ isFocus, setIsFocus, params, setStoredData, storedData }) => {
+export const Form = ({ params, setStoredData, storedData }) => {
     const [searchValue, setSearchValue] = useState("")
+    const { isSearchBarFocused, setIsSearchBarFocused, } = useUIContext()
+
 
     const handleFucos = () => {
-        setIsFocus(true)
+        setIsSearchBarFocused(true)
     }
 
     const handleBlur = () => {
-        setIsFocus(false)
+        setIsSearchBarFocused(false)
     }
 
     const handleChange = (e) => {
@@ -60,8 +63,8 @@ export const Form = ({ isFocus, setIsFocus, params, setStoredData, storedData })
                         type: 'search',
                         disableUnderline: true,
                         startAdornment: (
-                            <StyledInputAdornment position="start" isFocus={isFocus}>
-                                {isFocus && <StyledSearchIcon />}
+                            <StyledInputAdornment position="start" isSearchBarFocused={isSearchBarFocused}>
+                                {isSearchBarFocused && <StyledSearchIcon />}
                             </StyledInputAdornment>
                         ),
                     }} />

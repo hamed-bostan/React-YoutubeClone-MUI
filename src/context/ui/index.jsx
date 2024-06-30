@@ -7,6 +7,9 @@ export const useUIContext = () => useContext(UIContext)
 export const UIProvider = ({ children }) => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
+    const [isSearchBarFocused, setIsSearchBarFocused] = useState(false)
+
+    
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
@@ -18,6 +21,7 @@ export const UIProvider = ({ children }) => {
 
 
     const value = {
+        isSearchBarFocused, setIsSearchBarFocused,
         isDrawerOpen, setIsDrawerOpen,
         anchorEl, setAnchorEl, open,
         isDesktopScreen, isMobileScreen,

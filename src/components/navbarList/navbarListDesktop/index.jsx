@@ -8,8 +8,7 @@ import { useUIContext } from '../../../context/ui';
 import { CameraComponent } from '../cameraComponent';
 
 export const NavbarListDesktop = () => {
-    const [isFocus, setIsFocus] = useState(false)
-    const { isDesktopScreen } = useUIContext()
+    const { isDesktopScreen, isSearchBarFocused } = useUIContext()
 
     return (
         <>
@@ -17,8 +16,8 @@ export const NavbarListDesktop = () => {
 
             <SearchContainer>
                 <MicComponent isDesktopScreen={isDesktopScreen} />
-                <AutoCompleteContainerDesktop isFocus={isFocus}>
-                    <AutoComplete isFocus={isFocus} setIsFocus={setIsFocus} />
+                <AutoCompleteContainerDesktop isSearchBarFocused={isSearchBarFocused}>
+                    <AutoComplete />
                 </AutoCompleteContainerDesktop>
             </SearchContainer>
 

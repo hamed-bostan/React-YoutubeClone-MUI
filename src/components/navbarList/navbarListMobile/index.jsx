@@ -10,35 +10,35 @@ import { MicComponent } from '../micComponent';
 import { CameraComponent } from '../cameraComponent';
 
 export const NavbarListMobile = () => {
-    const [isFocus, setIsFocus] = useState(false)
+    const [isSearchBarFocused, setIsSearchBarFocused,] = useState(false)
     const { isMobileScreen } = useUIContext()
 
     const handleClick = () => {
-        setIsFocus(true)
+        setIsSearchBarFocused(true)
     }
 
     return (
         <>
-            {!isFocus && (<LogoComponent />)}
+            {!isSearchBarFocused && (<LogoComponent />)}
 
-            {isFocus && (
+            {isSearchBarFocused && (
                 <Tooltip title='back'>
-                    <StyledIconsButton disableRipple onClick={() => setIsFocus(false)}>
+                    <StyledIconsButton disableRipple onClick={() => setIsSearchBarFocused(false)}>
                         <ArrowBackIcon />
                     </StyledIconsButton>
                 </Tooltip>
             )}
 
-            {isFocus && (
+            {isSearchBarFocused && (
                 <SearchContainer>
                     <AutoCompleteContainerMobile>
-                        <AutoComplete isFocus={isFocus} setIsFocus={setIsFocus} />
+                        <AutoComplete isSearchBarFocused={isSearchBarFocused} setIsSearchBarFocused={setIsSearchBarFocused} />
                     </AutoCompleteContainerMobile>
                 </SearchContainer>
             )}
 
-            <IconsContainer isMobileScreen={isMobileScreen} isFocus={isFocus}>
-                {!isFocus && (
+            <IconsContainer isMobileScreen={isMobileScreen} isSearchBarFocused={isSearchBarFocused}>
+                {!isSearchBarFocused && (
                     <Tooltip title='Search'>
                         <StyledIconsButton disableRipple onClick={handleClick}>
                             <SubmitSearchIconMobile />
@@ -46,9 +46,9 @@ export const NavbarListMobile = () => {
                     </Tooltip>
                 )}
                 <MicComponent />
-                {!isFocus && (<CameraComponent />)}
-                {!isFocus && (<NotificationComponent />)}
-                {!isFocus && <StyledAvatar src='./images/profileImages/caleb-curry.jpg' isMobileScreen={isMobileScreen} />}
+                {!isSearchBarFocused && (<CameraComponent />)}
+                {!isSearchBarFocused && (<NotificationComponent />)}
+                {!isSearchBarFocused && <StyledAvatar src='./images/profileImages/caleb-curry.jpg' isMobileScreen={isMobileScreen} />}
             </IconsContainer >
         </>
     )

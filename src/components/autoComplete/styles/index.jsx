@@ -1,4 +1,4 @@
-import { Autocomplete, Box, Button, IconButton, InputAdornment, Stack, TextField, Tooltip, Typography, styled } from "@mui/material";
+import { Autocomplete, Box, Button, IconButton, InputAdornment, Stack, TextField, Typography, styled } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
 export const StackContainer = styled(Stack)(() => ({
@@ -39,11 +39,11 @@ export const RenderInputContainer = styled(Box)(() => ({
     alignItems: 'center'
 }))
 
-export const StyledTextField = styled(TextField)(({ isFocus }) => ({
+export const StyledTextField = styled(TextField)(({ isSearchBarFocused }) => ({
     width: '100%',
     '.MuiInputBase-input': {
         padding: '0',
-        marginLeft: !isFocus && '0.5rem',
+        marginLeft: !isSearchBarFocused && '0.5rem',
     },
 }))
 
@@ -70,9 +70,9 @@ export const SubmitSearchIcon = styled(SearchIcon)(({ theme }) => ({
 }))
 
 export const StyledInputAdornment = styled(InputAdornment, {
-    shouldForwardProp: (prop => prop !== 'isFocus')
-})(({ isFocus }) => ({
-    paddingLeft: isFocus && '1rem',
+    shouldForwardProp: (prop => prop !== 'isSearchBarFocused')
+})(({ isSearchBarFocused }) => ({
+    paddingLeft: isSearchBarFocused && '1rem',
 }))
 
 export const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({

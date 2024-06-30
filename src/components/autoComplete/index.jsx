@@ -1,5 +1,4 @@
 import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
-import { useState } from 'react';
 import { capitalizeFirstLetter } from '../../utility/Utilities';
 import {
     StackContainer, InformationContainer, RenderOptionContainer, StyledButton, StyledInformation, StyledAutocomplete
@@ -8,7 +7,7 @@ import { theme } from '../../theme';
 import { useUIContext } from '../../context/ui';
 import { Form } from './form';
 
-export const AutoComplete = ({ isFocus, setIsFocus }) => {
+export const AutoComplete = () => {
 
 
     const { isDesktopScreen, storedData, setStoredData } = useUIContext()
@@ -56,7 +55,7 @@ export const AutoComplete = ({ isFocus, setIsFocus }) => {
                 )}
 
                 renderInput={(params) => (
-                    <Form isFocus={isFocus} setIsFocus={setIsFocus} params={params} setStoredData={setStoredData} storedData={storedData} />
+                    <Form params={params} setStoredData={setStoredData} storedData={storedData} />
                 )}
                 ListboxProps={{
                     style: {

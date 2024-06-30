@@ -79,8 +79,8 @@ export const AutoCompleteContainer = styled(Box)(() => ({
 }))
 
 export const AutoCompleteContainerDesktop = styled(AutoCompleteContainer,
-    { shouldForwardProp: (prop) => prop !== 'isFocus' })(({ isFocus }) => ({
-        width: isFocus ? '85%' : '80%',
+    { shouldForwardProp: (prop) => prop !== 'isSearchBarFocused' })(({ isSearchBarFocused }) => ({
+        width: isSearchBarFocused ? '85%' : '80%',
     }))
 
 
@@ -88,11 +88,11 @@ export const AutoCompleteContainerMobile = styled(AutoCompleteContainer)(() => (
     width: '95%',
 }))
 
-export const IconsContainer = styled(Box, { shouldForwardProp: (prop) => prop !== 'isMobileScreen' && prop !== 'isFocus' })(({ isMobileScreen, isFocus }) => ({
+export const IconsContainer = styled(Box, { shouldForwardProp: (prop) => prop !== 'isMobileScreen' && prop !== 'isSearchBarFocused' })(({ isMobileScreen, isSearchBarFocused }) => ({
     gap: isMobileScreen ? '0' : '1.5rem',
     display: 'flex',
     // flex: 2,
-    flex: !isFocus && !isMobileScreen && 2,
+    flex: !isSearchBarFocused && !isMobileScreen && 2,
     alignItems: 'center',
     justifyContent: 'end'
 }))
