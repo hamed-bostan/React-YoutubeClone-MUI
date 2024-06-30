@@ -3,14 +3,14 @@ import { LogoIconButton, MenuANDLogoContainer, MenuIconButton, YoutubeIcon, Yout
 import MenuIcon from '@mui/icons-material/Menu';
 
 export const LogoComponent = () => {
-    const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
+    const { isDrawerOpen, setIsDrawerOpen, isMobileScreen } = useUIContext()
 
     const handleDrawer = () => {
         setIsDrawerOpen(!isDrawerOpen);
     };
 
     return (
-        <MenuANDLogoContainer>
+        <MenuANDLogoContainer isDrawerOpen={isDrawerOpen} isMobileScreen={isMobileScreen}>
             <MenuIconButton aria-label="open drawer" disableTouchRipple onClick={handleDrawer}>
                 <MenuIcon />
             </MenuIconButton>

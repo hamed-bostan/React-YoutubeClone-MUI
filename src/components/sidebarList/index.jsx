@@ -1,5 +1,4 @@
 import Divider from '@mui/material/Divider';
-import List from '@mui/material/List';
 
 import ListItem from '@mui/material/ListItem';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -52,7 +51,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 import {
     StyledListItemButton, StyledListItemIcon, StyledListItemText, TextContainer, StyledTypography,
-    StyledAvatar, StyledListItemShowData,
+    StyledAvatar, StyledListItemShowData, StyledListContainer
 } from './styles';
 import { useUIContext } from '../../context/ui';
 import { useState } from 'react';
@@ -72,7 +71,7 @@ export const SidebarList = () => {
 
     return (
         <>
-            <List>
+            <StyledListContainer disablePadding isDrawerOpen={isDrawerOpen}>
                 {HeadingIcons.map((item => (
                     <ListItem key={item.id} disablePadding
 
@@ -86,11 +85,11 @@ export const SidebarList = () => {
                         </StyledListItemButton>
                     </ListItem>
                 )))}
-            </List>
+            </StyledListContainer>
             {isDrawerOpen && <Divider />}
 
             {isDrawerOpen && (
-                <List>
+                <StyledListContainer disablePadding isDrawerOpen={isDrawerOpen}>
                     <TextContainer>
                         <StyledTypography variant='h6'>You</StyledTypography>
                         <ChevronRightIcon />
@@ -110,13 +109,13 @@ export const SidebarList = () => {
                         </ListItem>
                     )))}
 
-                </List>
+                </StyledListContainer>
             )}
             {isDrawerOpen && <Divider />}
 
             {isDrawerOpen && (
                 <>
-                    <List>
+                    <StyledListContainer disablePadding isDrawerOpen={isDrawerOpen}>
                         <TextContainer>
                             <StyledTypography variant='h6'>Subscriptions</StyledTypography>
                         </TextContainer>
@@ -139,10 +138,10 @@ export const SidebarList = () => {
                                     primaryTypographyProps={{ fontSize: isDrawerOpen ? '0.875rem' : '0.625rem' }} />
                             </StyledListItemShowData>
                         )}
-                    </List>
+                    </StyledListContainer>
 
                     {isShowMoreSidebar && (
-                        <List>
+                        <StyledListContainer disablePadding isDrawerOpen={isDrawerOpen}>
                             {ShowMoreItems.map((item => (
                                 <ListItem key={item.id} disablePadding onClick={() => handlClick(item.path)} >
                                     <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
@@ -159,7 +158,7 @@ export const SidebarList = () => {
                                 <StyledListItemText primary={capitalizeFirstLetter('show less')}
                                     primaryTypographyProps={{ fontSize: isDrawerOpen ? '0.875rem' : '0.625rem' }} />
                             </StyledListItemShowData>
-                        </List>
+                        </StyledListContainer>
                     )}
                 </>
             )}
@@ -167,7 +166,7 @@ export const SidebarList = () => {
             {isDrawerOpen && <Divider />}
 
             {isDrawerOpen && (
-                <List>
+                <StyledListContainer disablePadding isDrawerOpen={isDrawerOpen}>
                     <TextContainer>
                         <StyledTypography variant='h6'>Explore</StyledTypography>
                     </TextContainer>
@@ -183,7 +182,7 @@ export const SidebarList = () => {
                             </StyledListItemButton>
                         </ListItem>
                     )))}
-                </List>
+                </StyledListContainer>
             )}
         </>
     )

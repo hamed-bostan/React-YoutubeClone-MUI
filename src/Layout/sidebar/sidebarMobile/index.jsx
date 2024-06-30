@@ -17,14 +17,11 @@ export const SidebarMobile = () => {
       <Drawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }}>
         {/* <DrawerHeader /> */}
 
+        <LogoComponent />
+
         <BoxContainer isDrawerOpen={isDrawerOpen}>
 
-          <LogoComponent />
           <SidebarList />
-
-
-
-
 
         </BoxContainer>
       </Drawer >

@@ -1,4 +1,4 @@
-import { Avatar, Box, ListItemButton, ListItemIcon, ListItemText, Typography, styled } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import MuiDrawer from '@mui/material/Drawer';
 
 const drawerWidth = 240;
@@ -59,12 +59,6 @@ export const StyledDrawer = styled(MuiDrawer, { shouldForwardProp: (prop) => pro
 export const BoxContainer = styled(Box, {
     shouldForwardProp: (prop) => prop !== 'isDrawerOpen'
 })(({ isDrawerOpen }) => ({
-    paddingRight: isDrawerOpen ? '0.7rem' : '0.25rem',
-    paddingLeft: isDrawerOpen ? '0.7rem' : '0.25rem',
+    paddingRight: !isDrawerOpen && '0.25rem',
+    paddingLeft: !isDrawerOpen && '0.25rem',
 }))
-
-
-// cut from here
-// cut from here
-
-

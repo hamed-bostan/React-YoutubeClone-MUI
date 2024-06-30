@@ -6,12 +6,18 @@ import { Avatar, Badge, Box, IconButton, Typography, styled } from "@mui/materia
 import SearchIcon from '@mui/icons-material/Search';
 
 
-export const MenuANDLogoContainer = styled(Box)(() => ({
-    display: 'flex',
-    flex: 2,
-    alignItems: 'center',
-    columnGap: '1rem'
-}))
+export const MenuANDLogoContainer = styled(Box, {
+    shouldForwardProp: (prop) => prop !== 'isDrawerOpen' && prop !== 'isMobileScreen'
+})
+    (({ isDrawerOpen, isMobileScreen }) => ({
+        display: 'flex',
+        flex: 2,
+        alignItems: 'center',
+        columnGap: '1rem',
+        paddingLeft: isDrawerOpen && isMobileScreen && '1rem',
+        paddingTop: isDrawerOpen && isMobileScreen && '1.125rem',
+        paddingBottom: isDrawerOpen && isMobileScreen && '1.125rem',
+    }))
 
 export const MenuIconButton = styled(IconButton)(({ theme }) => ({
     color: theme.palette.primary.main,
