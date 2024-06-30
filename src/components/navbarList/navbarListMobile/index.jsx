@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { Tooltip } from '@mui/material'
 import { AutoComplete } from '../../autoComplete';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { IconsContainer, SearchContainer, StyledAvatar, StyledIconsButton, AutoCompleteContainerMobile, SubmitSearchIconMobile } from '../styles';
+import { IconsContainer, SearchContainer, StyledAvatar, StyledIconsButton, SubmitSearchIconMobile, AutoCompleteContainer } from '../styles';
 import { useUIContext } from '../../../context/ui';
 import { NotificationComponent } from '../notificationComponent';
 import { LogoComponent } from '../logoComponent';
 import { MicComponent } from '../micComponent';
 import { CameraComponent } from '../cameraComponent';
+import { SearchComponent } from '../searchComponent';
 
 export const NavbarListMobile = () => {
     const [isSearchBarFocused, setIsSearchBarFocused,] = useState(false)
@@ -30,11 +31,12 @@ export const NavbarListMobile = () => {
             )}
 
             {isSearchBarFocused && (
-                <SearchContainer>
-                    <AutoCompleteContainerMobile>
-                        <AutoComplete isSearchBarFocused={isSearchBarFocused} setIsSearchBarFocused={setIsSearchBarFocused} />
-                    </AutoCompleteContainerMobile>
-                </SearchContainer>
+                // <SearchContainer>
+                //     <AutoCompleteContainer>
+                //         <AutoComplete />
+                //     </AutoCompleteContainer>
+                // </SearchContainer>
+                <SearchComponent />
             )}
 
             <IconsContainer isMobileScreen={isMobileScreen} isSearchBarFocused={isSearchBarFocused}>

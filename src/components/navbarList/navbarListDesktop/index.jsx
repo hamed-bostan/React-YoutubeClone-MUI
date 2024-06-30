@@ -1,11 +1,11 @@
-import { useState } from 'react';
 import { AutoComplete } from '../../autoComplete';
-import { IconsContainer, SearchContainer, StyledAvatar, AutoCompleteContainerDesktop } from '../styles';
+import { IconsContainer, SearchContainer, StyledAvatar, AutoCompleteContainerDesktop, AutoCompleteContainer } from '../styles';
 import { NotificationComponent } from '../notificationComponent';
 import { LogoComponent } from '../logoComponent';
 import { MicComponent } from '../micComponent';
 import { useUIContext } from '../../../context/ui';
 import { CameraComponent } from '../cameraComponent';
+import { SearchComponent } from '../searchComponent';
 
 export const NavbarListDesktop = () => {
     const { isDesktopScreen, isSearchBarFocused } = useUIContext()
@@ -14,12 +14,14 @@ export const NavbarListDesktop = () => {
         <>
             <LogoComponent />
 
-            <SearchContainer>
+            {/* <SearchContainer>
                 <MicComponent isDesktopScreen={isDesktopScreen} />
-                <AutoCompleteContainerDesktop isSearchBarFocused={isSearchBarFocused}>
+                <AutoCompleteContainer isSearchBarFocused={isSearchBarFocused}>
                     <AutoComplete />
-                </AutoCompleteContainerDesktop>
-            </SearchContainer>
+                </AutoCompleteContainer>
+            </SearchContainer> */}
+
+            <SearchComponent />
 
             <IconsContainer>
                 <CameraComponent />

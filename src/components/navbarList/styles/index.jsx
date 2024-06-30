@@ -11,7 +11,6 @@ export const MenuANDLogoContainer = styled(Box, {
 })
     (({ isDrawerOpen, isMobileScreen }) => ({
         display: 'flex',
-        flex: 2,
         alignItems: 'center',
         columnGap: '1rem',
         paddingLeft: isDrawerOpen && isMobileScreen && '1rem',
@@ -46,13 +45,16 @@ export const YoutubeText = styled(Typography)(() => ({
     fontWeight: '700'
 }))
 
-export const SearchContainer = styled(Box)(() => ({
-    display: 'flex',
-    flexDirection: 'row-reverse',
-    flex: 3,
-    alignItems: 'center',
-    gap: '1rem',
-}))
+export const SearchContainer = styled(Box,
+    { shouldForwardProp: (prop) => prop !== 'isDesktopScreen' && prop !== 'isMobileScreen' })
+    (({ isDesktopScreen, isMobileScreen }) => ({
+        display: 'flex',
+        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        gap: '1rem',
+        justifyContent: 'center',
+        width: isDesktopScreen ? '40%' : isMobileScreen && '80%',
+    }))
 
 export const MicIconButton = styled(IconButton, { shouldForwardProp: (prop) => prop !== 'isDesktopScreen' })
     (({ theme, isDesktopScreen }) => ({
@@ -76,25 +78,14 @@ export const AutoCompleteContainer = styled(Box)(() => ({
     borderRadius: 40,
     minHeight: '2.5rem',
     boxShadow: 'inset 1px 1px 1px 0.05px #eee',
-}))
-
-export const AutoCompleteContainerDesktop = styled(AutoCompleteContainer,
-    { shouldForwardProp: (prop) => prop !== 'isSearchBarFocused' })(({ isSearchBarFocused }) => ({
-        width: isSearchBarFocused ? '85%' : '80%',
-    }))
-
-
-export const AutoCompleteContainerMobile = styled(AutoCompleteContainer)(() => ({
-    width: '95%',
+    width: '100%',
 }))
 
 export const IconsContainer = styled(Box, { shouldForwardProp: (prop) => prop !== 'isMobileScreen' && prop !== 'isSearchBarFocused' })(({ isMobileScreen, isSearchBarFocused }) => ({
     gap: isMobileScreen ? '0' : '1.5rem',
     display: 'flex',
-    // flex: 2,
-    flex: !isSearchBarFocused && !isMobileScreen && 2,
     alignItems: 'center',
-    justifyContent: 'end'
+    justifyContent: 'end',
 }))
 
 export const StyledIconsButton = styled(IconButton)(({ theme }) => ({
@@ -108,8 +99,6 @@ export const StyledIconsButton = styled(IconButton)(({ theme }) => ({
 export const CameraIcon = styled(VideocamOutlinedIcon)(({ theme }) => ({
     color: theme.palette.primary.main,
 }))
-
-
 
 export const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -130,7 +119,6 @@ export const StyledAvatar = styled(Avatar, { shouldForwardProp: (prop) => prop !
     cursor: 'pointer',
     marginLeft: isMobileScreen && '0.8rem'
 }))
-
 
 export const SubmitSearchIconMobile = styled(SearchIcon)(({ theme }) => ({
     color: theme.palette.primary.main,

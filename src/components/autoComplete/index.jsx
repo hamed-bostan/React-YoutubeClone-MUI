@@ -10,7 +10,7 @@ import { Form } from './form';
 export const AutoComplete = () => {
 
 
-    const { isDesktopScreen, storedData, setStoredData } = useUIContext()
+    const { isDesktopScreen, isMobileScreen, storedData, setStoredData } = useUIContext()
 
     const removeFunction = (id) => {
         const newStoredData = storedData.filter(item => item.id !== id)
@@ -29,8 +29,7 @@ export const AutoComplete = () => {
                 componentsProps={{
                     popper: {
                         style: {
-                            width: isDesktopScreen && '31.5%',
-                            // width: '61%%',
+                            width: isDesktopScreen ? '32%' : isMobileScreen && '62%',
                             paddingTop: '0.5rem'
                         }
                     }
