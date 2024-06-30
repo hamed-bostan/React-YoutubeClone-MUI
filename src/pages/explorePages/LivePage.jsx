@@ -1,10 +1,8 @@
 import { Box, Typography } from '@mui/material'
-import { DrawerHeader } from '../../Layout/sidebar/styles'
 
 export const LivePage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <DrawerHeader />
             <Typography>Wellocme to Live page</Typography>
             <Typography paragraph>
                 Soprano Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

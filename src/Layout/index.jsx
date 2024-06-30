@@ -3,7 +3,7 @@ import { Navbar } from './navbar'
 import { Sidebar } from './sidebar'
 import { Outlet } from 'react-router-dom'
 import { CategoryPills } from '../components/categoryPills'
-import { DrawerHeader } from './sidebar/styles'
+import { DrawerHeader } from '../styles'
 
 export const Layout = () => {
 
@@ -14,7 +14,7 @@ export const Layout = () => {
                 <Sidebar />
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <DrawerHeader />
-                    <CategoryPills />w
+                    {/* <CategoryPills /> */}
                     <Outlet />
                 </Box>
             </Box>

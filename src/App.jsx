@@ -11,8 +11,6 @@ import { YourVideos } from './pages/youIconsPages/YourVideos'
 import { WatchLater } from './pages/youIconsPages/WatchLater'
 import { LikedVideos } from './pages/youIconsPages/LikedVideos'
 
-
-
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, } from "react-router-dom";
 import { Layout } from './Layout'
 import { NotFoundPage } from './pages/NotFoundPage'
@@ -32,6 +30,10 @@ import { NewsPage } from './pages/explorePages/NewsPage'
 import { LearningPage } from './pages/explorePages/LearningPage'
 import { PodcastsPage } from './pages/explorePages/PodcastsPage'
 import { SportsPage } from './pages/explorePages/SportsPage'
+import { BbcPage } from './pages/subscriptionPages/BbcPage'
+import { DevelopedbyedPage } from './pages/subscriptionPages/DevelopedbyedPage'
+import { ReutersPage } from './pages/subscriptionPages/ReutersPage'
+import { TedTalkPage } from './pages/subscriptionPages/TedTalkPage'
 
 function App() {
 
@@ -49,14 +51,16 @@ function App() {
         <Route path="watch-later" element={<WatchLater />} />
         <Route path="liked-videos" element={<LikedVideos />} />
 
-
         <Route path="fireship" element={<FireshipPage />} />
         <Route path="traversy-media" element={<TraversyMediaPage />} />
         <Route path="kevin-powell" element={<KevinPowellPage />} />
         <Route path="web-dev-simplified" element={<WebDevSimplifiedPage />} />
         <Route path="caleb-curry" element={<CalebCurryPage />} />
         <Route path="sonny-sangha" element={<SonnySanghaPage />} />
-
+        <Route path="developedbyed" element={<DevelopedbyedPage />} />
+        <Route path="ted-talk" element={<TedTalkPage />} />
+        <Route path="bbc" element={<BbcPage />} />
+        <Route path="reuters" element={<ReutersPage />} />
 
         <Route path="trending" element={<TrendingPage />} />
         <Route path="music" element={<MusicPage />} />
@@ -67,8 +71,6 @@ function App() {
         <Route path="sports" element={<SportsPage />} />
         <Route path="learning" element={<LearningPage />} />
         <Route path="podcasts" element={<PodcastsPage />} />
-
-
 
         <Route path="*" element={<NotFoundPage />} />
       </Route>

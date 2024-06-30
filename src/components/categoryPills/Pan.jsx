@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { categories } from "../../data/categories";
 import { capitalizeFirstLetter } from "../../utility/Utilities";
 import { BoxContainer, StyledButton } from "./styles";
-import { DrawerHeader } from "../../Layout/sidebar/styles";
 import { Box } from "@mui/material";
 
 export const CategoryPills = () => {
@@ -17,7 +16,6 @@ export const CategoryPills = () => {
 
     return (
         <>
-            <DrawerHeader />
             <BoxContainer component={motion.div}
                 ref={carousel}
 

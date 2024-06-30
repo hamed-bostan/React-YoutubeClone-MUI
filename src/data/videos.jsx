@@ -50,7 +50,7 @@ export const videos = [
       id: "KevinPowell",
       profileUrl: './images/profileImages/kevin-powell.jpg',
     },
-    views: 112,
+    views: 11200,
     postedAt: new Date("2022-05-19"),
     duration: 4343,
     thumbnailUrl: './images/thumbnail/Thumbnail-04.jpg',
