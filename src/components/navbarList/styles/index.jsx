@@ -81,7 +81,7 @@ export const AutoCompleteContainer = styled(Box)(() => ({
     width: '100%',
 }))
 
-export const IconsContainer = styled(Box, { shouldForwardProp: (prop) => prop !== 'isMobileScreen' && prop !== 'isSearchBarFocused' })(({ isMobileScreen, isSearchBarFocused }) => ({
+export const IconsContainer = styled(Box, { shouldForwardProp: (prop) => prop !== 'isMobileScreen' })(({ isMobileScreen }) => ({
     gap: isMobileScreen ? '0' : '1.5rem',
     display: 'flex',
     alignItems: 'center',

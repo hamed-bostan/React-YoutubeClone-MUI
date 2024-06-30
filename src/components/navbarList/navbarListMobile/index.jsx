@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Tooltip } from '@mui/material'
-import { AutoComplete } from '../../autoComplete';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { IconsContainer, SearchContainer, StyledAvatar, StyledIconsButton, SubmitSearchIconMobile, AutoCompleteContainer } from '../styles';
+import { IconsContainer, StyledAvatar, StyledIconsButton, SubmitSearchIconMobile } from '../styles';
 import { useUIContext } from '../../../context/ui';
 import { NotificationComponent } from '../notificationComponent';
 import { LogoComponent } from '../logoComponent';
@@ -39,7 +38,7 @@ export const NavbarListMobile = () => {
                 <SearchComponent />
             )}
 
-            <IconsContainer isMobileScreen={isMobileScreen} isSearchBarFocused={isSearchBarFocused}>
+            <IconsContainer isMobileScreen={isMobileScreen}>
                 {!isSearchBarFocused && (
                     <Tooltip title='Search'>
                         <StyledIconsButton disableRipple onClick={handleClick}>

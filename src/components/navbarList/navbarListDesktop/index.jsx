@@ -1,8 +1,6 @@
-import { AutoComplete } from '../../autoComplete';
-import { IconsContainer, SearchContainer, StyledAvatar, AutoCompleteContainerDesktop, AutoCompleteContainer } from '../styles';
+import { IconsContainer, StyledAvatar } from '../styles';
 import { NotificationComponent } from '../notificationComponent';
 import { LogoComponent } from '../logoComponent';
-import { MicComponent } from '../micComponent';
 import { useUIContext } from '../../../context/ui';
 import { CameraComponent } from '../cameraComponent';
 import { SearchComponent } from '../searchComponent';
