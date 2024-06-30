@@ -1,4 +1,4 @@
-import { Autocomplete, Box, Button, IconButton, InputAdornment, Stack, TextField, Typography, styled } from "@mui/material";
+import { Box, Button, IconButton, InputAdornment, Stack, TextField, Typography, styled } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
 export const StackContainer = styled(Stack)(() => ({
@@ -73,9 +73,4 @@ export const StyledInputAdornment = styled(InputAdornment, {
     shouldForwardProp: (prop => prop !== 'isSearchBarFocused')
 })(({ isSearchBarFocused }) => ({
     paddingLeft: isSearchBarFocused && '1rem',
-}))
-
-export const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
-    // width: '100%'
-    // color: theme.palette.primary.main,
 }))

@@ -1,16 +1,14 @@
+import { useUIContext } from '../../context/ui';
+import { useState } from 'react';
 import Divider from '@mui/material/Divider';
-
 import ListItem from '@mui/material/ListItem';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-
 import HomeIcon from '@mui/icons-material/Home';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import AddToDriveIcon from '@mui/icons-material/AddToDrive';
 import AddToDriveOutlinedIcon from '@mui/icons-material/AddToDriveOutlined';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
-
-
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined';
 import RestoreIcon from '@mui/icons-material/Restore';
@@ -23,8 +21,6 @@ import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import QueryBuilderOutlinedIcon from '@mui/icons-material/QueryBuilderOutlined';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
-
-
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import WhatshotOutlinedIcon from '@mui/icons-material/WhatshotOutlined';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
@@ -45,16 +41,12 @@ import PodcastsIcon from '@mui/icons-material/Podcasts';
 import PodcastsOutlinedIcon from '@mui/icons-material/PodcastsOutlined';
 import { capitalizeFirstLetter } from '../../utility/Utilities';
 import { useLocation, useNavigate } from 'react-router-dom';
-
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-
 import {
     StyledListItemButton, StyledListItemIcon, StyledListItemText, TextContainer, StyledTypography,
     StyledAvatar, StyledListItemShowData, StyledListContainer
 } from './styles';
-import { useUIContext } from '../../context/ui';
-import { useState } from 'react';
 
 export const SidebarList = () => {
     const { isDrawerOpen, setIsDrawerOpen, isMobileScreen } = useUIContext()
@@ -73,9 +65,7 @@ export const SidebarList = () => {
         <>
             <StyledListContainer disablePadding isDrawerOpen={isDrawerOpen}>
                 {HeadingIcons.map((item => (
-                    <ListItem key={item.id} disablePadding
-
-                        onClick={() => handlClick(item.path)} >
+                    <ListItem key={item.id} disablePadding onClick={() => handlClick(item.path)} >
                         <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
                             <StyledListItemIcon isDrawerOpen={isDrawerOpen}>
                                 {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
@@ -94,11 +84,8 @@ export const SidebarList = () => {
                         <StyledTypography variant='h6'>You</StyledTypography>
                         <ChevronRightIcon />
                     </TextContainer>
-
                     {YouIcons.map((item => (
-                        <ListItem key={item.id} disablePadding
-                            onClick={() => handlClick(item.path)}
-                        >
+                        <ListItem key={item.id} disablePadding onClick={() => handlClick(item.path)}>
                             <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
                                 <StyledListItemIcon isDrawerOpen={isDrawerOpen}>
                                     {location.pathname == item.path ? item.iconImageFilled : item.iconImageOutlined}
@@ -108,7 +95,6 @@ export const SidebarList = () => {
                             </StyledListItemButton>
                         </ListItem>
                     )))}
-
                 </StyledListContainer>
             )}
             {isDrawerOpen && <Divider />}
@@ -117,9 +103,9 @@ export const SidebarList = () => {
                 <>
                     <StyledListContainer disablePadding isDrawerOpen={isDrawerOpen}>
                         <TextContainer>
-                            <StyledTypography variant='h6'>Subscriptions</StyledTypography>
+                            <StyledTypography variant='h6'>
+                                Subscriptions</StyledTypography>
                         </TextContainer>
-
                         {SubscriptionIcons.map((item => (
                             <ListItem key={item.id} disablePadding onClick={() => handlClick(item.path)}>
                                 <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
@@ -162,7 +148,6 @@ export const SidebarList = () => {
                     )}
                 </>
             )}
-
             {isDrawerOpen && <Divider />}
 
             {isDrawerOpen && (
@@ -170,7 +155,6 @@ export const SidebarList = () => {
                     <TextContainer>
                         <StyledTypography variant='h6'>Explore</StyledTypography>
                     </TextContainer>
-
                     {ExploreIcons.map((item => (
                         <ListItem key={item.id} disablePadding onClick={() => handlClick(item.path)} >
                             <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>

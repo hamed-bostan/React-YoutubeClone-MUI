@@ -6,7 +6,6 @@ export const useUIContext = () => useContext(UIContext)
 
 export const UIProvider = ({ children }) => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
     const [isSearchBarFocused, setIsSearchBarFocused] = useState(false)
 
     

@@ -11,8 +11,6 @@ import { YourVideos } from './pages/youIconsPages/YourVideos'
 import { WatchLater } from './pages/youIconsPages/WatchLater'
 import { LikedVideos } from './pages/youIconsPages/LikedVideos'
 
-
-
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, } from "react-router-dom";
 import { Layout } from './Layout'
 import { NotFoundPage } from './pages/NotFoundPage'
@@ -53,7 +51,6 @@ function App() {
         <Route path="watch-later" element={<WatchLater />} />
         <Route path="liked-videos" element={<LikedVideos />} />
 
-
         <Route path="fireship" element={<FireshipPage />} />
         <Route path="traversy-media" element={<TraversyMediaPage />} />
         <Route path="kevin-powell" element={<KevinPowellPage />} />
@@ -65,7 +62,6 @@ function App() {
         <Route path="bbc" element={<BbcPage />} />
         <Route path="reuters" element={<ReutersPage />} />
 
-
         <Route path="trending" element={<TrendingPage />} />
         <Route path="music" element={<MusicPage />} />
         <Route path="movies-Tv" element={<MoviesTvPage />} />
@@ -75,8 +71,6 @@ function App() {
         <Route path="sports" element={<SportsPage />} />
         <Route path="learning" element={<LearningPage />} />
         <Route path="podcasts" element={<PodcastsPage />} />
-
-
 
         <Route path="*" element={<NotFoundPage />} />
       </Route>

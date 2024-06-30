@@ -66,17 +66,13 @@ export const HomePageDetails = ({ thumbnailUrl, channel, title, videoUrl, durati
                         onClick={handleClickVolume} onMouseOver={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}>
                         {isTurnOn.volume ? <StyledVolumeOnIcon /> : <StyledVolumeOffIcon />}
                     </StyledVolumeIconButton>
-                    <StyledSubtitleIconButton isMouseOver={isMouseOver} isVideoPlaying={isVideoPlaying}
-                        disableRipple
-                        onClick={handleClickFilled} onMouseOver={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}
-                    >
+                    <StyledSubtitleIconButton isMouseOver={isMouseOver} isVideoPlaying={isVideoPlaying} disableRipple
+                        onClick={handleClickFilled} onMouseOver={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)} >
                         {isTurnOn.filled ? <StyledSubtitleIcon /> : <StyledSubtitleOutlinedIcon />}
                     </StyledSubtitleIconButton>
                     <StyledDuration>{formatDuration(duration)}</StyledDuration>
                 </ImageContainer>
 
-                {/* Bottom of container */}
-                {/* Bottom of container */}
                 <StackInformationContainer>
                     <StyledAvatar src={channel.profileUrl} />
                     <BoxWrapper>

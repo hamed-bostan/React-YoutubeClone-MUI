@@ -50,7 +50,6 @@ export const Form = ({ params, setStoredData, storedData }) => {
     return (
         <form onSubmit={handleSubmit} >
             <RenderInputContainer>
-
                 <StyledTextField
                     variant='standard'
                     placeholder='Serach'
@@ -65,15 +64,13 @@ export const Form = ({ params, setStoredData, storedData }) => {
                         startAdornment: (
                             <StyledInputAdornment position="start" isSearchBarFocused={isSearchBarFocused}>
                                 {isSearchBarFocused && <StyledSearchIcon />}
-                            </StyledInputAdornment>
-                        ),
+                            </StyledInputAdornment>),
                     }} />
                 <Tooltip title='Search'>
                     <StyledIconButton type='submit' disableRipple >
                         <SubmitSearchIcon />
                     </StyledIconButton>
                 </Tooltip>
-
             </RenderInputContainer>
         </form>
     )

@@ -127,7 +127,6 @@ export const StyledTitle = styled(Typography)(({ theme }) => ({
 
 }))
 
-
 export const MoreIconContainer = styled(IconButton)(() => ({
     width: 40,
     height: 40,

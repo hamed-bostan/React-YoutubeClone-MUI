@@ -6,8 +6,6 @@ export const StyledListContainer = styled(List, {
     padding: isDrawerOpen && '0.7rem',
 }))
 
-
-
 export const StyledListItemButton = styled(ListItemButton, {
     shouldForwardProp: (prop) => prop !== 'pathname' && prop !== 'path' && prop !== 'isDrawerOpen'
 })(({ pathname, path, isDrawerOpen, theme }) => ({
@@ -21,7 +19,6 @@ export const StyledListItemButton = styled(ListItemButton, {
     paddingLeft: isDrawerOpen && '0.75rem',
     paddingTop: !isDrawerOpen && '1rem',
     paddingBottom: !isDrawerOpen && '1rem',
-
     ":hover": {
         borderRadius: '0.75rem',
         backgroundColor: pathname == path && isDrawerOpen ? theme.palette.secondary.main : theme.palette.secondary.light,
@@ -37,7 +34,6 @@ export const StyledListItemShowData = styled(ListItemButton, { shouldForwardProp
     paddingLeft: isDrawerOpen && '0.8rem',
     paddingTop: isDrawerOpen ? '0.35rem' : '1rem',
     paddingBottom: isDrawerOpen ? '0.35rem' : '1rem',
-
     ":hover": {
         borderRadius: '0.75rem',
         backgroundColor: theme.palette.secondary.light,

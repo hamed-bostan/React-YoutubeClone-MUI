@@ -1,7 +1,5 @@
 import { Stack, Toolbar, styled } from "@mui/material";
-
 import MuiAppBar from '@mui/material/AppBar';
-
 
 export const StyledAppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open' && prop !== 'isDesktopScreen'

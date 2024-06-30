@@ -20,32 +20,20 @@ export const NavbarListMobile = () => {
     return (
         <>
             {!isSearchBarFocused && (<LogoComponent />)}
-
             {isSearchBarFocused && (
                 <Tooltip title='back'>
                     <StyledIconsButton disableRipple onClick={() => setIsSearchBarFocused(false)}>
                         <ArrowBackIcon />
                     </StyledIconsButton>
-                </Tooltip>
-            )}
-
-            {isSearchBarFocused && (
-                // <SearchContainer>
-                //     <AutoCompleteContainer>
-                //         <AutoComplete />
-                //     </AutoCompleteContainer>
-                // </SearchContainer>
-                <SearchComponent />
-            )}
-
+                </Tooltip>)}
+            {isSearchBarFocused && (<SearchComponent />)}
             <IconsContainer isMobileScreen={isMobileScreen}>
                 {!isSearchBarFocused && (
                     <Tooltip title='Search'>
                         <StyledIconsButton disableRipple onClick={handleClick}>
                             <SubmitSearchIconMobile />
                         </StyledIconsButton>
-                    </Tooltip>
-                )}
+                    </Tooltip>)}
                 <MicComponent />
                 {!isSearchBarFocused && (<CameraComponent />)}
                 {!isSearchBarFocused && (<NotificationComponent />)}
