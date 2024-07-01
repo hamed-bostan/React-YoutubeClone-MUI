@@ -45,15 +45,21 @@ export const YoutubeText = styled(Typography)(() => ({
     fontWeight: '700'
 }))
 
+export const SearchWraper = styled(Box, { shouldForwardProp: (prop) => prop !== 'isDesktopScreen' })(({ isDesktopScreen }) => ({
+    width: isDesktopScreen ? '40%' : '82%'
+}))
+
 export const SearchContainer = styled(Box,
-    { shouldForwardProp: (prop) => prop !== 'isDesktopScreen' && prop !== 'isMobileScreen' })
-    (({ isDesktopScreen, isMobileScreen }) => ({
+    { shouldForwardProp: (prop) => prop !== 'isDesktopScreen' && prop !== 'isMobileScreen' && prop !== 'isSearchBarFocused' })
+    (({ isDesktopScreen, isSearchBarFocused }) => ({
         display: 'flex',
-        flexDirection: 'row-reverse',
+        flexDirection: 'row',
+        marginLeft: 'auto',
         alignItems: 'center',
         gap: '1rem',
-        justifyContent: 'center',
-        width: isDesktopScreen ? '40%' : isMobileScreen && '80%',
+        width: isDesktopScreen && isSearchBarFocused ? '100%'
+            : isDesktopScreen ? '95%'
+                : '100%',
     }))
 
 export const MicIconButton = styled(IconButton, { shouldForwardProp: (prop) => prop !== 'isDesktopScreen' })
