@@ -36,5 +36,4 @@ const initialData = [
     { id: "3", textInformation: 'big bang theory best scenes' },
     { id: "4", textInformation: 'jean-luc godard best films' },
     { id: "5", textInformation: "typescript crash course" },
-    { id: "6", textInformation: "hamed" },
 ]
