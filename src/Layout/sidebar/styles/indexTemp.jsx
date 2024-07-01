@@ -24,11 +24,20 @@ const closedMixin = (theme) => ({
     },
 });
 
-export const StyledDrawer = styled(MuiDrawer)(
-    () => ({
+export const StyledDrawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+    ({ theme, open }) => ({
+        width: drawerWidth,
         flexShrink: 0,
         whiteSpace: 'nowrap',
         boxSizing: 'border-box',
+        ...(open && {
+            ...openedMixin(theme),
+            '& .MuiDrawer-paper': openedMixin(theme),
+        }),
+        ...(!open && {
+            ...closedMixin(theme),
+            '& .MuiDrawer-paper': closedMixin(theme),
+        }),
 
         "& ::-webkit-scrollbar": {
             width: "8px",
@@ -54,16 +63,35 @@ export const BoxContainer = styled(Box, {
     paddingLeft: !isDrawerOpen && '0.25rem',
 }))
 
-export const StyledDrawerDesktop = styled(StyledDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+
+export const StyledDrawerMobile = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
-        width: drawerWidth,
-        ...(open && {
-            ...openedMixin(theme),
-            '& .MuiDrawer-paper': openedMixin(theme),
-        }),
-        ...(!open && {
-            ...closedMixin(theme),
-            '& .MuiDrawer-paper': closedMixin(theme),
-        }),
+        // width: drawerWidth,
+        // flexShrink: 0,
+        // whiteSpace: 'nowrap',
+        // boxSizing: 'border-box',
+        // ...(open && {
+        //     ...openedMixin(theme),
+        //     '& .MuiDrawer-paper': openedMixin(theme),
+        // }),
+        // ...(!open && {
+        //     ...closedMixin(theme),
+        //     '& .MuiDrawer-paper': closedMixin(theme),
+        // }),
+
+        "& ::-webkit-scrollbar": {
+            width: "8px",
+            minWidth: "unset"
+        },
+        "& ::-webkit-scrollbar-track": {
+            background: "#fff",
+        },
+        "& ::-webkit-scrollbar-thumb": {
+            background: "#CCCCCC",
+            borderRadius: "1px",
+        },
+        "& ::-webkit-scrollbar-thumb:hover": {
+            background: "#C1C1C1",
+        },
     }),
 );
