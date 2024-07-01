@@ -32,7 +32,7 @@ export const StyledDrawer = styled(MuiDrawer)(
 
         "& ::-webkit-scrollbar": {
             width: "8px",
-            minWidth: "unset"
+            minWidth: "unset",
         },
         "& ::-webkit-scrollbar-track": {
             background: "#fff",
@@ -46,6 +46,16 @@ export const StyledDrawer = styled(MuiDrawer)(
         },
     }),
 );
+
+
+export const StyledDrawerMobile = styled(StyledDrawer)(
+    () => ({
+        "& ::-webkit-scrollbar-track": {
+            marginTop: '61px',
+        },
+    }),
+);
+
 
 export const BoxContainer = styled(Box, {
     shouldForwardProp: (prop) => prop !== 'isDrawerOpen'
