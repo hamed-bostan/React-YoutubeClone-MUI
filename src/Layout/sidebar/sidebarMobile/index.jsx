@@ -5,11 +5,16 @@ import { LogoComponent } from '../../../components/navbarList/logoComponent';
 import { SidebarList } from '../../../components/sidebarList';
 
 export const SidebarMobile = () => {
-  const { isDrawerOpen } = useUIContext()
+  const { isDrawerOpen, setIsDrawerOpen } = useUIContext()
+
+  const handleClose = () => {
+    setIsDrawerOpen(false)
+  }
 
   return (
     <Box>
-      <StyledDrawer variant="permanent" open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }}>
+      <StyledDrawer variant="temporary" onClose={handleClose}
+        open={isDrawerOpen} PaperProps={{ style: { border: 'none', minWidth: !isDrawerOpen && '4.65rem' } }}>
         <LogoComponent />
         <BoxContainer isDrawerOpen={isDrawerOpen}>
           <SidebarList />
@@ -18,7 +23,3 @@ export const SidebarMobile = () => {
     </Box >
   );
 }
-
-
-
-
