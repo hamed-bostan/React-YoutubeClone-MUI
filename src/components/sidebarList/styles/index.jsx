@@ -3,7 +3,7 @@ import { Avatar, Box, List, ListItemButton, ListItemIcon, ListItemText, Typograp
 export const StyledListContainer = styled(List, {
     shouldForwardProp: (prop) => prop !== 'isDrawerOpen'
 })(({ isDrawerOpen }) => ({
-    padding: isDrawerOpen && '0.7rem',
+    padding: isDrawerOpen && '0.75rem',
 }))
 
 export const StyledListItemButton = styled(ListItemButton, {
