@@ -45,7 +45,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import {
     StyledListItemButton, StyledListItemIcon, StyledListItemText, TextContainer, StyledTypography,
-    StyledAvatar, StyledListItemShowData, StyledListContainer
+    StyledAvatar, StyledListContainer, StyledListItemButtonShowMore
 } from './styles';
 
 export const SidebarList = () => {
@@ -116,13 +116,13 @@ export const SidebarList = () => {
                             </ListItem>
                         )))}
                         {!isShowMoreSidebar && (
-                            <StyledListItemShowData isDrawerOpen={isDrawerOpen} disableRipple onClick={() => setIsShowMoreSidebar(true)}>
+                            <StyledListItemButtonShowMore isDrawerOpen={isDrawerOpen} disableRipple onClick={() => setIsShowMoreSidebar(true)}>
                                 <StyledListItemIcon >
                                     <KeyboardArrowDownIcon />
                                 </StyledListItemIcon>
                                 <StyledListItemText primary={capitalizeFirstLetter('show more')}
                                     primaryTypographyProps={{ fontSize: isDrawerOpen ? '0.875rem' : '0.625rem' }} />
-                            </StyledListItemShowData>
+                            </StyledListItemButtonShowMore>
                         )}
                     </StyledListContainer>
 
@@ -137,13 +137,13 @@ export const SidebarList = () => {
                                     </StyledListItemButton>
                                 </ListItem>
                             )))}
-                            <StyledListItemShowData disableRipple isDrawerOpen={isDrawerOpen} onClick={() => setIsShowMoreSidebar(false)}>
+                            <StyledListItemButtonShowMore disableRipple isDrawerOpen={isDrawerOpen} onClick={() => setIsShowMoreSidebar(false)}>
                                 <StyledListItemIcon >
                                     <KeyboardArrowUpIcon />
                                 </StyledListItemIcon>
                                 <StyledListItemText primary={capitalizeFirstLetter('show less')}
                                     primaryTypographyProps={{ fontSize: isDrawerOpen ? '0.875rem' : '0.625rem' }} />
-                            </StyledListItemShowData>
+                            </StyledListItemButtonShowMore>
                         </StyledListContainer>
                     )}
                 </>

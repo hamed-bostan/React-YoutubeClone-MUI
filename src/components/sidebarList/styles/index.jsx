@@ -25,15 +25,14 @@ export const StyledListItemButton = styled(ListItemButton, {
     },
 }))
 
-export const StyledListItemShowData = styled(ListItemButton, { shouldForwardProp: (prop) => prop !== 'isDrawerOpen' })(({ theme, isDrawerOpen }) => ({
+export const StyledListItemButtonShowMore = styled(ListItemButton, { shouldForwardProp: (prop) => prop !== 'isDrawerOpen' })(({ theme, isDrawerOpen }) => ({
     borderRadius: '0.75rem',
     flexDirection: 'row',
     columnGap: '1.725rem',
     padding: 0,
-    paddingRight: isDrawerOpen && '0.8rem',
-    paddingLeft: isDrawerOpen && '0.8rem',
-    paddingTop: isDrawerOpen ? '0.35rem' : '1rem',
-    paddingBottom: isDrawerOpen ? '0.35rem' : '1rem',
+    paddingRight: isDrawerOpen && '0.75rem',
+    paddingLeft: isDrawerOpen && '0.75rem',
+    minHeight: isDrawerOpen && '2.5rem',
     ":hover": {
         borderRadius: '0.75rem',
         backgroundColor: theme.palette.secondary.light,
@@ -60,7 +59,7 @@ export const TextContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     color: theme.palette.primary.main,
-    paddingLeft: '0.75rem'
+    paddingLeft: '0.75rem',
 }))
 
 export const StyledTypography = styled(Typography)(() => ({
