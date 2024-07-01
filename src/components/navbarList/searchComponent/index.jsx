@@ -1,17 +1,19 @@
 import { useUIContext } from "../../../context/ui"
 import { AutoComplete } from "../autoComplete"
 import { MicComponent } from "../micComponent"
-import { AutoCompleteContainer, SearchContainer } from "../styles"
+import { AutoCompleteContainer, SearchContainer, SearchWraper } from "../styles"
 
 export const SearchComponent = () => {
-    const { isDesktopScreen, isMobileScreen } = useUIContext()
+    const { isDesktopScreen, isMobileScreen, isSearchBarFocused } = useUIContext()
 
     return (
-        <SearchContainer isDesktopScreen={isDesktopScreen} isMobileScreen={isMobileScreen}>
-            {isDesktopScreen && <MicComponent />}
-            <AutoCompleteContainer>
-                <AutoComplete />
-            </AutoCompleteContainer>
-        </SearchContainer>
+        <SearchWraper isDesktopScreen={isDesktopScreen}>
+            <SearchContainer isDesktopScreen={isDesktopScreen} isMobileScreen={isMobileScreen} isSearchBarFocused={isSearchBarFocused}>
+                <AutoCompleteContainer>
+                    <AutoComplete />
+                </AutoCompleteContainer>
+                {isDesktopScreen && <MicComponent />}
+            </SearchContainer>
+        </SearchWraper>
     )
 }
