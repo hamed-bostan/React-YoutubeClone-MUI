@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material'
 const TedTalkPage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <Typography>Wellocme to Ted Talk page</Typography>
+            <Typography>Wellocme to Tedx Talk page</Typography>
             <Typography paragraph>
                 Soprano Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
