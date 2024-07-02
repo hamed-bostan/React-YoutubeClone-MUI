@@ -124,28 +124,28 @@ export const SidebarList = () => {
                                     primaryTypographyProps={{ fontSize: isDrawerOpen ? '0.875rem' : '0.625rem' }} />
                             </StyledListItemButtonShowMore>
                         )}
-
-                        {isShowMoreSidebar && (
-                            <>
-                                {ShowMoreItems.map((item => (
-                                    <ListItem key={item.id} disablePadding onClick={() => handlClick(item.path)} >
-                                        <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
-                                            <StyledAvatar src={item.avater} />
-                                            <StyledListItemText primary={capitalizeFirstLetter(item.textTitle)}
-                                                primaryTypographyProps={{ fontSize: isDrawerOpen ? '0.875rem' : '0.625rem' }} />
-                                        </StyledListItemButton>
-                                    </ListItem>
-                                )))}
-                                <StyledListItemButtonShowMore disableRipple isDrawerOpen={isDrawerOpen} onClick={() => setIsShowMoreSidebar(false)}>
-                                    <StyledListItemIcon >
-                                        <KeyboardArrowUpIcon />
-                                    </StyledListItemIcon>
-                                    <StyledListItemText primary={capitalizeFirstLetter('show less')}
-                                        primaryTypographyProps={{ fontSize: isDrawerOpen ? '0.875rem' : '0.625rem' }} />
-                                </StyledListItemButtonShowMore>
-                            </>
-                        )}
                     </StyledListContainer>
+
+                    {isShowMoreSidebar && (
+                        <StyledListContainer disablePadding isDrawerOpen={isDrawerOpen}>
+                            {ShowMoreItems.map((item => (
+                                <ListItem key={item.id} disablePadding onClick={() => handlClick(item.path)} >
+                                    <StyledListItemButton pathname={location.pathname} path={item.path} isDrawerOpen={isDrawerOpen} disableRipple>
+                                        <StyledAvatar src={item.avater} />
+                                        <StyledListItemText primary={capitalizeFirstLetter(item.textTitle)}
+                                            primaryTypographyProps={{ fontSize: isDrawerOpen ? '0.875rem' : '0.625rem' }} />
+                                    </StyledListItemButton>
+                                </ListItem>
+                            )))}
+                            <StyledListItemButtonShowMore disableRipple isDrawerOpen={isDrawerOpen} onClick={() => setIsShowMoreSidebar(false)}>
+                                <StyledListItemIcon >
+                                    <KeyboardArrowUpIcon />
+                                </StyledListItemIcon>
+                                <StyledListItemText primary={capitalizeFirstLetter('show less')}
+                                    primaryTypographyProps={{ fontSize: isDrawerOpen ? '0.875rem' : '0.625rem' }} />
+                            </StyledListItemButtonShowMore>
+                        </StyledListContainer>
+                    )}
                 </>
             )}
             {isDrawerOpen && <Divider />}
