@@ -3,7 +3,7 @@ import { UIProvider } from './context/ui'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, } from "react-router-dom";
 import { Layout } from './Layout'
 
-import { HomePage, BbcPage, CalebCurryPage, DevelopedbyedPage, FireshipPage, GamingPage, History, KevinPowellPage, LearningPage, LikedVideos, LivePage, MoviesTvPage, MusicPage, NewsPage, PlayLists, PodcastsPage, ReutersPage, ShortsPage, SonnySanghaPage, SportsPage, SubscriptionPage, TedTalkPage, TraversyMediaPage, TrendingPage, WatchLater, WebDevSimplifiedPage, YourChannel, YourVideos } from './components/pathComponent'
+import { HomePage, BbcPage, CalebCurryPage, DevelopedbyedPage, FireshipPage, GamingPage, History, KevinPowellPage, LearningPage, LikedVideos, LivePage, MoviesTvPage, MusicPage, NewsPage, PlayLists, PodcastsPage, ReutersPage, ShortsPage, SonnySanghaPage, SportsPage, SubscriptionPage, TedTalkPage, TraversyMediaPage, TrendingPage, WatchLater, WebDevSimplifiedPage, YourChannel, YourVideos, NotFoundPage } from './components/pathComponent'
 
 
 function App() {

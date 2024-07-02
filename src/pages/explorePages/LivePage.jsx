@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const LivePage = () => {
+const LivePage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Typography>Wellocme to Live page</Typography>
@@ -34,3 +34,5 @@ export const LivePage = () => {
         </Box>
     )
 }
+
+export default LivePage

@@ -1,4 +1,4 @@
-export const NotFoundPage = () => {
+const NotFoundPage = () => {
   return (
     <>
       <TypeError> Page not Found </TypeError>
@@ -8,3 +8,5 @@ export const NotFoundPage = () => {
     </>
   )
 }
+
+export default NotFoundPage

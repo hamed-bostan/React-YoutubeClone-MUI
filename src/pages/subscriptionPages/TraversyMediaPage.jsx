@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const TraversyMediaPage = () => {
+const TraversyMediaPage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Typography>Wellocme to Traversy Media page</Typography>
@@ -34,3 +34,5 @@ export const TraversyMediaPage = () => {
         </Box>
     )
 }
+
+export default TraversyMediaPage

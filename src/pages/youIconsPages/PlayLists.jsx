@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const PlayLists = () => {
+const PlayLists = () => {
   return (
     <Box sx={{ p: 3 }}>
       <Typography>Wellcome to Your Play Lists</Typography>
@@ -34,3 +34,5 @@ export const PlayLists = () => {
     </Box>
   )
 }
+
+export default PlayLists

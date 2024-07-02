@@ -29,3 +29,5 @@ export { default as NewsPage } from '../../pages/explorePages/NewsPage'
 export { default as SportsPage } from '../../pages/explorePages/SportsPage'
 export { default as LearningPage } from '../../pages/explorePages/LearningPage'
 export { default as PodcastsPage } from '../../pages/explorePages/PodcastsPage'
+
+export { default as NotFoundPage } from '../../pages/NotFoundPage'

@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const NewsPage = () => {
+const NewsPage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Typography>Wellocme to News page</Typography>
@@ -34,3 +34,5 @@ export const NewsPage = () => {
         </Box>
     )
 }
+
+export default NewsPage

@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const TedTalkPage = () => {
+const TedTalkPage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Typography>Wellocme to Ted Talk page</Typography>
@@ -34,3 +34,5 @@ export const TedTalkPage = () => {
         </Box>
     )
 }
+
+export default TedTalkPage

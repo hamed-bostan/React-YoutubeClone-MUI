@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const History = () => {
+const History = () => {
   return (
     <Box sx={{ p: 3 }}>
       <Typography>Wellcome to Your History page</Typography>
@@ -34,3 +34,5 @@ export const History = () => {
     </Box>
   )
 }
+
+export default History

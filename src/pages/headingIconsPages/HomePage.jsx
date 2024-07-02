@@ -2,7 +2,7 @@ import { Box, Grid } from '@mui/material'
 import { videos } from '../../data/videos'
 import { HomePageDetails } from '../../components/homePageDetails';
 
-export const HomePage = () => {
+const HomePage = () => {
 
     return (
         <Box >
@@ -12,3 +12,5 @@ export const HomePage = () => {
         </Box>
     )
 }
+
+export default HomePage

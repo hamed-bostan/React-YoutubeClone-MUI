@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const FireshipPage = () => {
+const FireshipPage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Typography>Wellocme to Fireship page</Typography>
@@ -34,3 +34,5 @@ export const FireshipPage = () => {
         </Box>
     )
 }
+
+export default FireshipPage
