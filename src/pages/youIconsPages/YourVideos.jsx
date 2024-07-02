@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const YourVideos = () => {
+const YourVideos = () => {
   return (
     <Box sx={{ p: 3 }}>
       <Typography>Wellcome to Your Videos page</Typography>
@@ -34,3 +34,5 @@ export const YourVideos = () => {
     </Box>
   )
 }
+
+export default YourVideos

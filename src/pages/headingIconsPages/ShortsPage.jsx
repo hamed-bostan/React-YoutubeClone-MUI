@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const ShortsPage = () => {
+const ShortsPage = () => {
   return (
     <Box sx={{ p: 3 }}>
       <Typography>Wellcome to Shorts page</Typography>
@@ -34,3 +34,5 @@ export const ShortsPage = () => {
     </Box>
   )
 }
+
+export default ShortsPage

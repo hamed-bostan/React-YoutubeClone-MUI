@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const YourChannel = () => {
+const YourChannel = () => {
   return (
     <Box sx={{ p: 3 }}>
       <Typography>Wellcome to Your Channel page</Typography>
@@ -34,3 +34,5 @@ export const YourChannel = () => {
     </Box>
   )
 }
+
+export default YourChannel

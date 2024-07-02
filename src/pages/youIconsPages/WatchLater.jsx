@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const WatchLater = () => {
+const WatchLater = () => {
   return (
     <Box sx={{ p: 3 }}>
       <Typography>Wellcome to Your Watch Later page</Typography>
@@ -34,3 +34,5 @@ export const WatchLater = () => {
     </Box>
   )
 }
+
+export default WatchLater

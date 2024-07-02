@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const LearningPage = () => {
+const LearningPage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Typography>Wellocme to Learning page</Typography>
@@ -34,3 +34,5 @@ export const LearningPage = () => {
         </Box>
     )
 }
+
+export default LearningPage

@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const TrendingPage = () => {
+const TrendingPage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Typography>Wellocme to Trending page</Typography>
@@ -34,3 +34,5 @@ export const TrendingPage = () => {
         </Box>
     )
 }
+
+export default TrendingPage

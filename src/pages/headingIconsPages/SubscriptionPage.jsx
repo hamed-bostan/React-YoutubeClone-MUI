@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const SubscriptionPage = () => {
+const SubscriptionPage = () => {
   return (
     <Box sx={{ p: 3 }}>
       <Typography>Wellcome to Subscription page</Typography>
@@ -34,3 +34,5 @@ export const SubscriptionPage = () => {
     </Box>
   )
 }
+
+export default SubscriptionPage

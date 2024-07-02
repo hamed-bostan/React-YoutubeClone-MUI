@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const MoviesTvPage = () => {
+const MoviesTvPage = () => {
     return (
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Typography>Wellocme to Movies and Tv page</Typography>
@@ -34,3 +34,5 @@ export const MoviesTvPage = () => {
         </Box>
     )
 }
+
+export default MoviesTvPage
