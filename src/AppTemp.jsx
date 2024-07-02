@@ -3,8 +3,39 @@ import { UIProvider } from './context/ui'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, } from "react-router-dom";
 import { Layout } from './Layout'
 
-import { HomePage, BbcPage, CalebCurryPage, DevelopedbyedPage, FireshipPage, GamingPage, History, KevinPowellPage, LearningPage, LikedVideos, LivePage, MoviesTvPage, MusicPage, NewsPage, PlayLists, PodcastsPage, ReutersPage, ShortsPage, SonnySanghaPage, SportsPage, SubscriptionPage, TedTalkPage, TraversyMediaPage, TrendingPage, WatchLater, WebDevSimplifiedPage, YourChannel, YourVideos } from './components/pathComponent'
+import { HomePage } from './pages/headingIconsPages/HomePage'
+import { ShortsPage } from './pages/headingIconsPages/ShortsPage'
+import { SubscriptionPage } from './pages/headingIconsPages/SubscriptionPage'
 
+import { YourChannel } from './pages/youIconsPages/YourChannel'
+import { History } from './pages/youIconsPages/History'
+import { PlayLists } from './pages/youIconsPages/PlayLists'
+import { YourVideos } from './pages/youIconsPages/YourVideos'
+import { WatchLater } from './pages/youIconsPages/WatchLater'
+import { LikedVideos } from './pages/youIconsPages/LikedVideos'
+
+
+import { NotFoundPage } from './pages/NotFoundPage'
+import { FireshipPage } from './pages/subscriptionPages/FireshipPage'
+import { TraversyMediaPage } from './pages/subscriptionPages/TraversyMediaPage'
+import { KevinPowellPage } from './pages/subscriptionPages/KevinPowellPage'
+import { WebDevSimplifiedPage } from './pages/subscriptionPages/WebDevSimplifiedPage'
+import { CalebCurryPage } from './pages/subscriptionPages/CalebCurryPage'
+import { SonnySanghaPage } from './pages/subscriptionPages/SonnySanghaPage'
+
+import { TrendingPage } from './pages/explorePages/TrendingPage'
+import { MusicPage } from './pages/explorePages/MusicPage'
+import { MoviesTvPage } from './pages/explorePages/MoviesTvPage'
+import { LivePage } from './pages/explorePages/LivePage'
+import { GamingPage } from './pages/explorePages/GamingPage'
+import { NewsPage } from './pages/explorePages/NewsPage'
+import { LearningPage } from './pages/explorePages/LearningPage'
+import { PodcastsPage } from './pages/explorePages/PodcastsPage'
+import { SportsPage } from './pages/explorePages/SportsPage'
+import { BbcPage } from './pages/subscriptionPages/BbcPage'
+import { DevelopedbyedPage } from './pages/subscriptionPages/DevelopedbyedPage'
+import { ReutersPage } from './pages/subscriptionPages/ReutersPage'
+import { TedTalkPage } from './pages/subscriptionPages/TedTalkPage'
 
 function App() {
 
